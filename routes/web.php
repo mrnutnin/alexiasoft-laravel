@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/services', [ServicesController::class, 'index'])->name('services');
+
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+
