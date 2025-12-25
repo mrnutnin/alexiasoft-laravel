@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/services', [ServicesController::class, 'index'])->name('services');
+Route::get('/services', [ServiceController::class, 'index'])->name('services');
 
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 
