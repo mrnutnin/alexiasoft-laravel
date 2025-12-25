@@ -1,8 +1,3 @@
-@extends('layouts.app')
-
-@section('title','Contact – AlexiaSoft')
-
-@section('content')
 <section id="contact">
 
             <h2 data-en="Get In Touch" data-th="ติดต่อเรา">Get In Touch</h2>
@@ -96,4 +91,3 @@
             </div>
 
         </section>
-@endsection

@@ -1,9 +1,4 @@
-@extends('layouts.app')
-
-@section('title','Our Services – AlexiaSoft')
-
-@section('content')
-        <section id="services">
+ <section id="services">
 
             <h2 data-en="Our Services" data-th="บริการของเรา">Our Services</h2>
 
@@ -96,5 +91,5 @@
             </div>
 
         </section>
-@endsection
+
 

@@ -1,16 +1,17 @@
 <header id="main-header">
     <div class="nav-container">
 
-        <a href="{{ route('home') }}" class="logo">
+        {{-- โลโก้ กลับบนสุด --}}
+        <a href="#home" class="logo">
             <img src="{{ asset('images/logo-alexia.png') }}" alt="AlexiaSoft">
         </a>
 
         <nav class="nav-menu">
-            <a href="{{ route('home') }}">Home</a>
-            <a href="{{ route('services') }}">Our Services</a>
-            <a href="{{ route('portfolio') }}">Portfolio</a>
-            <a href="{{ route('about') }}">About Us</a>
-            <a href="{{ route('contact') }}">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#services">Our Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
         </nav>
 
         <div class="lang-switch">

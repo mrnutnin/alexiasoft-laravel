@@ -1,23 +1,17 @@
-@extends('layouts.app')
+<section id="portfolio">
 
-@section('title','Portfolio – AlexiaSoft')
+    <h2 data-en="Our Portfolio" data-th="ตัวอย่างงานของเรา">Our Portfolio</h2>
 
-@section('content')
-        <section id="portfolio">
+    <p data-en="Explore our diverse range of successful projects across various industries."
+        data-th="สำรวจโปรเจกต์ที่ประสบความสำเร็จของเราในหลากหลายอุตสาหกรรม"
+        style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
 
-            <h2 data-en="Our Portfolio" data-th="ตัวอย่างงานของเรา">Our Portfolio</h2>
+        Explore our diverse range of successful projects across various industries.
 
-            <p data-en="Explore our diverse range of successful projects across various industries."
-                data-th="สำรวจโปรเจกต์ที่ประสบความสำเร็จของเราในหลากหลายอุตสาหกรรม"
-                style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
-
-                Explore our diverse range of successful projects across various industries.
-
-            </p>
-
-            <div class="portfolio-container">
-                <div class="swiper portfolioSwiper">
-                    <div class="swiper-wrapper">
+    </p>
+    <div class="portfolio-container">
+        <div class="swiper portfolioSwiper">
+            <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
                     <div class="glass-card portfolio-item">
@@ -217,16 +211,18 @@
                     </div>
                 </div>
 
-                    </div>
-                    
-                    <!-- Swiper Navigation -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    
-                    <!-- Swiper Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
             </div>
 
-        </section>
-@endsection
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="portfolio-cta">
+        <a href="#contact" class="btn btn-primary">Start Project</a>
+    </div>
+
+</section>

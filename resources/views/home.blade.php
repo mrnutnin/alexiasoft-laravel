@@ -1,9 +1,4 @@
-@extends('layouts.app')
-
-@section('title','AlexiaSoft – Crafted Software Solutions')
-
-@section('content')
-     <section id="home" class="hero">
+<section id="home" class="hero">
 
             <div class="hero-text">
 

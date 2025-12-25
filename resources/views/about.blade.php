@@ -1,10 +1,4 @@
-@extends('layouts.app')
-
-@section('title','About Us – AlexiaSoft')
-
-@section('content')
-
-         <section id="about">
+<section id="about">
             <div class="about-container">
                 <div class="stat-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div class="glass-card stat-card"><h3>100%</h3><p data-en="Reliability" data-th="ความน่าเชื่อถือ">Reliability</p></div>
@@ -21,4 +15,3 @@
                 </div>
             </div>
         </section>
-@endsection
