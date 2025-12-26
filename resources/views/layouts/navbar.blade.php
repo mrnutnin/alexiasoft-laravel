@@ -15,9 +15,10 @@
         </nav>
 
         <div class="lang-switch">
-            <button class="lang-btn active">EN</button>
-            <button class="lang-btn">TH</button>
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="th">TH</button>
         </div>
+
 
     </div>
 </header>

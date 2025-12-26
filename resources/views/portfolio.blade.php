@@ -1,3 +1,4 @@
+
 <section id="portfolio">
 
     <h2 data-en="Our Portfolio" data-th="ตัวอย่างงานของเรา">Our Portfolio</h2>
@@ -78,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide">
                     <div class="glass-card portfolio-item">
                         <div class="portfolio-image">
@@ -221,8 +221,215 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <div class="portfolio-cta">
-        <a href="#contact" class="btn btn-primary">Start Project</a>
-    </div>
+            <h2 data-en="Trusted By" data-th="ลูกค้าที่ไว้วางใจเรา">Trusted By</h2>
 
+            <p data-en="We are proud to work with leading organizations across various industries."
+                data-th="เรามีความภาคภูมิใจที่ได้ทำงานร่วมกับองค์กรชั้นนำในหลากหลายอุตสาหกรรม"
+                style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 20px; font-size: 0.95rem;">
+
+                We are proud to work with leading organizations across various industries.
+
+            </p>
+
+            <div class="clients-grid">
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <!-- <i class="fa-solid fa-building"></i> -->
+                        <img src="images/clients/client-1.png" alt="Client 1">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-1.png" alt="Client 1"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-2.png" alt="Client 2">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-2.png" alt="Client 2"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-3.png" alt="Client 3">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-3.png" alt="Client 3"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-4.png" alt="Client 4">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-4.png" alt="Client 4"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-5.png" alt="Client 5">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-5.png" alt="Client 5"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-6.png" alt="Client 6">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-6.png" alt="Client 6"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-7.png" alt="Client 7">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-7.png" alt="Client 7"> -->
+                </div>
+
+                <div class="glass-card client-logo-card">
+                    <div class="client-logo-placeholder">
+                        <img src="images/clients/client-8.png" alt="Client 8">
+                    </div>
+                    <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
+                </div>
+            </div>
 </section>
+
+            <h3 data-en="Implementation Plan" data-th="แผนการดำเนินงาน" style="font-size: 1.7rem;">Implementation Plan
+            </h3>
+
+            <p data-en="Our systematic approach ensures smooth deployment and successful adoption of your solution."
+                data-th="แนวทางที่เป็นระบบของเราช่วยให้การติดตั้งและนำระบบไปใช้งานเป็นไปอย่างราบรื่นและประสบความสำเร็จ"
+                style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; font-size: 0.9rem;">
+
+                Our systematic approach ensures smooth deployment and successful adoption of your solution.
+
+            </p>
+
+            <div style="display: grid; gap: 15px; max-width: 800px; margin: 0 auto;">
+
+                <div class="glass-card"
+                    style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 0; margin-right: 100px;">
+
+                    <div
+                        style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                        1</div>
+
+                    <div>
+
+                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Requirement & Analysis"
+                            data-th="วิเคราะห์ความต้องการ">Requirement & Analysis</h3>
+
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
+                            data-en="We thoroughly analyze your business needs, existing workflows, and objectives to create a detailed project blueprint."
+                            data-th="เราวิเคราะห์ความต้องการทางธุรกิจ กระบวนการทำงานที่มีอยู่ และเป้าหมายของคุณอย่างละเอียดเพื่อสร้างแผนโครงการที่ชัดเจน">
+
+                            We thoroughly analyze your business needs, existing workflows, and objectives to create a
+                            detailed project blueprint.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card"
+                    style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 100px; margin-right: 0;">
+
+                    <div
+                        style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                        2</div>
+
+                    <div>
+
+                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="System Design & Customization"
+                            data-th="ออกแบบและปรับแต่งระบบ">System Design & Customization</h3>
+
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
+                            data-en="Our team designs and customizes the solution specifically for your requirements, ensuring perfect fit with your operations."
+                            data-th="ทีมงานของเราออกแบบและปรับแต่งโซลูชันให้ตรงกับความต้องการของคุณโดยเฉพาะ เพื่อให้เข้ากับการดำเนินงานของคุณอย่างลงตัว">
+
+                            Our team designs and customizes the solution specifically for your requirements, ensuring
+                            perfect fit with your operations.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card"
+                    style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 0; margin-right: 100px;">
+
+                    <div
+                        style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                        3</div>
+
+                    <div>
+
+                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Setup & Configuration"
+                            data-th="ติดตั้งและตั้งค่าระบบ">Setup & Configuration</h3>
+
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
+                            data-en="We install, configure, and integrate the system with your existing infrastructure, ensuring seamless connectivity."
+                            data-th="เราติดตั้ง ตั้งค่า และเชื่อมต่อระบบเข้ากับโครงสร้างพื้นฐานที่มีอยู่ของคุณ เพื่อการเชื่อมต่อที่ราบรื่น">
+
+                            We install, configure, and integrate the system with your existing infrastructure, ensuring
+                            seamless connectivity.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card"
+                    style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 100px; margin-right: 0;">
+
+                    <div
+                        style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                        4</div>
+
+                    <div>
+
+                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Staff Training & Testing"
+                            data-th="อบรมพนักงานและทดสอบระบบ">Staff Training & Testing</h3>
+
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
+                            data-en="Comprehensive training for your team and thorough testing to ensure everything works perfectly before launch."
+                            data-th="อบรมทีมงานของคุณอย่างครบถ้วนและทดสอบระบบอย่างละเอียดเพื่อให้มั่นใจว่าทุกอย่างทำงานได้อย่างสมบูรณ์แบบก่อนเปิดตัว">
+
+                            Comprehensive training for your team and thorough testing to ensure everything works
+                            perfectly before launch.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card"
+                    style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 0; margin-right: 100px;">
+
+                    <div
+                        style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                        5</div>
+
+                    <div>
+
+                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Go-live & Support"
+                            data-th="เปิดใช้งานและสนับสนุน">Go-live & Support</h3>
+
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
+                            data-en="Smooth launch of your system with continuous monitoring and dedicated support to ensure optimal performance."
+                            data-th="เปิดใช้งานระบบอย่างราบรื่นพร้อมการติดตามอย่างต่อเนื่องและการสนับสนุนอย่างเต็มที่เพื่อให้มั่นใจในประสิทธิภาพที่ดีที่สุด">
+
+                            Smooth launch of your system with continuous monitoring and dedicated support to ensure
+                            optimal performance.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
