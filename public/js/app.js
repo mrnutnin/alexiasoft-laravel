@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ========= SCROLL SPY ========= */
     const sections = document.querySelectorAll('section[id]');
-    // ❗ สำคัญ: ไม่เอาปุ่มภาษา
+
     const navLinks = document.querySelectorAll('.nav-menu a:not(.lang-btn)');
 
     function onScroll() {

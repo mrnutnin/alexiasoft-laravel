@@ -26,6 +26,7 @@
             </div>
 
         </div>
+    </footer>
 
         <div class="footer-section">
 

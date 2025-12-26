@@ -1,4 +1,117 @@
-<section id="home" class="hero">
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>AlexiaSoft – Crafted Software Solutions | Custom Development</title>
+    <meta name="title" content="AlexiaSoft – Crafted Software Solutions | Custom Development" />
+    <meta name="description"
+        content="Crafted software solutions for modern businesses. We build ERP, POS, e-Commerce, and custom applications with cutting-edge technologies like Laravel, React, Vue.js, and Node.js." />
+    <meta name="keywords"
+        content="software development, custom software, ERP system, POS system, e-commerce, web application, mobile app, system integration, Laravel, React, Vue.js, AlexiaSoft" />
+    <meta name="author" content="AlexiaSoft Co., Ltd." />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English, Thai" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.alexiasoft.co" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#22c55e" />
+    <meta name="msapplication-TileColor" content="#22c55e" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.alexiasoft.co" />
+    <meta property="og:title" content="AlexiaSoft – Crafted Software Solutions" />
+    <meta property="og:description"
+        content="Crafted software solutions for modern businesses. We build technology that drives success." />
+    <meta property="og:image" content="https://www.alexiasoft.co/images/og-image.jpg" />
+    <meta property="og:site_name" content="AlexiaSoft" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="th_TH" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.alexiasoft.co" />
+    <meta property="twitter:title" content="AlexiaSoft – Crafted Software Solutions" />
+    <meta property="twitter:description"
+        content="Crafted software solutions for modern businesses. We build technology that drives success." />
+    <meta property="twitter:image" content="https://www.alexiasoft.co/images/twitter-image.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="ambient-blob blob-1"></div>
+
+    <div class="ambient-blob blob-2"></div>
+
+
+
+    <header id="main-header">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo"><img src="images/logo-alexia.png" alt="AlexiaSoft"></a>
+
+            <nav class="nav-menu">
+
+                <a href="#home" class="active">Home</a>
+
+                <a href="#services">Our Services</a>
+
+                <a href="#portfolio">Portfolio</a>
+
+                <a href="#about">About Us</a>
+
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+            <div class="lang-switch">
+
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+
+                <button class="lang-btn" onclick="setLang('th')">TH</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main id="main-content" class="content-transition">
+
+
+
+        <section id="home" class="hero">
 
             <div class="hero-text">
 
@@ -46,29 +159,34 @@
 
                     <div class="code-content">
 
-                            <div><span class="kwd">import</span> { <span class="prop">Innovation</span> } <span class="kwd">from</span> <span class="str">'@alexiasoft/core'</span>;</div>
+                        <div><span class="kwd">import</span> { <span class="prop">Innovation</span> } <span
+                                class="kwd">from</span> <span class="str">'@alexiasoft/core'</span>;</div>
 
-                            <br>
+                        <br>
 
-                            <div><span class="kwd">const</span> <span class="func">createSuccess</span> = <span class="kwd">async</span> () => {</div>
+                        <div><span class="kwd">const</span> <span class="func">createSuccess</span> = <span
+                                class="kwd">async</span> () => {</div>
 
-                            <div style="padding-left: 20px;">
+                        <div style="padding-left: 20px;">
 
-                                <span class="kwd">const</span> project = <span class="kwd">await</span> <span class="prop">AlexiaSoft</span>.<span class="func">build</span>({</div>
+                            <span class="kwd">const</span> project = <span class="kwd">await</span> <span
+                                class="prop">AlexiaSoft</span>.<span class="func">build</span>({
+                        </div>
 
-                            <div style="padding-left: 40px;">type: <span class="str">'Crafted'</span>,</div>
+                        <div style="padding-left: 40px;">type: <span class="str">'Crafted'</span>,</div>
 
-                            <div style="padding-left: 40px;">design: <span class="str">'Modern'</span>,</div>
+                        <div style="padding-left: 40px;">design: <span class="str">'Modern'</span>,</div>
 
-                            <div style="padding-left: 40px;">performance: <span class="str">'100%'</span></div>
+                        <div style="padding-left: 40px;">performance: <span class="str">'100%'</span></div>
 
-                            <div style="padding-left: 20px;">});</div>
+                        <div style="padding-left: 20px;">});</div>
 
-                            <br>
+                        <br>
 
-                            <div style="padding-left: 20px;"><span class="kwd">return</span> project.<span class="func">launch</span>();</div>
+                        <div style="padding-left: 20px;"><span class="kwd">return</span> project.<span
+                                class="func">launch</span>();</div>
 
-                            <div>};</div>
+                        <div>};</div>
 
                     </div>
 
@@ -77,23 +195,30 @@
             </div>
 
         </section>
-                <div class="marquee-container">
+
+
+
+        <div class="marquee-container">
 
             <div class="track">
 
-                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel</div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel
+                </div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-react" style="color:#61dafb"></i> React</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-vuejs" style="color:#42b883"></i> Vue.js</div>
-                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js
+                </div>
                 <div class="glass-card tech-card"><i class="fa-solid fa-cube" style="color:#fbf0df"></i> Bun.js</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-aws" style="color:#ff9900"></i> AWS</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-docker" style="color:#2496ed"></i> Docker</div>
-                
+
                 <!-- Duplicate set for seamless loop -->
-                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel</div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel
+                </div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-react" style="color:#61dafb"></i> React</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-vuejs" style="color:#42b883"></i> Vue.js</div>
-                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js
+                </div>
                 <div class="glass-card tech-card"><i class="fa-solid fa-cube" style="color:#fbf0df"></i> Bun.js</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-aws" style="color:#ff9900"></i> AWS</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-docker" style="color:#2496ed"></i> Docker</div>
@@ -101,116 +226,3 @@
             </div>
 
         </div>
-
-            <section id="implementation" style="padding: 80px 24px;">
-
-            <h2 data-en="Implementation Plan" data-th="แผนการดำเนินงาน" style="font-size: 2rem;">Implementation Plan</h2>
-
-            <p data-en="Our systematic approach ensures smooth deployment and successful adoption of your solution."
-                data-th="แนวทางที่เป็นระบบของเราช่วยให้การติดตั้งและนำระบบไปใช้งานเป็นไปอย่างราบรื่นและประสบความสำเร็จ"
-                style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; font-size: 0.9rem;">
-
-                Our systematic approach ensures smooth deployment and successful adoption of your solution.
-
-            </p>
-
-            <div style="display: grid; gap: 15px; max-width: 800px; margin: 0 auto;">
-
-                <div class="glass-card" style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 0; margin-right: 100px;">
-
-                    <div style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">1</div>
-
-                    <div>
-
-                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Requirement & Analysis" data-th="วิเคราะห์ความต้องการ">Requirement & Analysis</h3>
-
-                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;" data-en="We thoroughly analyze your business needs, existing workflows, and objectives to create a detailed project blueprint."
-                            data-th="เราวิเคราะห์ความต้องการทางธุรกิจ กระบวนการทำงานที่มีอยู่ และเป้าหมายของคุณอย่างละเอียดเพื่อสร้างแผนโครงการที่ชัดเจน">
-
-                            We thoroughly analyze your business needs, existing workflows, and objectives to create a detailed project blueprint.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="glass-card" style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 100px; margin-right: 0;">
-
-                    <div style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">2</div>
-
-                    <div>
-
-                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="System Design & Customization" data-th="ออกแบบและปรับแต่งระบบ">System Design & Customization</h3>
-
-                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;" data-en="Our team designs and customizes the solution specifically for your requirements, ensuring perfect fit with your operations."
-                            data-th="ทีมงานของเราออกแบบและปรับแต่งโซลูชันให้ตรงกับความต้องการของคุณโดยเฉพาะ เพื่อให้เข้ากับการดำเนินงานของคุณอย่างลงตัว">
-
-                            Our team designs and customizes the solution specifically for your requirements, ensuring perfect fit with your operations.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="glass-card" style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 0; margin-right: 100px;">
-
-                    <div style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">3</div>
-
-                    <div>
-
-                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Setup & Configuration" data-th="ติดตั้งและตั้งค่าระบบ">Setup & Configuration</h3>
-
-                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;" data-en="We install, configure, and integrate the system with your existing infrastructure, ensuring seamless connectivity."
-                            data-th="เราติดตั้ง ตั้งค่า และเชื่อมต่อระบบเข้ากับโครงสร้างพื้นฐานที่มีอยู่ของคุณ เพื่อการเชื่อมต่อที่ราบรื่น">
-
-                            We install, configure, and integrate the system with your existing infrastructure, ensuring seamless connectivity.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="glass-card" style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 100px; margin-right: 0;">
-
-                    <div style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">4</div>
-
-                    <div>
-
-                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Staff Training & Testing" data-th="อบรมพนักงานและทดสอบระบบ">Staff Training & Testing</h3>
-
-                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;" data-en="Comprehensive training for your team and thorough testing to ensure everything works perfectly before launch."
-                            data-th="อบรมทีมงานของคุณอย่างครบถ้วนและทดสอบระบบอย่างละเอียดเพื่อให้มั่นใจว่าทุกอย่างทำงานได้อย่างสมบูรณ์แบบก่อนเปิดตัว">
-
-                            Comprehensive training for your team and thorough testing to ensure everything works perfectly before launch.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="glass-card" style="padding: 20px; display: flex; gap: 15px; align-items: start; margin-left: 0; margin-right: 100px;">
-
-                    <div style="background: var(--gradient-main); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">5</div>
-
-                    <div>
-
-                        <h3 style="margin: 0 0 5px 0; font-size: 1rem;" data-en="Go-live & Support" data-th="เปิดใช้งานและสนับสนุน">Go-live & Support</h3>
-
-                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;" data-en="Smooth launch of your system with continuous monitoring and dedicated support to ensure optimal performance."
-                            data-th="เปิดใช้งานระบบอย่างราบรื่นพร้อมการติดตามอย่างต่อเนื่องและการสนับสนุนอย่างเต็มที่เพื่อให้มั่นใจในประสิทธิภาพที่ดีที่สุด">
-
-                            Smooth launch of your system with continuous monitoring and dedicated support to ensure optimal performance.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
