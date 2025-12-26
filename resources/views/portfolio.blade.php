@@ -221,8 +221,76 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <div class="portfolio-cta">
-        <a href="#contact" class="btn btn-primary">Start Project</a>
+    <h2 data-en="Trusted By" data-th="ลูกค้าที่ไว้วางใจเรา">Trusted By</h2>
+
+    <p data-en="We are proud to work with leading organizations across various industries."
+        data-th="เรามีความภาคภูมิใจที่ได้ทำงานร่วมกับองค์กรชั้นนำในหลากหลายอุตสาหกรรม"
+        style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 20px; font-size: 0.95rem;">
+
+        We are proud to work with leading organizations across various industries.
+
+    </p>
+
+    <div class="clients-grid">
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <!-- <i class="fa-solid fa-building"></i> -->
+                <img src="images/clients/client-1.png" alt="Client 1">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-1.png" alt="Client 1"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <img src="images/clients/client-2.png" alt="Client 2">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-2.png" alt="Client 2"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <img src="images/clients/client-3.png" alt="Client 3">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-3.png" alt="Client 3"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <img src="images/clients/client-4.png" alt="Client 4">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-4.png" alt="Client 4"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <img src="images/clients/client-5.png" alt="Client 5">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-5.png" alt="Client 5"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <img src="images/clients/client-6.png" alt="Client 6">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-6.png" alt="Client 6"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">]
+                <img src="images/clients/client-7.png" alt="Client 7">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-7.png" alt="Client 7"> -->
+        </div>
+
+        <div class="glass-card client-logo-card">
+            <div class="client-logo-placeholder">
+                <img src="images/clients/client-8.png" alt="Client 8">
+            </div>
+            <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
+        </div>
+
+
     </div>
 
 </section>
