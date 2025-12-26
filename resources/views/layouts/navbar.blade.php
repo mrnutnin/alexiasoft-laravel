@@ -13,7 +13,7 @@
             <a href="#about">About Us</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="lang-switch">
+       <div class="lang-switch">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="th">TH</button>
         </div>

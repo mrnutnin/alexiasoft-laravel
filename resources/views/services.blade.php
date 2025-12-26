@@ -1,4 +1,4 @@
- <section id="services">
+ <section id="services"class="scroll-reveal">
 
             <h2 data-en="Our Services" data-th="บริการของเรา">Our Services</h2>
 

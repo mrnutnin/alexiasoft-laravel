@@ -1,4 +1,4 @@
-<section id="contact">
+<section id="contact"class="scroll-reveal">
 
             <h2 data-en="Get In Touch" data-th="ติดต่อเรา">Get In Touch</h2>
 
