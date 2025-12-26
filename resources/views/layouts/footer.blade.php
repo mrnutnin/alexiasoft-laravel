@@ -25,11 +25,16 @@
                 <div class="footer-section">
                     <h3 data-en="Quick Links" data-th="ลิงก์ด่วน">Quick Links</h3>
                     <div class="footer-links">
-                        <a href="#home" class="footer-link" data-en="Home" data-th="หน้าแรก"><i class="fa-solid fa-chevron-right"></i> Home</a>
-                        <a href="#services" class="footer-link" data-en="Services" data-th="บริการ"><i class="fa-solid fa-chevron-right"></i> Services</a>
-                        <a href="#portfolio" class="footer-link" data-en="Portfolio" data-th="ผลงาน"><i class="fa-solid fa-chevron-right"></i> Portfolio</a>
-                        <a href="#about" class="footer-link" data-en="About" data-th="เกี่ยวกับ"><i class="fa-solid fa-chevron-right"></i> About</a>
-                        <a href="#contact" class="footer-link" data-en="Contact" data-th="ติดต่อ"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                        <a href="#home" class="footer-link" data-en="Home" data-th="หน้าแรก"><i
+                                class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="#services" class="footer-link" data-en="Services" data-th="บริการ"><i
+                                class="fa-solid fa-chevron-right"></i> Services</a>
+                        <a href="#portfolio" class="footer-link" data-en="Portfolio" data-th="ผลงาน"><i
+                                class="fa-solid fa-chevron-right"></i> Portfolio</a>
+                        <a href="#about" class="footer-link" data-en="About" data-th="เกี่ยวกับ"><i
+                                class="fa-solid fa-chevron-right"></i> About</a>
+                        <a href="#contact" class="footer-link" data-en="Contact" data-th="ติดต่อ"><i
+                                class="fa-solid fa-chevron-right"></i> Contact</a>
                     </div>
                 </div>
 
@@ -42,7 +47,8 @@
                             </div>
                             <p data-en="999/21 Moo 8, Muang Kao Sub-district, Mueang Khon Kaen District, Khon Kaen Province 40000, Thailand"
                                 data-th="999/21 หมู่ที่ 8 ต.เมืองเก่า อ.เมืองขอนแก่น จ.ขอนแก่น 40000">
-                                999/21 Moo 8, Muang Kao Sub-district, Mueang Khon Kaen District, Khon Kaen Province 40000, Thailand
+                                999/21 Moo 8, Muang Kao Sub-district, Mueang Khon Kaen District, Khon Kaen Province
+                                40000, Thailand
                             </p>
                         </div>
                         <div class="contact-item-footer">
@@ -64,10 +70,11 @@
 
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
-                <p>&copy; 2025 AlexiaSoft Co., Ltd. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์ทั้งหมด">All rights reserved.</span></p>
+                <p>&copy; 2025 AlexiaSoft Co., Ltd. <span data-en="All rights reserved."
+                        data-th="สงวนลิขสิทธิ์ทั้งหมด">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>

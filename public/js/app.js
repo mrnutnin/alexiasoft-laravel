@@ -1,42 +1,74 @@
-/* ===============================DOM READY================================ */
+/* =========================================================
+   DOM READY
+========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
-    /* ========= LANG SWITCHER ========= */
+
+    /* ================= LANG SWITCHER ================= */
     const langButtons = document.querySelectorAll('.lang-btn');
 
     langButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            setLang(lang);
+            setLang(btn.dataset.lang);
         });
     });
 
-    /* ========= SCROLL SPY ========= */
+    /* ================= SCROLL REVEAL ================= */
+    const revealElements = () => {
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                el.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealElements);
+    window.addEventListener('load', revealElements);
+
+    // ================================
+    // Nav Scroll Spy (IMPROVED)
+    // ================================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
-    function onScroll() {
-        const scrollPos = window.scrollY + 160; // เผื่อ navbar fixed
+    function updateActiveNav() {
+        let currentSection = null;
 
         sections.forEach(section => {
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-            const id = section.getAttribute('id');
+            const rect = section.getBoundingClientRect();
 
-            if (scrollPos >= top && scrollPos < top + height) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+            // section ที่อยู่กลางจอ (แม่นมาก)
+            if (
+                rect.top <= window.innerHeight / 2 &&
+                rect.bottom >= window.innerHeight / 2
+            ) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+
+            if (
+                currentSection &&
+                link.getAttribute('href') === `#${currentSection}`
+            ) {
+                link.classList.add('active');
             }
         });
     }
 
-    window.addEventListener('scroll', onScroll);
-    onScroll();
+    // run ทั้งตอนโหลด และตอน scroll
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
 
-    /* ========= PORTFOLIO SWIPER ========= */
+
+    /* ================= PORTFOLIO SWIPER ================= */
     if (typeof Swiper !== 'undefined' && document.querySelector('.portfolioSwiper')) {
         new Swiper('.portfolioSwiper', {
             slidesPerView: 2,
@@ -56,13 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 601: { slidesPerView: 3 },
                 951: { slidesPerView: 4 },
             },
+            on: {
+                init() {
+                    console.log('Portfolio Swiper initialized');
+                }
+            }
         });
     }
 
 });
 
 
-/* ===============================LANG FUNCTION (GLOBAL)================================ */
+/* =========================================================
+   LANG FUNCTION (GLOBAL)
+========================================================= */
 window.setLang = function (lang) {
 
     // toggle active button

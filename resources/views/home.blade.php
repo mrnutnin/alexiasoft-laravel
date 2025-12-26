@@ -59,7 +59,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 </head>
 
@@ -104,13 +104,7 @@
         </div>
 
     </header>
-
-
-
     <main id="main-content" class="content-transition">
-
-
-
         <section id="home" class="hero">
 
             <div class="hero-text">
@@ -142,8 +136,6 @@
                 </div>
 
             </div>
-
-
 
             <div class="hero-visual">
 
@@ -195,9 +187,6 @@
             </div>
 
         </section>
-
-
-
         <div class="marquee-container">
 
             <div class="track">
