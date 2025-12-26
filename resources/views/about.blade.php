@@ -1,4 +1,4 @@
-<section id="about"class="scroll-reveal">
+<section id="about" class="scroll-reveal">
      <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
                 <h2 data-en="Why AlexiaSoft?" data-th="ทำไมต้อง AlexiaSoft?">Why AlexiaSoft?</h2>
                 <p data-en="We build long-term technology partnerships to ensure your business stays ahead."

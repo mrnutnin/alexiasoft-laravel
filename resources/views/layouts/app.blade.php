@@ -8,8 +8,9 @@
     <title>@yield('title', 'AlexiaSoft')</title>
 
     {{-- Google Font --}}
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
     {{-- Main CSS (จาก public/css) --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
