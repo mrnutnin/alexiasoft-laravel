@@ -320,7 +320,7 @@
 
                     <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
                         data-en="We thoroughly analyze your business needs, existing workflows, and objectives to create a detailed project blueprint."
-                        data-th="เราวิเคราะห์ความต้องการทางธุรกิจ กระบวนการทำงานที่มีอยู่ และเป้าหมายของคุณอย่างละเอียดเพื่อสร้างแผนโครงการที่ชัดเจน">
+                        data-th="เราจะมาวิเคราะห์ความต้องการทางธุรกิจ กระบวนการทำงานที่มีอยู่ รวมถึงเป้าหมายของคุณอย่างละเอียด เพื่อสร้างแผนโครงการที่ชัดเจนและตรงจุด">
 
                         We thoroughly analyze your business needs, existing workflows, and objectives to create a
                         detailed project blueprint.
@@ -345,7 +345,7 @@
 
                     <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
                         data-en="Our team designs and customizes the solution specifically for your requirements, ensuring perfect fit with your operations."
-                        data-th="ทีมงานของเราออกแบบและปรับแต่งโซลูชันให้ตรงกับความต้องการของคุณโดยเฉพาะ เพื่อให้เข้ากับการดำเนินงานของคุณอย่างลงตัว">
+                        data-th="ทีมงานของเราจะออกแบบและปรับแต่งโซลูชันให้ตรงตามความต้องการของคุณโดยเฉพาะ เพื่อให้เข้ากับการดำเนินงานของคุณอย่างลงตัว">
 
                         Our team designs and customizes the solution specifically for your requirements, ensuring
                         perfect fit with your operations.
@@ -370,7 +370,7 @@
 
                     <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
                         data-en="We install, configure, and integrate the system with your existing infrastructure, ensuring seamless connectivity."
-                        data-th="เราติดตั้ง ตั้งค่า และเชื่อมต่อระบบเข้ากับโครงสร้างพื้นฐานที่มีอยู่ของคุณ เพื่อการเชื่อมต่อที่ราบรื่น">
+                        data-th="เราจะทำการติดตั้ง ตั้งค่า และเชื่อมต่อระบบเข้ากับโครงสร้างพื้นฐานที่มีอยู่ของคุณ เพื่อให้การเชื่อมต่อมันราบรื่น">
 
                         We install, configure, and integrate the system with your existing infrastructure, ensuring
                         seamless connectivity.
@@ -395,7 +395,7 @@
 
                     <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
                         data-en="Comprehensive training for your team and thorough testing to ensure everything works perfectly before launch."
-                        data-th="อบรมทีมงานของคุณอย่างครบถ้วนและทดสอบระบบอย่างละเอียดเพื่อให้มั่นใจว่าทุกอย่างทำงานได้อย่างสมบูรณ์แบบก่อนเปิดตัว">
+                        data-th="ทีมงานของคุณจะได้รับการอบรมอย่างครบถ้วน และเราจะทดสอบระบบอย่างละเอียดเพื่อให้มั่นใจว่าทุกอย่างทำงานได้อย่างสมบูรณ์แบบก่อนที่จะเปิดตัว">
 
                         Comprehensive training for your team and thorough testing to ensure everything works
                         perfectly before launch.
@@ -421,7 +421,7 @@
 
                     <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;"
                         data-en="Smooth launch of your system with continuous monitoring and dedicated support to ensure optimal performance."
-                        data-th="เปิดใช้งานระบบอย่างราบรื่นพร้อมการติดตามอย่างต่อเนื่องและการสนับสนุนอย่างเต็มที่เพื่อให้มั่นใจในประสิทธิภาพที่ดีที่สุด">
+                        data-th="เราจะเปิดใช้งานระบบอย่างราบรื่นพร้อมการติดตามอย่างต่อเนื่อง และมีการสนับสนุนอย่างเต็มที่เพื่อให้มั่นใจในประสิทธิภาพที่ดีที่สุด">
 
                         Smooth launch of your system with continuous monitoring and dedicated support to ensure
                         optimal performance.

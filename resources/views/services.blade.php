@@ -17,7 +17,7 @@
             <h3 data-en="Custom Solution" data-th="โซลูชันเฉพาะทาง">Custom Solution</h3>
 
             <p data-en="Tailor-made software solutions designed specifically for your unique business needs and challenges. From concept to deployment, we deliver exactly what you envision."
-                data-th="โซลูชันซอฟต์แวร์ที่ออกแบบเฉพาะสำหรับความต้องการและความท้าทายทางธุรกิจของคุณ ตั้งแต่แนวคิดจนถึงการใช้งานจริง เราส่งมอบสิ่งที่คุณต้องการอย่างแท้จริง">
+                data-th="ซอฟต์แวร์ที่เราออกแบบมาเพื่อตอบโจทย์ความต้องการและความท้าทายทางธุรกิจของคุณนะ แล้วก็เริ่มตั้งแต่คิดไอเดียไปจนถึงการใช้งานจริง เราก็ส่งมอบสิ่งที่คุณต้องการอย่างแท้จริง">
 
                 Tailor-made software solutions designed specifically for your unique business needs and
                 challenges.
@@ -39,7 +39,7 @@
             <h3 data-en="Web Application" data-th="เว็บแอปพลิเคชัน">Web Application</h3>
 
             <p data-en="Cutting-edge web applications built with modern technologies, Fast, scalable, and responsive across all devices."
-                data-th="เว็บแอปพลิเคชันที่ทันสมัยสร้างด้วยเทคโนโลยีล่าสุด รวดเร็ว ขยายงานได้ง่าย และตอบสนองได้ดีในทุกอุปกรณ์">
+                data-th="เป็นเว็บแอปที่ทันสมัยมากเลยนะ เพราะว่าถูกสร้างขึ้นด้วยเทคโนโลยีล่าสุดที่ทำให้ใช้งานได้รวดเร็วและสะดวกมากขึ้น นอกจากนี้ยังขยายงานได้ง่ายสุดๆ และก็ตอบสนองได้ดีในทุกอุปกรณ์">
 
                 Cutting-edge web applications built with modern technologies, Fast, scalable, and responsive
                 across all devices
@@ -61,7 +61,7 @@
             <h3 data-en="Mobile Application" data-th="แอปพลิเคชันมือถือ">Mobile Application</h3>
 
             <p data-en="Native and cross-platform mobile apps for iOS and Android. Seamless user experience with powerful features that keep your customers engaged."
-                data-th="แอปมือถือแบบ Native และ Cross-platform สำหรับ iOS และ Android ประสบการณ์ผู้ใช้ที่ลื่นไหล พร้อมฟีเจอร์ที่ทรงพลังเพื่อดึงดูดลูกค้าของคุณ">
+                data-th="มีแบบ Native และ Cross-platform นะจ๊ะ สำหรับ iOS กับ Android เลย ประสบการณ์การใช้งานมันลื่นไหลมากๆ แถมยังมีฟีเจอร์เจ๋งๆ ที่ช่วยดึงดูดลูกค้าได้ดี">
 
                 Native and cross-platform mobile apps for iOS and Android with seamless user experience.
 
@@ -82,7 +82,7 @@
             <h3 data-en="System Integration" data-th="ระบบเชื่อมโยง">System Integration</h3>
 
             <p data-en="Connect and synchronize your existing systems seamlessly. API development, third-party integrations, and data migration services for unified operations."
-                data-th="เชื่อมต่อและซิงค์ระบบที่มีอยู่ของคุณได้อย่างราบรื่น พัฒนา API, เชื่อมโยงบริการภายนอก และย้ายข้อมูลเพื่อการดำเนินงานที่เป็นหนึ่งเดียว">
+                data-th="ช่วยให้คุณเชื่อมต่อแล้วก็ซิงค์ระบบที่มีอยู่ได้อย่างราบรื่นเลยนะ หลักๆ ก็คือพัฒนา API เพื่อเชื่อมโยงบริการจากข้างนอก แล้วก็ย้ายข้อมูลให้ทุกอย่างมันทำงานแบบเป็นหนึ่งเดียวกัน">
 
                 Connect and synchronize your existing systems seamlessly with API development and data
                 migration.
