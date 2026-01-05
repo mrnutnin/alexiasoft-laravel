@@ -1,11 +1,7 @@
 // Lang Switcher with Animation
 function setLang(lang) {
-    document.querySelectorAll('.lang-btn')
-        .forEach(btn => btn.classList.remove('active'));
-
-    const activeBtn = document.querySelector(
-        `.lang-btn[onclick="setLang('${lang}')"]`
-    );
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
     if (activeBtn) activeBtn.classList.add('active');
 
     const content = document.getElementById('main-content');
@@ -13,9 +9,7 @@ function setLang(lang) {
 
     setTimeout(() => {
         document.querySelectorAll('[data-en]').forEach(el => {
-            el.innerHTML = lang === 'en'
-                ? el.dataset.en
-                : el.dataset.th;
+            el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.th;
         });
         content.classList.remove('content-hidden');
     }, 350);
@@ -23,7 +17,8 @@ function setLang(lang) {
 
 // Scroll Reveal Animation
 const revealElements = () => {
-    document.querySelectorAll('.scroll-reveal').forEach(element => {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    reveals.forEach(element => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
@@ -34,10 +29,11 @@ const revealElements = () => {
     });
 };
 
+// Initialize scroll reveal on load
 window.addEventListener('load', revealElements);
 window.addEventListener('scroll', revealElements);
 
-// Active Nav on Scroll
+/* =========================NAV SCROLL SPY (FIXED) ✔ underline ขึ้นทันที========================= */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
@@ -70,6 +66,7 @@ window.addEventListener('load', updateActiveNav);
 const portfolioSwiper = new Swiper('.portfolioSwiper', {
     slidesPerView: 2,
     spaceBetween: 15,
+    loop: false,
     grabCursor: true,
     navigation: {
         nextEl: '.swiper-button-next',
@@ -81,8 +78,25 @@ const portfolioSwiper = new Swiper('.portfolioSwiper', {
         dynamicBullets: true,
     },
     breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 15 },
-        601: { slidesPerView: 3, spaceBetween: 18 },
-        951: { slidesPerView: 4, spaceBetween: 20 },
-    }
+        // Mobile
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+        },
+        // Tablet
+        601: {
+            slidesPerView: 3,
+            spaceBetween: 18,
+        },
+        // Desktop
+        951: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+        },
+    },
+    on: {
+        init: function () {
+            console.log('Portfolio Swiper initialized');
+        },
+    },
 });

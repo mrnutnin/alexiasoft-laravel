@@ -219,6 +219,11 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+    <div class="project-btn-wrap">
+        <a href="/projects" class="btn btn-primary btn-project" data-en="View All Portfolio" data-th="ผลงานทั้งหมด">
+            View All Portfolio
+        </a>
+    </div>
     <section style="padding: 80px 24px;" class="scroll-reveal">
         <h2 data-en="Trusted By" data-th="ลูกค้าที่ไว้วางใจเรา">Trusted By </h2>
 
