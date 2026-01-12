@@ -219,11 +219,13 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <div class="project-btn-wrap">
-        <a href="/projects" class="btn btn-primary btn-project" data-en="View All Portfolio" data-th="ผลงานทั้งหมด">
-            View All Portfolio
-        </a>
+    <div class="portfolio-cta">
+    <a href="{{ route('portfolio') }}" class="btn btn-primary btn-project" data-en="View All Portfolio"
+        data-th="ผลงานทั้งหมด">
+        View All Portfolio
+    </a>
     </div>
+
     <section style="padding: 80px 24px;" class="scroll-reveal">
         <h2 data-en="Trusted By" data-th="ลูกค้าที่ไว้วางใจเรา">Trusted By </h2>
 
@@ -290,6 +292,18 @@
             <div class="glass-card client-logo-card">
                 <div class="client-logo-placeholder">
                     <img src="images/clients/client-8.png" alt="Client 8">
+                </div>
+                <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
+            </div>
+            <div class="glass-card client-logo-card">
+                <div class="client-logo-placeholder">
+                    <img src="images/clients/client-9.png" alt="Client 9">
+                </div>
+                <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
+            </div>
+            <div class="glass-card client-logo-card">
+                <div class="client-logo-placeholder">
+                    <img src="images/clients/client-10.png" alt="Client 10">
                 </div>
                 <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
             </div>

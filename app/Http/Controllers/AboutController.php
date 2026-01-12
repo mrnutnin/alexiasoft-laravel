@@ -8,6 +8,6 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return redirect('/#about');
+         return view('about-page');
     }
 }

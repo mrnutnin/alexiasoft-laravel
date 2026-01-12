@@ -1,8 +1,8 @@
 <header id="main-header">
     <div class="nav-container">
 
-        {{-- โลโก้ กลับบนสุด --}}
-        <a href="#home" class="logo">
+        {{-- Logo → กลับหน้า Home --}}
+        <a href="{{ url('/') }}" class="logo">
             <img src="{{ asset('images/logo-alexia.png') }}" alt="AlexiaSoft">
         </a>
 
@@ -28,5 +28,6 @@
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="th">TH</button>
         </div>
+
     </div>
 </header>

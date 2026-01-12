@@ -8,6 +8,6 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        return redirect('/#portfolio');
+        return view('portfolio-page');
     }
 }

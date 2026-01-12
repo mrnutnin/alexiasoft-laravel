@@ -100,16 +100,35 @@ const portfolioSwiper = new Swiper('.portfolioSwiper', {
         },
     },
 });
-// Force reveal on page load (for Contact page)
-window.addEventListener('load', () => {
-    const reveals = document.querySelectorAll('.scroll-reveal');
-
-    reveals.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            el.classList.add('active');
+/*ส่วนproject*/ 
+const scrollReveal = () => {
+    const items = document.querySelectorAll('.project-item');
+    items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight - 100;
+        if (itemTop < triggerPoint) {
+            item.classList.add('reveal');
         }
+    });
+}
+
+window.addEventListener('scroll', scrollReveal);
+window.addEventListener('load', scrollReveal);
+document.addEventListener("DOMContentLoaded", function() {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const projectImages = document.querySelectorAll(".project-visual img");
+
+    // เมื่อคลิกที่รูปภาพใดๆ ใน project-visual
+    projectImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src; // เอารูปที่กดไปใส่ใน lightbox
+        });
     });
 });
 
-
+// ฟังก์ชันปิด Lightbox
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}

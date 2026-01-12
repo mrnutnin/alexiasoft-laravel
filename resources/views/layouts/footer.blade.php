@@ -8,28 +8,40 @@
             <div class="footer-section">
                 <div class="footer-logo">
                     <div class="logo-icon">
-                        <i class="fa-solid fa-code"></i>
+                        <img src="{{ asset('images/logo1.png') }}" alt="AlexiaSoft Logo" style="height: 40px; width: auto;">
                     </div>
                     <h3>AlexiaSoft Co., Ltd.</h3>
                 </div>
 
                 <p data-en="Crafted software solutions for modern businesses. We build technology that drives success."
-                   data-th="โซลูชันซอฟต์แวร์ระดับพรีเมียมสำหรับธุรกิจยุคใหม่ เราสร้างเทคโนโลยีที่ขับเคลื่อนความสำเร็จ">
+                    data-th="โซลูชันซอฟต์แวร์ระดับพรีเมียมสำหรับธุรกิจยุคใหม่ เราสร้างเทคโนโลยีที่ขับเคลื่อนความสำเร็จ">
                     Crafted software solutions for modern businesses. We build technology that drives success.
                 </p>
             </div>
 
             <!-- Quick Links -->
-            <div class="footer-section">
-                <h3 data-en="Quick Links" data-th="ลิงก์ด่วน">Quick Links</h3>
-                <div class="footer-links">
-                    <a href="#home" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Home</a>
-                    <a href="#services" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Services</a>
-                    <a href="#portfolio" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Portfolio</a>
-                    <a href="#about" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About</a>
-                    <a href="#contact" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact</a>
-                </div>
+            <div class="footer-links">
+                <a href="{{ url('/') }}" class="footer-link">
+                    <i class="fa-solid fa-chevron-right"></i> Home
+                </a>
+
+                <a href="{{ url('/#services') }}" class="footer-link">
+                    <i class="fa-solid fa-chevron-right"></i> Services
+                </a>
+
+                <a href="{{ url('/#portfolio') }}" class="footer-link">
+                    <i class="fa-solid fa-chevron-right"></i> Portfolio
+                </a>
+
+                <a href="{{ url('/about') }}" class="footer-link">
+                    <i class="fa-solid fa-chevron-right"></i> About Us
+                </a>
+
+                <a href="{{ url('/#contact') }}" class="footer-link">
+                    <i class="fa-solid fa-chevron-right"></i> Contact
+                </a>
             </div>
+
 
             <!-- Contact Info -->
             <div class="footer-section">
