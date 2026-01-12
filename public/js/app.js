@@ -100,3 +100,16 @@ const portfolioSwiper = new Swiper('.portfolioSwiper', {
         },
     },
 });
+// Force reveal on page load (for Contact page)
+window.addEventListener('load', () => {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+
+    reveals.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+});
+
+

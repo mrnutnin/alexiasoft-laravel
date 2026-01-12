@@ -8,6 +8,6 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return redirect('/#contact');
+        return view('contact-page');
     }
 }
