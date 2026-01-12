@@ -81,8 +81,10 @@
                 Let's discuss your project and create something extraordinary.
             </p>
 
-            <a href="mailto:sale@alexiasoft.co" class="btn" style="background: white; color: var(--primary-end);"
-                data-en="Contact Us" data-th="ติดต่อเรา">Contact Us</a>
+            <a href="{{ route('contact.page') }}" class="btn" style="background: white; color: var(--primary-end);"
+                data-en="Contact Us" data-th="ติดต่อเรา">
+                Contact Us
+            </a>
 
         </div>
 
