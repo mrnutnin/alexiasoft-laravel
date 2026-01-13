@@ -42,7 +42,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 2.0rem;
             margin-bottom: 15px;
         }
 
@@ -95,7 +95,7 @@
 
         .phone-frame {
             width: 280px;
-            height: 560px;
+            height: 500px;
             background: #0f172a;
             border-radius: 40px;
             border: 6px solid #334155;

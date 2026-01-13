@@ -38,7 +38,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem; /* ปรับขนาดให้พอดี */
+            font-size: 2.0rem; /* ปรับขนาดให้พอดี */
             margin-bottom: 15px;
         }
 

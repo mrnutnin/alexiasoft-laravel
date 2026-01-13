@@ -42,7 +42,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 2.0rem;
             margin-bottom: 15px;
         }
 
