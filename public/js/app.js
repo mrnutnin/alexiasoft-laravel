@@ -38,6 +38,8 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
 function updateActiveNav() {
+    if (!location.pathname.endsWith('/')) return; // ทำงานเฉพาะหน้า Home
+
     let currentSection = null;
     const viewportCenter = window.innerHeight / 2;
 
@@ -58,6 +60,7 @@ function updateActiveNav() {
         }
     });
 }
+
 
 window.addEventListener('scroll', updateActiveNav);
 window.addEventListener('load', updateActiveNav);

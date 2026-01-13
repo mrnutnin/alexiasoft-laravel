@@ -161,20 +161,28 @@ header {
     color: var(--text-main);
 }
 
+/* เน้นตัวหนาเมื่อ Active */
 .nav-menu a.active {
     font-weight: 700;
 }
 
-.nav-menu a.active::after {
+/* สร้างขีดเส้นใต้ (รวมร่างจากที่คุณส่งมา) */
+.nav-menu a.active::after,
+.dropdown-trigger.active::after { /* เพิ่มให้ Services แสดงขีดด้วย */
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -6px; /* ระยะห่างจากตัวอักษร */
     left: 0;
     width: 100%;
     height: 2px;
     background: var(--gradient-main);
     border-radius: 2px;
-    animation: slideIn 0.3s ease;
+    animation: slideIn 0.3s ease; /* ใช้ Animation ที่คุณเขียนไว้ */
+}
+
+@keyframes slideIn {
+    from { width: 0; opacity: 0; }
+    to { width: 100%; opacity: 1; }
 }
 
 @keyframes slideIn {
@@ -1354,3 +1362,297 @@ footer {
 .dropdown-menu a::after {
     display: none !important;
 }
+#about {
+    padding: 40px 0; /* ลดระยะห่างบนล่างของ Section */
+}
+
+/* HERO SECTION - เปลี่ยนหัวข้อหลักเป็นสีดำ */
+#about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: #000000; /* เปลี่ยนเป็นสีดำสนิท */
+    font-weight: 800;
+}
+
+/* CARD ROW - ปรับให้เป็นกล่องโปร่งแสง */
+.about-row {
+    max-width: 780px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 28px;
+    margin-bottom: 16px;
+    
+    /* --- ส่วนที่ทำโปร่งแสง (Glassmorphism) --- */
+    background: rgba(255, 255, 255, 0.6); /* สีขาวแบบโปร่งแสง 60% */
+    backdrop-filter: blur(10px);          /* ทำให้พื้นหลังหลังกล่องเบลอ */
+    -webkit-backdrop-filter: blur(10px);   /* รองรับ Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* ขอบกล่องจางๆ ให้ดูมีมิติ */
+    
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* เงาบางๆ */
+}
+
+/* ICON - ปรับขนาดให้ใหญ่ขึ้น */
+.about-icon {
+    font-size: 2rem;      /* เพิ่มขนาดไอคอน (ปรับได้ตามชอบ เช่น 2.2rem) */
+    width: 60px;          /* ปรับขนาดกรอบไอคอนให้ใหญ่ขึ้นตาม */
+    height: 60px;
+    border-radius: 14px;
+    background: var(--gradient-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;       /* ป้องกันไอคอนเบี้ยวหรือโดนบีบ */
+}
+
+
+/* หัวข้อในการ์ด (Vision, Mission) เปลี่ยนเป็นสีดำ */
+.about-row h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000; /* เปลี่ยนเป็นสีดำสนิท */
+}
+
+/* ปรับสีตัวหนังสือรายละเอียดให้เข้มขึ้นเล็กน้อยเพื่อให้ตัดกับพื้นหลังโปร่งแสง */
+.about-row p, .about-list {
+    color: #333333; 
+    font-size: 0.9rem;
+}
+/* ===== ABOUT PAGE (GLASSMORPHISM & CENTERED) ===== */
+
+/* พื้นหลังและ Layout หลัก - จัดกึ่งกลางเหมือนเดิม */
+.about-bg {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดกึ่งกลางแนวแกน X */
+    justify-content: flex-start;
+}
+
+/* HERO SECTION - หัวข้อหลักสีดำ */
+#about-hero {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+#about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: #000000; /* เปลี่ยนหัวข้อใหญ่เป็นสีดำ */
+    font-weight: 800;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .about-bg {
+        padding: 50px 20px;
+    }
+
+    .about-row {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 28px 24px;
+    }
+
+    .about-icon {
+        margin-bottom: 12px;
+    }
+}
+
+/* หน้าproject */
+/* จัดการระยะห่างและการสลับฟันปลา */
+.project-item {
+    margin-bottom: 120px;
+}
+
+/* ปรับให้สลับฝั่งที่ลำดับคี่ (1, 3, 5...) --- */
+.project-item:nth-child(odd) .project-content {
+    flex-direction: row-reverse;
+}
+
+
+.project-content {
+    display: flex;
+    align-items: center;
+    gap: 80px; /* เพิ่มช่องว่างระหว่างข้อความกับรูป */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ฝั่งข้อความ: ลดขนาดตัวอักษรลง */
+.project-text-box {
+    flex: 1;
+}
+
+.project-text-box h3 {
+    font-size: 2rem; /* ลดจาก 3rem เหลือ 2rem */
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.project-text-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* ฝั่งรูปภาพ: ปรับให้ขนาดพอดีกับพื้นที่ */
+.project-visual {
+    flex: 1.2;
+    position: relative;
+}
+
+/* --- จัดการพื้นที่รูปภาพให้เท่ากันทุก Block --- */
+.image-stack {
+    position: relative;
+    width: 100%;
+    height: 400px; /* บังคับความสูงคงที่เพื่อให้รูปภาพเท่ากันทั้งหมด */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* รูปหลัก (แผ่นหลัง) */
+.img-main {
+    width: 75% !important; /* กำหนดขนาดแน่นอน */
+    height: auto;
+    aspect-ratio: 4/3; /* บังคับสัดส่วนภาพ */
+    object-fit: cover;
+    position: absolute;
+    top: 20px;
+    right: 0; 
+    z-index: 1;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: #fff; /* ป้องกันภาพโปร่งใสแล้วเห็นข้างหลัง */
+}
+
+/* รูปย่อย (แผ่นหน้า) */
+.img-sub {
+    width: 55% !important; /* กำหนดขนาดแน่นอน */
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    z-index: 2;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 6px solid #fff; /* ขอบขาวหนาขึ้นเพื่อให้ดูมีมิติเหมือนในรูป */
+}
+
+/* --- การสลับตำแหน่งเมื่อเป็นแถวคู่ (Even) --- */
+.project-item:nth-child(even) .img-main {
+    right: auto;
+    left: 0;
+}
+
+.project-item:nth-child(even) .img-sub {
+    left: auto;
+    right: 0;
+}
+
+.project-text-box h3 {
+    font-size: 1.8rem; /* ขนาดเล็กลงตามภาพตัวอย่าง */
+    margin-bottom: 10px;
+}
+
+.project-text-box p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+/* ปรับตำแหน่งรูปย่อยเมื่อโดนสลับฝั่ง */
+.project-item:nth-child(even) .img-sub {
+    left: auto;
+    right: 0;
+}
+.btn-consult {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(135deg, #17eb92, #283ad9); /* ไล่เฉดม่วงไปชมพูแบบในปุ่มภาพที่ 2 */
+    color: #ffffff !important;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 4px 15px rgba(20, 211, 122, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-consult:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(118, 63, 247, 0.4);
+    filter: brightness(1.1);
+}
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* พื้นหลังดำโปร่งแสง */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s ease; /* เอฟเฟกต์เด้งเข้า */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ปรับให้รูปใน Project Visual กดได้ */
+.project-visual img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.project-visual img:hover {
+    transform: scale(1.02);
+}
+/* สำหรับมือถือ */
+@media (max-width: 991px) {
+    .project-item:nth-child(even) .project-content,
+    .project-content {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 40px;
+    }
+    .image-stack {
+        height: 300px;
+        width: 100%;
+    }
+}
+
