@@ -8,7 +8,7 @@
     </style>
 
     <style>
-        /* --- THEME CONFIG (คงค่าสีเดิมของคุณไว้) --- */
+        /* --- THEME CONFIG --- */
         :root {
             --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%); 
             --text-main: #1e293b;
@@ -38,11 +38,11 @@
 
         .hero-tag {
             display: inline-block;
-            color: #22c55e; /* สีเขียวเดิม */
+            color: #22c55e;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 2.0rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
@@ -68,7 +68,6 @@
             max-width: 90%;
         }
 
-        /* ปุ่มตามแบบเดิม */
         .btn-theme {
             background: var(--primary-grad);
             color: white;
@@ -77,7 +76,7 @@
             font-weight: 600;
             text-decoration: none;
             display: inline-flex; align-items: center; gap: 8px;
-            box-shadow: 0 10px 20px -5px rgba(34, 197, 94, 0.4); /* เงาสีเขียว */
+            box-shadow: 0 10px 20px -5px rgba(34, 197, 94, 0.4);
             transition: all 0.3s;
             border: none;
             cursor: pointer;
@@ -87,7 +86,7 @@
             box-shadow: 0 15px 30px -5px rgba(34, 197, 94, 0.5);
         }
 
-        /* --- GRAPHIC (ขวามือ) --- */
+        /* --- GRAPHIC --- */
         .floating-card {
             background: #1e293b; 
             border-radius: 20px;
@@ -97,9 +96,7 @@
             transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
             transition: transform 0.5s ease;
         }
-        .floating-card:hover {
-            transform: perspective(1000px) rotateY(0) rotateX(0);
-        }
+        .floating-card:hover { transform: perspective(1000px) rotateY(0) rotateX(0); }
 
         .code-line { height: 12px; border-radius: 6px; margin-bottom: 12px; opacity: 0.8; }
         .code-1 { width: 40%; background: #f472b6; }
@@ -117,7 +114,7 @@
             font-size: 2rem;
             animation: float 4s ease-in-out infinite;
         }
-        .icon-1 { top: -30px; right: -30px; color: #61dafb; animation-delay: 0s; }
+        .icon-1 { top: -30px; right: -30px; color: #61dafb; }
         .icon-2 { bottom: -30px; left: -30px; color: #f05340; animation-delay: 2s; }
 
         @keyframes float {
@@ -125,7 +122,6 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* --- FEATURES GRID --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -142,10 +138,8 @@
             transition: transform 0.3s;
             border: 1px solid rgba(255,255,255,0.8);
         }
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
-        }
+        .feature-box:hover { transform: translateY(-5px); }
+
         .icon-circle {
             width: 50px; height: 50px;
             background: #f0fdf4; 
@@ -156,10 +150,7 @@
             margin-bottom: 20px;
         }
 
-        .tech-strip {
-            display: flex; gap: 20px; flex-wrap: wrap; 
-            margin-top: 40px;
-        }
+        .tech-strip { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
         .tech-badge {
             display: flex; align-items: center; gap: 8px;
             background: white;
@@ -173,16 +164,11 @@
 
         @media (max-width: 900px) {
             .hero-section { grid-template-columns: 1fr; text-align: center; }
-            .hero-tag { display: block; }
+            h1 { font-size: 2.5rem; }
             .hero-desc { margin-left: auto; margin-right: auto; }
-            .floating-card { margin-top: 40px; }
             .tech-strip { justify-content: center; }
         }
     </style>
-
-
-    <div class="ambient-blob blob-1"></div>
-    <div class="ambient-blob blob-2"></div>
 
     <div class="container-custom">
         
@@ -191,28 +177,23 @@
             <div>
                 <span class="hero-tag">
                     <i class="fa-solid fa-code"></i> 
-                    <span data-en="Web Application Service" data-th="Web Application Service">Web Application Service</span>
+                    <span data-en="Web Application Service" data-th="บริการเว็บแอปพลิเคชัน">Web Application Service</span>
                 </span>
                 
                 <h1>
-                    {{-- เพิ่ม data-en และ data-th --}}
-                    <span data-en="Web Applications" data-th="แอปพลิเคชันบนเว็บ">แอปพลิเคชันบนเว็บ</span> <br>
-                    <span class="text-highlight" data-en="Powerful" data-th="ที่ทรงพลัง">ที่ทรงพลัง</span> 
-                    <span data-en="& Seamless" data-th="และลื่นไหล">และลื่นไหล</span>
+                    <span data-en="Web Applications" data-th="แอปพลิเคชันบนเว็บ">Web Applications</span> <br>
+                    <span class="text-highlight" data-en="Powerful" data-th="ที่ทรงพลัง">Powerful</span> 
+                    <span data-en="& Seamless" data-th="และลื่นไหล">& Seamless</span>
                 </h1>
                 
-                {{-- เพิ่ม data-en และ data-th --}}
                 <p class="hero-desc"
                    data-en="Transform your website into a powerful Web App that works like desktop software. Fast, secure, and accessible on any device without installation."
                    data-th="เปลี่ยนเว็บไซต์ธรรมดาให้เป็น Web App ที่ทำงานได้เหมือนโปรแกรมบนคอมพิวเตอร์ รวดเร็ว ปลอดภัย และใช้งานได้ทุกอุปกรณ์โดยไม่ต้องติดตั้ง">
-                    เปลี่ยนเว็บไซต์ธรรมดาให้เป็น Web App ที่ทำงานได้เหมือนโปรแกรมบนคอมพิวเตอร์ 
-                    รวดเร็ว ปลอดภัย และใช้งานได้ทุกอุปกรณ์โดยไม่ต้องติดตั้ง
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
                     <a href="{{ route('contact.page') }}" class="btn-theme">
-                        {{-- เพิ่ม data-en และ data-th --}}
-                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">เริ่มโปรเจกต์ของคุณ</span> 
+                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">Start Your Project</span> 
                         <i class="fa-solid fa-rocket"></i>
                     </a>
                 </div>
@@ -253,92 +234,56 @@
             </div>
         </section>
 
-
         {{-- 2. FEATURES GRID --}}
         <section style="margin-bottom: 80px;">
             <div style="text-align: center; margin-bottom: 50px;">
                 <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;"
                     data-en="Why Web Application?" data-th="ทำไมต้อง Web Application?">
-                    ทำไมต้อง Web Application?
+                    Why Web Application?
                 </h2>
                 <p style="color: var(--text-sub);"
                    data-en="Elevate your business operations with modern technology."
                    data-th="ยกระดับการทำงานขององค์กร ด้วยเทคโนโลยีที่ทันสมัย">
-                    ยกระดับการทำงานขององค์กร ด้วยเทคโนโลยีที่ทันสมัย
                 </p>
             </div>
+
+            
+
+[Image of progressive web app architecture diagram]
+
 
             <div class="features-grid">
                 <div class="feature-box">
                     <div class="icon-circle"><i class="fa-solid fa-cloud"></i></div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Accessible Anywhere" data-th="Accessible Anywhere">Accessible Anywhere</h3>
+                        data-en="Accessible Anywhere" data-th="เข้าถึงได้ทุกที่">Accessible Anywhere</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Work from anywhere with internet access, not tied to a specific computer."
                        data-th="ทำงานได้ทุกที่ที่มีอินเทอร์เน็ต ไม่ยึดติดกับคอมพิวเตอร์เครื่องเดิม">
-                        ทำงานได้ทุกที่ที่มีอินเทอร์เน็ต ไม่ยึดติดกับคอมพิวเตอร์เครื่องเดิม
                     </p>
                 </div>
                 
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #eff6ff; color: #3b82f6;"><i class="fa-solid fa-sync"></i></div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Real-time Data" data-th="Real-time Data">Real-time Data</h3>
+                        data-en="Real-time Data" data-th="ข้อมูลแบบเรียลไทม์">Real-time Data</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Data updates instantly. No need to wait for file syncing."
                        data-th="ข้อมูลอัปเดตทันทีที่ใช้งาน ไม่ต้องรอ Sync ไฟล์ไปมาให้วุ่นวาย">
-                        ข้อมูลอัปเดตทันทีที่ใช้งาน ไม่ต้องรอ Sync ไฟล์ไปมาให้วุ่นวาย
                     </p>
                 </div>
 
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #fff7ed; color: #f97316;"><i class="fa-solid fa-mobile-screen"></i></div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="No Installation" data-th="No Installation">No Installation</h3>
+                        data-en="No Installation" data-th="ไม่ต้องติดตั้ง">No Installation</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Open via Browser (Chrome, Safari) immediately. No need to install heavy software."
                        data-th="เปิดผ่าน Browser (Chrome, Safari) ได้เลย ไม่ต้องลงโปรแกรมให้หนักเครื่อง">
-                        เปิดผ่าน Browser (Chrome, Safari) ได้เลย ไม่ต้องลงโปรแกรมให้หนักเครื่อง
                     </p>
                 </div>
             </div>
         </section>
-
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        
-            const langBtns = document.querySelectorAll('.lang-btn');
-            
-            // เช็คว่ามีปุ่มไหม (ป้องกัน error ถ้าหน้านี้ไม่มีปุ่มใน layout)
-            if(langBtns.length > 0){
-                langBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const lang = btn.getAttribute('data-lang');
-                        changeLanguage(lang);
-                    });
-                });
-            }
-
-            function changeLanguage(lang) {
-                // เปลี่ยนข้อความที่มี attribute data-en / data-th
-                document.querySelectorAll('[data-en]').forEach(el => {
-                    const text = el.getAttribute(`data-${lang}`);
-                    if (text) {
-                        el.innerHTML = text; // ใช้ innerHTML เผื่อมี <br>
-                    }
-                });
-
-                // เปลี่ยน active class ที่ปุ่ม
-                langBtns.forEach(b => {
-                    if (b.getAttribute('data-lang') === lang) {
-                        b.classList.add('active');
-                    } else {
-                        b.classList.remove('active');
-                    }
-                });
-            }
-        });
-    </script>
 @endsection

@@ -42,7 +42,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 2.0rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
@@ -106,9 +106,7 @@
             overflow: hidden;
             z-index: 2;
         }
-        .phone-frame:hover {
-            transform: rotateY(0) rotateX(0);
-        }
+        .phone-frame:hover { transform: rotateY(0) rotateX(0); }
 
         .phone-notch {
             position: absolute;
@@ -128,7 +126,6 @@
             display: flex; flex-direction: column; gap: 15px;
         }
 
-        .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .app-card {
             background: rgba(255,255,255,0.07);
             border-radius: 16px;
@@ -175,10 +172,7 @@
             transition: transform 0.3s;
             border: 1px solid rgba(255,255,255,0.6);
         }
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
-        }
+        .feature-box:hover { transform: translateY(-5px); }
         
         .icon-circle {
             width: 50px; height: 50px;
@@ -206,42 +200,36 @@
 
         @media (max-width: 900px) {
             .hero-section { grid-template-columns: 1fr; text-align: center; }
-            .hero-tag { display: block; }
             .hero-desc { margin-left: auto; margin-right: auto; }
             .phone-wrapper { margin-top: 60px; }
             .tech-strip { justify-content: center; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
     
-    <div class="ambient-blob blob-1"></div>
-    <div class="ambient-blob blob-2" style="background: rgba(34, 197, 94, 0.3);"></div>
-
     <div class="container-custom">
         
         {{-- 1. HERO SECTION --}}
         <section class="hero-section">
-            {{-- Left Content --}}
             <div>
                 <span class="hero-tag">
                     <i class="fa-solid fa-mobile-screen"></i>
-                    <span data-en="Mobile Application" data-th="Mobile Application">Mobile Application</span>
+                    <span data-en="Mobile Application" data-th="แอปพลิเคชันมือถือ">Mobile Application</span>
                 </span>
                 
                 <h1>
-                    <span data-en="Connect Customers" data-th="เชื่อมต่อลูกค้า">เชื่อมต่อลูกค้า</span> <br>
-                    <span class="text-highlight" data-en="Anytime, Anywhere" data-th="ได้ทุกที่ทุกเวลา">ได้ทุกที่ทุกเวลา</span>
+                    <span data-en="Connect Customers" data-th="เชื่อมต่อลูกค้า">Connect Customers</span> <br>
+                    <span class="text-highlight" data-en="Anytime, Anywhere" data-th="ได้ทุกที่ทุกเวลา">Anytime, Anywhere</span>
                 </h1>
                 
                 <p class="hero-desc"
                    data-en="We develop beautiful, user-friendly, and fast mobile applications (iOS & Android) to deliver the best experience for your brand."
                    data-th="บริการพัฒนาแอปพลิเคชันมือถือ (iOS & Android) ที่เน้นความสวยงาม ใช้งานง่าย และทำงานรวดเร็ว เพื่อสร้างประสบการณ์ที่ดีที่สุดให้กับแบรนด์ของคุณ">
-                    บริการพัฒนาแอปพลิเคชันมือถือ (iOS & Android) ที่เน้นความสวยงาม 
-                    ใช้งานง่าย และทำงานรวดเร็ว เพื่อสร้างประสบการณ์ที่ดีที่สุดให้กับแบรนด์ของคุณ
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
                     <a href="{{ route('contact.page') }}" class="btn-theme">
-                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">เริ่มโปรเจกต์ของคุณ</span>
+                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">Start Your Project</span>
                         <i class="fa-solid fa-rocket"></i>
                     </a>
                 </div>
@@ -258,10 +246,8 @@
             <div class="phone-wrapper">
                 <div class="phone-frame">
                     <div class="phone-notch"></div>
-                    
-                    {{-- Screen Content (Fake UI) --}}
                     <div class="phone-screen">
-                        <div class="app-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                             <div style="font-size: 0.8rem; color: #94a3b8;">Welcome back</div>
                             <div style="width: 28px; height: 28px; background: #22c55e; border-radius: 50%;"></div>
                         </div>
@@ -291,7 +277,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="float-icon icon-1"><i class="fa-brands fa-apple"></i></div>
                 <div class="float-icon icon-2"><i class="fa-brands fa-android"></i></div>
             </div>
@@ -302,94 +287,53 @@
             <div style="text-align: center; margin-bottom: 50px;">
                 <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;"
                     data-en="Why have a Mobile App?" data-th="ทำไมต้องมี Mobile App?">
-                    ทำไมต้องมี Mobile App?
+                    Why have a Mobile App?
                 </h2>
                 <p style="color: var(--text-sub);"
                    data-en="Get closer to your customers than ever before."
                    data-th="เข้าถึงลูกค้าได้ใกล้ชิดกว่าที่เคย">
-                   เข้าถึงลูกค้าได้ใกล้ชิดกว่าที่เคย
                 </p>
             </div>
 
             <div class="features-grid">
-                {{-- Feature 1 --}}
                 <div class="feature-box">
                     <div class="icon-circle">
                         <i class="fa-solid fa-fingerprint"></i>
                     </div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Native Features" data-th="Native Features">Native Features</h3>
+                        data-en="Native Features" data-th="ฟีเจอร์พื้นฐาน">Native Features</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Fully utilize device potential like Camera, GPS, Fingerprint, and Face ID."
                        data-th="ดึงศักยภาพเครื่องมาใช้ได้เต็มที่ เช่น กล้อง, GPS, สแกนนิ้ว และ Face ID">
-                       ดึงศักยภาพเครื่องมาใช้ได้เต็มที่ เช่น กล้อง, GPS, สแกนนิ้ว และ Face ID
                     </p>
                 </div>
                 
-                {{-- Feature 2 --}}
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #eff6ff; color: #3b82f6;">
                         <i class="fa-solid fa-bell"></i>
                     </div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Push Notifications" data-th="Push Notifications">Push Notifications</h3>
+                        data-en="Push Notifications" data-th="ระบบแจ้งเตือน">Push Notifications</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Send promotions or order updates directly to customer screens instantly."
                        data-th="แจ้งเตือนโปรโมชั่น หรือสถานะคำสั่งซื้อถึงหน้าจอลูกค้าได้ทันที">
-                       แจ้งเตือนโปรโมชั่น หรือสถานะคำสั่งซื้อถึงหน้าจอลูกค้าได้ทันที
                     </p>
                 </div>
 
-                {{-- Feature 3 --}}
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #fff7ed; color: #f97316;">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Better Performance" data-th="Better Performance">Better Performance</h3>
+                        data-en="Better Performance" data-th="ประสิทธิภาพสูง">Better Performance</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Smoother and more stable than websites, with Offline Mode support."
                        data-th="การทำงานที่ลื่นไหลและเสถียรกว่าเว็บไซต์ทั่วไป พร้อมระบบ Offline Mode">
-                       การทำงานที่ลื่นไหลและเสถียรกว่าเว็บไซต์ทั่วไป พร้อมระบบ Offline Mode
                     </p>
                 </div>
             </div>
         </section>
 
     </div>
-
-    {{-- Script เปลี่ยนภาษา (ใช้ปุ่มจาก Navbar) --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        
-            const langBtns = document.querySelectorAll('.lang-btn');
-            
-            langBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const lang = btn.getAttribute('data-lang');
-                    changeLanguage(lang);
-                });
-            });
-
-            function changeLanguage(lang) {
-                // 1. เปลี่ยนข้อความ
-                document.querySelectorAll('[data-en]').forEach(el => {
-                    const text = el.getAttribute(`data-${lang}`);
-                    if (text) {
-                        el.innerText = text; // ใช้ innerText ถ้าไม่มี HTML หรือ innerHTML ถ้ามี <br>
-                    }
-                });
-
-                // 2. เปลี่ยนสีปุ่ม Active
-                langBtns.forEach(b => {
-                    if (b.getAttribute('data-lang') === lang) {
-                        b.classList.add('active');
-                    } else {
-                        b.classList.remove('active');
-                    }
-                });
-            }
-        });
-    </script>
 
 @endsection

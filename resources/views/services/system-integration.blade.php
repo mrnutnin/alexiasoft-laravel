@@ -10,10 +10,8 @@
     <style>
         /* --- THEME CONFIG --- */
         :root {
-            /* สีธีมสำหรับ System Integration (ใช้โทนน้ำเงิน-ฟ้า-ม่วง สื่อถึง Network/Data) */
             --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
             --primary-shadow: rgba(34, 197, 94, 0.4);
-            
             --text-main: #1e293b;
             --text-sub: #64748b;
         }
@@ -45,7 +43,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 2.0rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
@@ -71,7 +69,6 @@
             max-width: 90%;
         }
 
-        /* ปุ่ม Theme */
         .btn-theme {
             background: var(--primary-grad);
             color: white;
@@ -90,7 +87,7 @@
             box-shadow: 0 15px 30px -5px rgba(34, 197, 94, 0.5);
         }
 
-        /* --- GRAPHIC: NETWORK HUB (ขวามือ) --- */
+        /* --- GRAPHIC: NETWORK HUB --- */
         .hub-wrapper {
             position: relative;
             height: 400px;
@@ -186,10 +183,7 @@
             transition: transform 0.3s;
             border: 1px solid rgba(255,255,255,0.6);
         }
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
-        }
+        .feature-box:hover { transform: translateY(-5px); }
 
         .icon-circle {
             width: 50px; height: 50px;
@@ -219,39 +213,33 @@
             .hero-section { grid-template-columns: 1fr; text-align: center; }
             .hub-wrapper { margin-top: 50px; height: 350px; }
             .tech-strip { justify-content: center; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
-
-    {{-- แสง Ambient Background --}}
-    <div class="ambient-blob blob-1"></div>
-    <div class="ambient-blob blob-2" style="background: rgba(59, 130, 246, 0.3);"></div>
 
     <div class="container-custom">
         
         {{-- 1. HERO SECTION --}}
         <section class="hero-section">
-            {{-- Left Content --}}
             <div>
                 <span class="hero-tag">
                     <i class="fa-solid fa-network-wired"></i> 
-                    <span data-en="System Integration" data-th="System Integration">System Integration</span>
+                    <span data-en="System Integration" data-th="การเชื่อมต่อระบบ">System Integration</span>
                 </span>
                 
                 <h1>
-                    <span data-en="Connect All" data-th="เชื่อมต่อทุกระบบ">เชื่อมต่อทุกระบบ</span> <br>
-                    <span class="text-highlight" data-en="Into One Unity" data-th="ให้เป็นหนึ่งเดียว">ให้เป็นหนึ่งเดียว</span>
+                    <span data-en="Connect All" data-th="เชื่อมต่อทุกระบบ">Connect All</span> <br>
+                    <span class="text-highlight" data-en="Into One Unity" data-th="ให้เป็นหนึ่งเดียว">Into One Unity</span>
                 </h1>
                 
                 <p class="hero-desc"
                    data-en="Simplify your workflow by seamlessly connecting legacy systems with modern cloud solutions via secure APIs. Data flows smoothly without interruption."
                    data-th="ลดความซับซ้อนในการทำงานด้วยการเชื่อมต่อข้อมูลระหว่างระบบเก่า (Legacy) และระบบใหม่ผ่าน API อย่างปลอดภัย ข้อมูลลื่นไหล ไร้รอยต่อ">
-                    ลดความซับซ้อนในการทำงานด้วยการเชื่อมต่อข้อมูลระหว่างระบบเก่า (Legacy) 
-                    และระบบใหม่ผ่าน API อย่างปลอดภัย ข้อมูลลื่นไหล ไร้รอยต่อ
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
                     <a href="{{ route('contact.page') }}" class="btn-theme">
-                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">เริ่มโปรเจกต์ของคุณ</span>
+                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">Start Your Project</span>
                         <i class="fa-solid fa-rocket"></i>
                     </a>
                 </div>
@@ -266,117 +254,74 @@
 
             {{-- Right Content: Network Hub Graphic --}}
             <div class="hub-wrapper">
-            
                 <div class="orbit-ring ring-1"></div>
                 <div class="orbit-ring ring-2"></div>
-
-                <div class="hub-core">
-                    <i class="fa-solid fa-server"></i>
-                </div>
-
+                <div class="hub-core"><i class="fa-solid fa-server"></i></div>
                 <div class="connector conn-1"><div class="data-packet"></div></div>
                 <div class="connector conn-2"><div class="data-packet pkt-delay-1"></div></div>
                 <div class="connector conn-3"><div class="data-packet pkt-delay-2"></div></div>
                 <div class="connector conn-4"></div>
-
-                {{-- Nodes ลอยๆ --}}
                 <div class="hub-node node-1"><i class="fa-brands fa-aws"></i></div>
                 <div class="hub-node node-2"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                 <div class="hub-node node-3"><i class="fa-solid fa-users"></i></div>
                 <div class="hub-node node-4"><i class="fa-solid fa-shop"></i></div>
-
             </div>
         </section>
-
 
         {{-- 2. FEATURES GRID --}}
         <section style="margin-bottom: 80px;">
             <div style="text-align: center; margin-bottom: 50px;">
                 <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;"
                     data-en="Our Integration Services" data-th="บริการ Integration ของเรา">
-                    บริการ Integration ของเรา
+                    Our Integration Services
                 </h2>
                 <p style="color: var(--text-sub);"
                    data-en="Unlock your organization's data potential."
                    data-th="ปลดล็อกศักยภาพข้อมูลในองค์กรของคุณ">
-                    ปลดล็อกศักยภาพข้อมูลในองค์กรของคุณ
                 </p>
             </div>
 
+            
+
             <div class="features-grid">
-                {{-- Feature 1 --}}
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #f0fdf4; color: #22c55e;">
                         <i class="fa-solid fa-plug"></i>
                     </div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="API Development" data-th="API Development">API Development</h3>
+                        data-en="API Development" data-th="การพัฒนา API">API Development</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Developing standard APIs (RESTful, GraphQL) to enable seamless communication between applications."
                        data-th="พัฒนา API มาตรฐาน (RESTful, GraphQL) เพื่อให้แอปพลิเคชันต่างๆ คุยกันรู้เรื่อง">
-                        พัฒนา API มาตรฐาน (RESTful, GraphQL) เพื่อให้แอปพลิเคชันต่างๆ คุยกันรู้เรื่อง
                     </p>
                 </div>
                 
-                {{-- Feature 2 --}}
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #eff6ff; color: #3b82f6;">
                         <i class="fa-solid fa-rotate"></i>
                     </div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Real-time Sync" data-th="Real-time Sync">Real-time Sync</h3>
+                        data-en="Real-time Sync" data-th="การซิงค์ข้อมูลแบบเรียลไทม์">Real-time Sync</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Data updates simultaneously across all systems, whether it's inventory, sales, or member data."
                        data-th="ข้อมูลอัปเดตพร้อมกันทุกระบบ ไม่ว่าจะเป็นสต็อกสินค้า ยอดขาย หรือข้อมูลสมาชิก">
-                        ข้อมูลอัปเดตพร้อมกันทุกระบบ ไม่ว่าจะเป็นสต็อกสินค้า ยอดขาย หรือข้อมูลสมาชิก
                     </p>
                 </div>
 
-                {{-- Feature 3 --}}
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #fefce8; color: #eab308;">
                         <i class="fa-solid fa-database"></i>
                     </div>
                     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
-                        data-en="Legacy Connect" data-th="Legacy Connect">Legacy Connect</h3>
+                        data-en="Legacy Connect" data-th="เชื่อมต่อระบบเก่า">Legacy Connect</h3>
                     <p style="color: var(--text-sub);"
                        data-en="Seamlessly connecting legacy software with modern cloud technologies."
                        data-th="เชื่อมต่อซอฟต์แวร์รุ่นเก่า (Legacy Systems) เข้ากับเทคโนโลยี Cloud ยุคใหม่ได้อย่างไร้รอยต่อ">
-                        เชื่อมต่อซอฟต์แวร์รุ่นเก่า (Legacy Systems) เข้ากับเทคโนโลยี Cloud ยุคใหม่ได้อย่างไร้รอยต่อ
                     </p>
                 </div>
             </div>
         </section>
 
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        
-            const langBtns = document.querySelectorAll('.lang-btn');
-            
-            langBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const lang = btn.getAttribute('data-lang');
-                    changeLanguage(lang);
-                });
-            });
 
-            function changeLanguage(lang) {
-                document.querySelectorAll('[data-en]').forEach(el => {
-                    const text = el.getAttribute(`data-${lang}`);
-                    if (text) {
-                        el.innerText = text;
-                    }
-                });
-                langBtns.forEach(b => {
-                    if (b.getAttribute('data-lang') === lang) {
-                        b.classList.add('active');
-                    } else {
-                        b.classList.remove('active');
-                    }
-                });
-            }
-        });
-    </script>
 @endsection
