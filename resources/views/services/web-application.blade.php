@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Web Application | AlexiaSoft')
 @section('content')
 
     {{-- Import Font --}}
@@ -8,9 +8,8 @@
     </style>
 
     <style>
-        /* --- THEME CONFIG --- */
+        /* --- THEME CONFIG (คงค่าสีเดิมของคุณไว้) --- */
         :root {
-           
             --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%); 
             --text-main: #1e293b;
             --text-sub: #64748b;
@@ -20,14 +19,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
             overflow-x: hidden;
-            
-            /* --- ลบส่วนที่ Override พื้นหลังออกเพื่อให้เหมือนหน้า Custom --- */
-            /* background-color: #f8fafc; */
-            /* background-image: ...; */
-            /* background-size: ...; */
         }
-
-        /* ลบ .hero-glow อันเก่าออก เพราะเราจะใช้ ambient-blob แทน */
 
         .container-custom {
             max-width: 1200px;
@@ -41,16 +33,16 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 50px;
-            padding: 120px 0 80px;
+            padding: 140px 0 80px;
         }
 
         .hero-tag {
             display: inline-block;
-            color: #22c55e; /* ปรับให้เขียวโทนเดียวกับ Custom */
+            color: #22c55e; /* สีเขียวเดิม */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 2.0rem;
             margin-bottom: 15px;
         }
 
@@ -76,7 +68,7 @@
             max-width: 90%;
         }
 
-        /* ปุ่มตามแบบ */
+        /* ปุ่มตามแบบเดิม */
         .btn-theme {
             background: var(--primary-grad);
             color: white;
@@ -142,7 +134,6 @@
         }
 
         .feature-box {
-            /* ปรับพื้นหลัง Card ให้โปร่งแสงนิดๆ เหมือนหน้า Custom (ถ้าต้องการ) */
             background: rgba(255, 255, 255, 0.8); 
             backdrop-filter: blur(10px);
             padding: 30px;
@@ -198,21 +189,31 @@
         {{-- 1. HERO SECTION --}}
         <section class="hero-section">
             <div>
-                <span class="hero-tag"><i class="fa-solid fa-code"></i> Web Application Service</span>
+                <span class="hero-tag">
+                    <i class="fa-solid fa-code"></i> 
+                    <span data-en="Web Application Service" data-th="Web Application Service">Web Application Service</span>
+                </span>
                 
                 <h1>
-                    แอปพลิเคชันบนเว็บ <br>
-                    <span class="text-highlight">ที่ทรงพลัง</span> และลื่นไหล
+                    {{-- เพิ่ม data-en และ data-th --}}
+                    <span data-en="Web Applications" data-th="แอปพลิเคชันบนเว็บ">แอปพลิเคชันบนเว็บ</span> <br>
+                    <span class="text-highlight" data-en="Powerful" data-th="ที่ทรงพลัง">ที่ทรงพลัง</span> 
+                    <span data-en="& Seamless" data-th="และลื่นไหล">และลื่นไหล</span>
                 </h1>
                 
-                <p class="hero-desc">
+                {{-- เพิ่ม data-en และ data-th --}}
+                <p class="hero-desc"
+                   data-en="Transform your website into a powerful Web App that works like desktop software. Fast, secure, and accessible on any device without installation."
+                   data-th="เปลี่ยนเว็บไซต์ธรรมดาให้เป็น Web App ที่ทำงานได้เหมือนโปรแกรมบนคอมพิวเตอร์ รวดเร็ว ปลอดภัย และใช้งานได้ทุกอุปกรณ์โดยไม่ต้องติดตั้ง">
                     เปลี่ยนเว็บไซต์ธรรมดาให้เป็น Web App ที่ทำงานได้เหมือนโปรแกรมบนคอมพิวเตอร์ 
                     รวดเร็ว ปลอดภัย และใช้งานได้ทุกอุปกรณ์โดยไม่ต้องติดตั้ง
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
                     <a href="{{ route('contact.page') }}" class="btn-theme">
-                        เริ่มโปรเจกต์ของคุณ <i class="fa-solid fa-rocket"></i>
+                        {{-- เพิ่ม data-en และ data-th --}}
+                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">เริ่มโปรเจกต์ของคุณ</span> 
+                        <i class="fa-solid fa-rocket"></i>
                     </a>
                 </div>
 
@@ -256,31 +257,88 @@
         {{-- 2. FEATURES GRID --}}
         <section style="margin-bottom: 80px;">
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;">ทำไมต้อง Web Application?</h2>
-                <p style="color: var(--text-sub);">ยกระดับการทำงานขององค์กร ด้วยเทคโนโลยีที่ทันสมัย</p>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;"
+                    data-en="Why Web Application?" data-th="ทำไมต้อง Web Application?">
+                    ทำไมต้อง Web Application?
+                </h2>
+                <p style="color: var(--text-sub);"
+                   data-en="Elevate your business operations with modern technology."
+                   data-th="ยกระดับการทำงานขององค์กร ด้วยเทคโนโลยีที่ทันสมัย">
+                    ยกระดับการทำงานขององค์กร ด้วยเทคโนโลยีที่ทันสมัย
+                </p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-box">
                     <div class="icon-circle"><i class="fa-solid fa-cloud"></i></div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Accessible Anywhere</h3>
-                    <p style="color: var(--text-sub);">ทำงานได้ทุกที่ที่มีอินเทอร์เน็ต ไม่ยึดติดกับคอมพิวเตอร์เครื่องเดิม</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Accessible Anywhere" data-th="Accessible Anywhere">Accessible Anywhere</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Work from anywhere with internet access, not tied to a specific computer."
+                       data-th="ทำงานได้ทุกที่ที่มีอินเทอร์เน็ต ไม่ยึดติดกับคอมพิวเตอร์เครื่องเดิม">
+                        ทำงานได้ทุกที่ที่มีอินเทอร์เน็ต ไม่ยึดติดกับคอมพิวเตอร์เครื่องเดิม
+                    </p>
                 </div>
                 
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #eff6ff; color: #3b82f6;"><i class="fa-solid fa-sync"></i></div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Real-time Data</h3>
-                    <p style="color: var(--text-sub);">ข้อมูลอัปเดตทันทีที่ใช้งาน ไม่ต้องรอ Sync ไฟล์ไปมาให้วุ่นวาย</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Real-time Data" data-th="Real-time Data">Real-time Data</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Data updates instantly. No need to wait for file syncing."
+                       data-th="ข้อมูลอัปเดตทันทีที่ใช้งาน ไม่ต้องรอ Sync ไฟล์ไปมาให้วุ่นวาย">
+                        ข้อมูลอัปเดตทันทีที่ใช้งาน ไม่ต้องรอ Sync ไฟล์ไปมาให้วุ่นวาย
+                    </p>
                 </div>
 
                 <div class="feature-box">
                     <div class="icon-circle" style="background: #fff7ed; color: #f97316;"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">No Installation</h3>
-                    <p style="color: var(--text-sub);">เปิดผ่าน Browser (Chrome, Safari) ได้เลย ไม่ต้องลงโปรแกรมให้หนักเครื่อง</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="No Installation" data-th="No Installation">No Installation</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Open via Browser (Chrome, Safari) immediately. No need to install heavy software."
+                       data-th="เปิดผ่าน Browser (Chrome, Safari) ได้เลย ไม่ต้องลงโปรแกรมให้หนักเครื่อง">
+                        เปิดผ่าน Browser (Chrome, Safari) ได้เลย ไม่ต้องลงโปรแกรมให้หนักเครื่อง
+                    </p>
                 </div>
             </div>
         </section>
 
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            // เช็คว่ามีปุ่มไหม (ป้องกัน error ถ้าหน้านี้ไม่มีปุ่มใน layout)
+            if(langBtns.length > 0){
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        changeLanguage(lang);
+                    });
+                });
+            }
 
+            function changeLanguage(lang) {
+                // เปลี่ยนข้อความที่มี attribute data-en / data-th
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = el.getAttribute(`data-${lang}`);
+                    if (text) {
+                        el.innerHTML = text; // ใช้ innerHTML เผื่อมี <br>
+                    }
+                });
+
+                // เปลี่ยน active class ที่ปุ่ม
+                langBtns.forEach(b => {
+                    if (b.getAttribute('data-lang') === lang) {
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 @endsection
