@@ -55,7 +55,6 @@
                 <a href="{{ url('/contact') }}" class="{{ $isContact ? 'active' : '' }}">Contact</a>
             @endif
         </nav>
-
         <div class="lang-switch">
             <button class="lang-btn active" onclick="setLang('en')">EN</button>
             <button class="lang-btn" onclick="setLang('th')">TH</button>

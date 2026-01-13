@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Mobile Application | AlexiaSoft')
 @section('content')
 
     {{-- Import Font --}}
@@ -8,12 +8,9 @@
     </style>
 
     <style>
-        
         :root {
-            
             --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
-            --primary-shadow: rgba(34, 197, 94, 0.4); /* เงาสีเขียวจางๆ */
-            
+            --primary-shadow: rgba(34, 197, 94, 0.4);
             --text-main: #1e293b;
             --text-sub: #64748b;
         }
@@ -22,7 +19,6 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
             overflow-x: hidden;
-            /* ไม่ใส่ background-color เพื่อให้โปร่งแสงเห็น Blob ด้านหลัง */
         }
 
         .container-custom {
@@ -37,16 +33,16 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 50px;
-            padding: 120px 0 80px;
+            padding: 100px 0 80px;
         }
 
         .hero-tag {
             display: inline-block;
-            color: #22c55e; /* สีเขียวตามธีมหลัก */
+            color: #22c55e;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 2.0rem;
             margin-bottom: 15px;
         }
 
@@ -58,7 +54,6 @@
             color: #0f172a;
         }
 
-        /* ไล่สีตัวอักษรเหมือนหน้าอื่น */
         .text-highlight {
             background: var(--primary-grad);
             -webkit-background-clip: text;
@@ -73,7 +68,6 @@
             max-width: 90%;
         }
 
-        /* ปุ่ม Theme (Gradient เขียว-ฟ้า) */
         .btn-theme {
             background: var(--primary-grad);
             color: white;
@@ -92,7 +86,6 @@
             box-shadow: 0 15px 30px -5px rgba(34, 197, 94, 0.5);
         }
 
-        /* --- GRAPHIC: CSS PHONE (ขวามือ) --- */
         .phone-wrapper {
             position: relative;
             display: flex;
@@ -103,9 +96,9 @@
         .phone-frame {
             width: 280px;
             height: 560px;
-            background: #0f172a; /* สีเครื่องดำด้าน */
+            background: #0f172a;
             border-radius: 40px;
-            border: 6px solid #334155; /* ขอบเครื่อง */
+            border: 6px solid #334155;
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
             transform: rotateY(-10deg) rotateX(5deg);
@@ -117,7 +110,6 @@
             transform: rotateY(0) rotateX(0);
         }
 
-        /* ติ่งหน้าจอ (Notch) */
         .phone-notch {
             position: absolute;
             top: 0; left: 50%;
@@ -129,16 +121,13 @@
             z-index: 10;
         }
 
-        /* หน้าจอภายใน */
         .phone-screen {
             width: 100%; height: 100%;
-            /* Gradient พื้นหลังจอ ใช้โทนเดียวกับเว็บแต่เข้มกว่า */
             background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
             padding: 40px 20px;
             display: flex; flex-direction: column; gap: 15px;
         }
 
-        /* Element จำลองในจอมือถือ */
         .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .app-card {
             background: rgba(255,255,255,0.07);
@@ -149,11 +138,8 @@
         .skeleton { background: rgba(255,255,255,0.1); border-radius: 4px; }
         .h-8 { height: 8px; margin-bottom: 6px; }
         .w-50 { width: 50%; } .w-70 { width: 70%; }
-
-        /* กราฟจำลอง */
         .chart-bar { flex: 1; border-radius: 4px 4px 0 0; }
 
-        /* ไอคอนลอย */
         .float-icon {
             position: absolute;
             width: 65px; height: 65px;
@@ -165,16 +151,14 @@
             animation: float 4s ease-in-out infinite;
             z-index: 3;
         }
-        /* ใช้สีไอคอนให้เข้าธีม หรือใช้สี Brand ของ OS */
-        .icon-1 { top: 80px; right: -10px; color: #000; animation-delay: 0s; } /* Apple */
-        .icon-2 { bottom: 100px; left: -10px; color: #3ddc84; animation-delay: 2s; } /* Android */
+        .icon-1 { top: 80px; right: -10px; color: #000; animation-delay: 0s; }
+        .icon-2 { bottom: 100px; left: -10px; color: #3ddc84; animation-delay: 2s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
         }
 
-        /* --- FEATURES GRID --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -183,7 +167,7 @@
         }
 
         .feature-box {
-            background: rgba(255, 255, 255, 0.7); /* โปร่งแสงเล็กน้อย */
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             padding: 30px;
             border-radius: 20px;
@@ -196,18 +180,16 @@
             box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
         }
         
-        /* วงกลมไอคอนใช้สีเขียวอ่อน ให้เข้ากับธีมหลัก */
         .icon-circle {
             width: 50px; height: 50px;
-            background: #f0fdf4; /* เขียวอ่อน */
-            color: #22c55e;      /* เขียวเข้ม */
+            background: #f0fdf4;
+            color: #22c55e;
             border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
 
-        /* Tech Badges */
         .tech-strip {
             display: flex; gap: 15px; flex-wrap: wrap; margin-top: 40px;
         }
@@ -230,7 +212,6 @@
             .tech-strip { justify-content: center; }
         }
     </style>
-
     
     <div class="ambient-blob blob-1"></div>
     <div class="ambient-blob blob-2" style="background: rgba(34, 197, 94, 0.3);"></div>
@@ -241,21 +222,27 @@
         <section class="hero-section">
             {{-- Left Content --}}
             <div>
-                <span class="hero-tag"><i class="fa-solid fa-mobile-screen"></i> Mobile Application</span>
+                <span class="hero-tag">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span data-en="Mobile Application" data-th="Mobile Application">Mobile Application</span>
+                </span>
                 
                 <h1>
-                    เชื่อมต่อลูกค้า <br>
-                    <span class="text-highlight">ได้ทุกที่ทุกเวลา</span>
+                    <span data-en="Connect Customers" data-th="เชื่อมต่อลูกค้า">เชื่อมต่อลูกค้า</span> <br>
+                    <span class="text-highlight" data-en="Anytime, Anywhere" data-th="ได้ทุกที่ทุกเวลา">ได้ทุกที่ทุกเวลา</span>
                 </h1>
                 
-                <p class="hero-desc">
+                <p class="hero-desc"
+                   data-en="We develop beautiful, user-friendly, and fast mobile applications (iOS & Android) to deliver the best experience for your brand."
+                   data-th="บริการพัฒนาแอปพลิเคชันมือถือ (iOS & Android) ที่เน้นความสวยงาม ใช้งานง่าย และทำงานรวดเร็ว เพื่อสร้างประสบการณ์ที่ดีที่สุดให้กับแบรนด์ของคุณ">
                     บริการพัฒนาแอปพลิเคชันมือถือ (iOS & Android) ที่เน้นความสวยงาม 
                     ใช้งานง่าย และทำงานรวดเร็ว เพื่อสร้างประสบการณ์ที่ดีที่สุดให้กับแบรนด์ของคุณ
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
                     <a href="{{ route('contact.page') }}" class="btn-theme">
-                        เริ่มสร้างแอปกันเลย <i class="fa-solid fa-arrow-right"></i>
+                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">เริ่มโปรเจกต์ของคุณ</span>
+                        <i class="fa-solid fa-rocket"></i>
                     </a>
                 </div>
 
@@ -274,31 +261,23 @@
                     
                     {{-- Screen Content (Fake UI) --}}
                     <div class="phone-screen">
-                        
-                        {{-- Top Bar --}}
                         <div class="app-header">
                             <div style="font-size: 0.8rem; color: #94a3b8;">Welcome back</div>
                             <div style="width: 28px; height: 28px; background: #22c55e; border-radius: 50%;"></div>
                         </div>
-
-                        {{-- Balance Card --}}
                         <div class="app-card" style="background: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%); border: none;">
                             <div style="color: rgba(255,255,255,0.8); font-size: 0.8rem;">Total Users</div>
                             <div style="color: white; font-size: 1.5rem; font-weight: 700;">12,450</div>
                         </div>
-
-                        {{-- Graph Area --}}
                         <div class="app-card" style="flex: 1; display: flex; flex-direction: column;">
                             <div style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 15px;">Weekly Stats</div>
                             <div style="display: flex; align-items: flex-end; gap: 8px; height: 100%;">
                                 <div class="chart-bar" style="height: 40%; background: #334155;"></div>
                                 <div class="chart-bar" style="height: 60%; background: #334155;"></div>
-                                <div class="chart-bar" style="height: 85%; background: #22c55e;"></div> {{-- Highlight Bar --}}
+                                <div class="chart-bar" style="height: 85%; background: #22c55e;"></div>
                                 <div class="chart-bar" style="height: 50%; background: #334155;"></div>
                             </div>
                         </div>
-
-                        {{-- List Items --}}
                         <div class="app-card">
                             <div style="display: flex; gap: 10px; align-items: center;">
                                 <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
@@ -310,7 +289,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -319,12 +297,18 @@
             </div>
         </section>
 
-
         {{-- 2. FEATURES GRID --}}
         <section style="margin-bottom: 80px;">
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;">ทำไมต้องมี Mobile App?</h2>
-                <p style="color: var(--text-sub);">เข้าถึงลูกค้าได้ใกล้ชิดกว่าที่เคย</p>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;"
+                    data-en="Why have a Mobile App?" data-th="ทำไมต้องมี Mobile App?">
+                    ทำไมต้องมี Mobile App?
+                </h2>
+                <p style="color: var(--text-sub);"
+                   data-en="Get closer to your customers than ever before."
+                   data-th="เข้าถึงลูกค้าได้ใกล้ชิดกว่าที่เคย">
+                   เข้าถึงลูกค้าได้ใกล้ชิดกว่าที่เคย
+                </p>
             </div>
 
             <div class="features-grid">
@@ -333,8 +317,13 @@
                     <div class="icon-circle">
                         <i class="fa-solid fa-fingerprint"></i>
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Native Features</h3>
-                    <p style="color: var(--text-sub);">ดึงศักยภาพเครื่องมาใช้ได้เต็มที่ เช่น กล้อง, GPS, สแกนนิ้ว และ Face ID</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Native Features" data-th="Native Features">Native Features</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Fully utilize device potential like Camera, GPS, Fingerprint, and Face ID."
+                       data-th="ดึงศักยภาพเครื่องมาใช้ได้เต็มที่ เช่น กล้อง, GPS, สแกนนิ้ว และ Face ID">
+                       ดึงศักยภาพเครื่องมาใช้ได้เต็มที่ เช่น กล้อง, GPS, สแกนนิ้ว และ Face ID
+                    </p>
                 </div>
                 
                 {{-- Feature 2 --}}
@@ -342,8 +331,13 @@
                     <div class="icon-circle" style="background: #eff6ff; color: #3b82f6;">
                         <i class="fa-solid fa-bell"></i>
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Push Notifications</h3>
-                    <p style="color: var(--text-sub);">แจ้งเตือนโปรโมชั่น หรือสถานะคำสั่งซื้อถึงหน้าจอลูกค้าได้ทันที</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Push Notifications" data-th="Push Notifications">Push Notifications</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Send promotions or order updates directly to customer screens instantly."
+                       data-th="แจ้งเตือนโปรโมชั่น หรือสถานะคำสั่งซื้อถึงหน้าจอลูกค้าได้ทันที">
+                       แจ้งเตือนโปรโมชั่น หรือสถานะคำสั่งซื้อถึงหน้าจอลูกค้าได้ทันที
+                    </p>
                 </div>
 
                 {{-- Feature 3 --}}
@@ -351,12 +345,51 @@
                     <div class="icon-circle" style="background: #fff7ed; color: #f97316;">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Better Performance</h3>
-                    <p style="color: var(--text-sub);">การทำงานที่ลื่นไหลและเสถียรกว่าเว็บไซต์ทั่วไป พร้อมระบบ Offline Mode</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Better Performance" data-th="Better Performance">Better Performance</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Smoother and more stable than websites, with Offline Mode support."
+                       data-th="การทำงานที่ลื่นไหลและเสถียรกว่าเว็บไซต์ทั่วไป พร้อมระบบ Offline Mode">
+                       การทำงานที่ลื่นไหลและเสถียรกว่าเว็บไซต์ทั่วไป พร้อมระบบ Offline Mode
+                    </p>
                 </div>
             </div>
         </section>
 
     </div>
+
+    {{-- Script เปลี่ยนภาษา (ใช้ปุ่มจาก Navbar) --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+
+            function changeLanguage(lang) {
+                // 1. เปลี่ยนข้อความ
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = el.getAttribute(`data-${lang}`);
+                    if (text) {
+                        el.innerText = text; // ใช้ innerText ถ้าไม่มี HTML หรือ innerHTML ถ้ามี <br>
+                    }
+                });
+
+                // 2. เปลี่ยนสีปุ่ม Active
+                langBtns.forEach(b => {
+                    if (b.getAttribute('data-lang') === lang) {
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 
 @endsection

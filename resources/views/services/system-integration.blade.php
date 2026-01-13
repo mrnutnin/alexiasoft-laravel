@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'System Integration | AlexiaSoft')
 @section('content')
 
     {{-- Import Font --}}
@@ -10,7 +10,7 @@
     <style>
         /* --- THEME CONFIG --- */
         :root {
-            /* Theme เดิม: เขียว -> ฟ้า */
+            /* สีธีมสำหรับ System Integration (ใช้โทนน้ำเงิน-ฟ้า-ม่วง สื่อถึง Network/Data) */
             --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
             --primary-shadow: rgba(34, 197, 94, 0.4);
             
@@ -22,7 +22,6 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
             overflow-x: hidden;
-            /* โปร่งแสงเพื่อให้เห็น Blob ด้านหลัง */
         }
 
         .container-custom {
@@ -37,7 +36,7 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 50px;
-            padding: 120px 0 80px;
+            padding: 140px 0 80px;
         }
 
         .hero-tag {
@@ -46,7 +45,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 2.0rem;
             margin-bottom: 15px;
         }
 
@@ -101,7 +100,6 @@
             perspective: 1000px;
         }
 
-        /* แกนกลาง */
         .hub-core {
             width: 100px; height: 100px;
             background: white;
@@ -115,7 +113,6 @@
             animation: pulse-core 3s infinite;
         }
 
-        /* วงโคจร */
         .orbit-ring {
             position: absolute;
             border: 1px dashed rgba(100, 116, 139, 0.3);
@@ -125,7 +122,6 @@
         .ring-1 { width: 250px; height: 250px; }
         .ring-2 { width: 380px; height: 380px; border-color: rgba(100, 116, 139, 0.15); animation-duration: 30s; animation-direction: reverse; }
 
-        /* Node ลูกข่าย */
         .hub-node {
             position: absolute;
             width: 50px; height: 50px;
@@ -136,13 +132,11 @@
             font-size: 1.2rem;
             color: #64748b;
         }
-        /* ตำแหน่ง Node */
         .node-1 { top: 20px; right: 80px; color: #f59e0b; }
         .node-2 { bottom: 40px; left: 60px; color: #22c55e; }
         .node-3 { top: 50%; right: -20px; transform: translateY(-50%); color: #ef4444; }
         .node-4 { top: 0; left: 50%; transform: translateX(-50%); color: #8b5cf6; }
 
-        /* เส้นเชื่อม (Connector) */
         .connector {
             position: absolute;
             top: 50%; left: 50%;
@@ -156,14 +150,12 @@
         .conn-3 { width: 180px; transform: rotate(0deg); }
         .conn-4 { width: 120px; transform: rotate(-90deg); }
 
-        /* Data Packet (จุดวิ่ง) */
         .data-packet {
             position: absolute;
             width: 8px; height: 8px;
             background: #22c55e;
             border-radius: 50%;
-            top: -3px;
-            left: 0;
+            top: -3px; left: 0;
             box-shadow: 0 0 10px #22c55e;
             animation: move-data 2s linear infinite;
         }
@@ -178,7 +170,6 @@
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes move-data { 0% { left: 0; opacity: 1; } 100% { left: 100%; opacity: 0; } }
 
-        /* --- FEATURES GRID --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -231,7 +222,7 @@
         }
     </style>
 
-    {{-- แสง Ambient Background (เหมือนหน้าอื่นๆ) --}}
+    {{-- แสง Ambient Background --}}
     <div class="ambient-blob blob-1"></div>
     <div class="ambient-blob blob-2" style="background: rgba(59, 130, 246, 0.3);"></div>
 
@@ -241,21 +232,27 @@
         <section class="hero-section">
             {{-- Left Content --}}
             <div>
-                <span class="hero-tag"><i class="fa-solid fa-network-wired"></i> System Integration</span>
+                <span class="hero-tag">
+                    <i class="fa-solid fa-network-wired"></i> 
+                    <span data-en="System Integration" data-th="System Integration">System Integration</span>
+                </span>
                 
                 <h1>
-                    เชื่อมต่อทุกระบบ <br>
-                    <span class="text-highlight">ให้เป็นหนึ่งเดียว</span>
+                    <span data-en="Connect All" data-th="เชื่อมต่อทุกระบบ">เชื่อมต่อทุกระบบ</span> <br>
+                    <span class="text-highlight" data-en="Into One Unity" data-th="ให้เป็นหนึ่งเดียว">ให้เป็นหนึ่งเดียว</span>
                 </h1>
                 
-                <p class="hero-desc">
+                <p class="hero-desc"
+                   data-en="Simplify your workflow by seamlessly connecting legacy systems with modern cloud solutions via secure APIs. Data flows smoothly without interruption."
+                   data-th="ลดความซับซ้อนในการทำงานด้วยการเชื่อมต่อข้อมูลระหว่างระบบเก่า (Legacy) และระบบใหม่ผ่าน API อย่างปลอดภัย ข้อมูลลื่นไหล ไร้รอยต่อ">
                     ลดความซับซ้อนในการทำงานด้วยการเชื่อมต่อข้อมูลระหว่างระบบเก่า (Legacy) 
                     และระบบใหม่ผ่าน API อย่างปลอดภัย ข้อมูลลื่นไหล ไร้รอยต่อ
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
                     <a href="{{ route('contact.page') }}" class="btn-theme">
-                        ปรึกษาผู้เชี่ยวชาญ <i class="fa-solid fa-arrow-right"></i>
+                        <span data-en="Start Your Project" data-th="เริ่มโปรเจกต์ของคุณ">เริ่มโปรเจกต์ของคุณ</span>
+                        <i class="fa-solid fa-rocket"></i>
                     </a>
                 </div>
 
@@ -295,8 +292,15 @@
         {{-- 2. FEATURES GRID --}}
         <section style="margin-bottom: 80px;">
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;">บริการ Integration ของเรา</h2>
-                <p style="color: var(--text-sub);">ปลดล็อกศักยภาพข้อมูลในองค์กรของคุณ</p>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b;"
+                    data-en="Our Integration Services" data-th="บริการ Integration ของเรา">
+                    บริการ Integration ของเรา
+                </h2>
+                <p style="color: var(--text-sub);"
+                   data-en="Unlock your organization's data potential."
+                   data-th="ปลดล็อกศักยภาพข้อมูลในองค์กรของคุณ">
+                    ปลดล็อกศักยภาพข้อมูลในองค์กรของคุณ
+                </p>
             </div>
 
             <div class="features-grid">
@@ -305,8 +309,13 @@
                     <div class="icon-circle" style="background: #f0fdf4; color: #22c55e;">
                         <i class="fa-solid fa-plug"></i>
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">API Development</h3>
-                    <p style="color: var(--text-sub);">พัฒนา API มาตรฐาน (RESTful, GraphQL) เพื่อให้แอปพลิเคชันต่างๆ คุยกันรู้เรื่อง</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="API Development" data-th="API Development">API Development</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Developing standard APIs (RESTful, GraphQL) to enable seamless communication between applications."
+                       data-th="พัฒนา API มาตรฐาน (RESTful, GraphQL) เพื่อให้แอปพลิเคชันต่างๆ คุยกันรู้เรื่อง">
+                        พัฒนา API มาตรฐาน (RESTful, GraphQL) เพื่อให้แอปพลิเคชันต่างๆ คุยกันรู้เรื่อง
+                    </p>
                 </div>
                 
                 {{-- Feature 2 --}}
@@ -314,8 +323,13 @@
                     <div class="icon-circle" style="background: #eff6ff; color: #3b82f6;">
                         <i class="fa-solid fa-rotate"></i>
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Real-time Sync</h3>
-                    <p style="color: var(--text-sub);">ข้อมูลอัปเดตพร้อมกันทุกระบบ ไม่ว่าจะเป็นสต็อกสินค้า ยอดขาย หรือข้อมูลสมาชิก</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Real-time Sync" data-th="Real-time Sync">Real-time Sync</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Data updates simultaneously across all systems, whether it's inventory, sales, or member data."
+                       data-th="ข้อมูลอัปเดตพร้อมกันทุกระบบ ไม่ว่าจะเป็นสต็อกสินค้า ยอดขาย หรือข้อมูลสมาชิก">
+                        ข้อมูลอัปเดตพร้อมกันทุกระบบ ไม่ว่าจะเป็นสต็อกสินค้า ยอดขาย หรือข้อมูลสมาชิก
+                    </p>
                 </div>
 
                 {{-- Feature 3 --}}
@@ -323,12 +337,46 @@
                     <div class="icon-circle" style="background: #fefce8; color: #eab308;">
                         <i class="fa-solid fa-database"></i>
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Legacy Connect</h3>
-                    <p style="color: var(--text-sub);">เชื่อมต่อซอฟต์แวร์รุ่นเก่า (Legacy Systems) เข้ากับเทคโนโลยี Cloud ยุคใหม่ได้อย่างไร้รอยต่อ</p>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"
+                        data-en="Legacy Connect" data-th="Legacy Connect">Legacy Connect</h3>
+                    <p style="color: var(--text-sub);"
+                       data-en="Seamlessly connecting legacy software with modern cloud technologies."
+                       data-th="เชื่อมต่อซอฟต์แวร์รุ่นเก่า (Legacy Systems) เข้ากับเทคโนโลยี Cloud ยุคใหม่ได้อย่างไร้รอยต่อ">
+                        เชื่อมต่อซอฟต์แวร์รุ่นเก่า (Legacy Systems) เข้ากับเทคโนโลยี Cloud ยุคใหม่ได้อย่างไร้รอยต่อ
+                    </p>
                 </div>
             </div>
         </section>
 
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
 
+            function changeLanguage(lang) {
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = el.getAttribute(`data-${lang}`);
+                    if (text) {
+                        el.innerText = text;
+                    }
+                });
+                langBtns.forEach(b => {
+                    if (b.getAttribute('data-lang') === lang) {
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

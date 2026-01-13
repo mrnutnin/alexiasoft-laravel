@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Contact | AlexiaSoft')
 @section('content')
 
 {{-- Import Font --}}
