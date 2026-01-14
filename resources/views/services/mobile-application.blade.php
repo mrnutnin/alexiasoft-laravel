@@ -33,7 +33,7 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 50px;
-            padding: 100px 0 80px;
+            padding: 120px 0 80px;
         }
 
         .hero-tag {
@@ -95,7 +95,7 @@
 
         .phone-frame {
             width: 280px;
-            height: 500px;
+            height: 530px;
             background: #0f172a;
             border-radius: 40px;
             border: 6px solid #334155;
@@ -225,6 +225,7 @@
                 <p class="hero-desc"
                    data-en="We develop beautiful, user-friendly, and fast mobile applications (iOS & Android) to deliver the best experience for your brand."
                    data-th="บริการพัฒนาแอปพลิเคชันมือถือ (iOS & Android) ที่เน้นความสวยงาม ใช้งานง่าย และทำงานรวดเร็ว เพื่อสร้างประสบการณ์ที่ดีที่สุดให้กับแบรนด์ของคุณ">
+                We develop beautiful, user-friendly, and fast mobile applications (iOS & Android) to deliver the best experience for your brand. 
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
@@ -292,6 +293,7 @@
                 <p style="color: var(--text-sub);"
                    data-en="Get closer to your customers than ever before."
                    data-th="เข้าถึงลูกค้าได้ใกล้ชิดกว่าที่เคย">
+                Get closer to your customers than ever before.
                 </p>
             </div>
 
@@ -305,6 +307,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Fully utilize device potential like Camera, GPS, Fingerprint, and Face ID."
                        data-th="ดึงศักยภาพเครื่องมาใช้ได้เต็มที่ เช่น กล้อง, GPS, สแกนนิ้ว และ Face ID">
+                       Fully utilize device potential like Camera, GPS, Fingerprint, and Face ID.
                     </p>
                 </div>
                 
@@ -317,6 +320,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Send promotions or order updates directly to customer screens instantly."
                        data-th="แจ้งเตือนโปรโมชั่น หรือสถานะคำสั่งซื้อถึงหน้าจอลูกค้าได้ทันที">
+                       Send promotions or order updates directly to customer screens instantly.
                     </p>
                 </div>
 
@@ -329,6 +333,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Smoother and more stable than websites, with Offline Mode support."
                        data-th="การทำงานที่ลื่นไหลและเสถียรกว่าเว็บไซต์ทั่วไป พร้อมระบบ Offline Mode">
+                       Smoother and more stable than websites, with Offline Mode support.
                     </p>
                 </div>
             </div>

@@ -235,6 +235,7 @@
                 <p class="hero-desc"
                    data-en="Simplify your workflow by seamlessly connecting legacy systems with modern cloud solutions via secure APIs. Data flows smoothly without interruption."
                    data-th="ลดความซับซ้อนในการทำงานด้วยการเชื่อมต่อข้อมูลระหว่างระบบเก่า (Legacy) และระบบใหม่ผ่าน API อย่างปลอดภัย ข้อมูลลื่นไหล ไร้รอยต่อ">
+                   Simplify your workflow by seamlessly connecting legacy systems with modern cloud solutions via secure APIs. Data flows smoothly without interruption.
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
@@ -278,6 +279,7 @@
                 <p style="color: var(--text-sub);"
                    data-en="Unlock your organization's data potential."
                    data-th="ปลดล็อกศักยภาพข้อมูลในองค์กรของคุณ">
+                   Unlock your organization's data potential.
                 </p>
             </div>
 
@@ -293,6 +295,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Developing standard APIs (RESTful, GraphQL) to enable seamless communication between applications."
                        data-th="พัฒนา API มาตรฐาน (RESTful, GraphQL) เพื่อให้แอปพลิเคชันต่างๆ คุยกันรู้เรื่อง">
+                       Developing standard APIs (RESTful, GraphQL) to enable seamless communication between applications.
                     </p>
                 </div>
                 
@@ -305,6 +308,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Data updates simultaneously across all systems, whether it's inventory, sales, or member data."
                        data-th="ข้อมูลอัปเดตพร้อมกันทุกระบบ ไม่ว่าจะเป็นสต็อกสินค้า ยอดขาย หรือข้อมูลสมาชิก">
+                       Data updates simultaneously across all systems, whether it's inventory, sales, or member data.
                     </p>
                 </div>
 
@@ -317,6 +321,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Seamlessly connecting legacy software with modern cloud technologies."
                        data-th="เชื่อมต่อซอฟต์แวร์รุ่นเก่า (Legacy Systems) เข้ากับเทคโนโลยี Cloud ยุคใหม่ได้อย่างไร้รอยต่อ">
+                       Seamlessly connecting legacy software with modern cloud technologies.
                     </p>
                 </div>
             </div>

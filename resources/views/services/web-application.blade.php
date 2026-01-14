@@ -189,6 +189,7 @@
                 <p class="hero-desc"
                    data-en="Transform your website into a powerful Web App that works like desktop software. Fast, secure, and accessible on any device without installation."
                    data-th="เปลี่ยนเว็บไซต์ธรรมดาให้เป็น Web App ที่ทำงานได้เหมือนโปรแกรมบนคอมพิวเตอร์ รวดเร็ว ปลอดภัย และใช้งานได้ทุกอุปกรณ์โดยไม่ต้องติดตั้ง">
+                   Transform your website into a powerful Web App that works like desktop software. Fast, secure, and accessible on any device without installation.
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
@@ -244,13 +245,9 @@
                 <p style="color: var(--text-sub);"
                    data-en="Elevate your business operations with modern technology."
                    data-th="ยกระดับการทำงานขององค์กร ด้วยเทคโนโลยีที่ทันสมัย">
+                   Elevate your business operations with modern technology.
                 </p>
             </div>
-
-            
-
-[Image of progressive web app architecture diagram]
-
 
             <div class="features-grid">
                 <div class="feature-box">
@@ -260,6 +257,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Work from anywhere with internet access, not tied to a specific computer."
                        data-th="ทำงานได้ทุกที่ที่มีอินเทอร์เน็ต ไม่ยึดติดกับคอมพิวเตอร์เครื่องเดิม">
+                       Work from anywhere with internet access, not tied to a specific computer.
                     </p>
                 </div>
                 
@@ -270,6 +268,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Data updates instantly. No need to wait for file syncing."
                        data-th="ข้อมูลอัปเดตทันทีที่ใช้งาน ไม่ต้องรอ Sync ไฟล์ไปมาให้วุ่นวาย">
+                       Data updates instantly. No need to wait for file syncing.
                     </p>
                 </div>
 
@@ -280,6 +279,7 @@
                     <p style="color: var(--text-sub);"
                        data-en="Open via Browser (Chrome, Safari) immediately. No need to install heavy software."
                        data-th="เปิดผ่าน Browser (Chrome, Safari) ได้เลย ไม่ต้องลงโปรแกรมให้หนักเครื่อง">
+                       Open via Browser (Chrome, Safari) immediately. No need to install heavy software.
                     </p>
                 </div>
             </div>

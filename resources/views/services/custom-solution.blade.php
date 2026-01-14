@@ -201,6 +201,7 @@
                 <p class="hero-desc"
                    data-en="Don't settle for off-the-shelf software. We build scalable, secure, and high-performance solutions tailored to your specific business workflows."
                    data-th="อย่าทนใช้ซอฟต์แวร์สำเร็จรูปที่ไม่ตอบโจทย์ เราสร้างระบบที่ยืดหยุ่น ปลอดภัย และมีประสิทธิภาพสูง ที่ออกแบบมาเพื่อขั้นตอนการทำงานของคุณโดยเฉพาะ">
+                   Don't settle for off-the-shelf software. We build scalable, secure, and high-performance solutions tailored to your specific business workflows.
                 </p>
 
                 <div style="display: flex; gap: 15px; align-items: center;" class="d-mobile-center">
@@ -253,6 +254,7 @@
                     <p data-en="Don't change how you work to fit software. We build software that fits you." 
                        data-th="ไม่ต้องปรับเปลี่ยนวิธีการทำงานของคุณเพื่อซอฟต์แวร์ แต่เราสร้างซอฟต์แวร์ที่ปรับเข้าหาคุณ" 
                        style="color: var(--text-sub); font-size: 0.95rem;">
+                       Don't change how you work to fit software. We build software that fits you.
                     </p>
                 </div>
 
@@ -264,6 +266,7 @@
                     <p data-en="Start small and scale big. Add new features anytime you need without limits." 
                        data-th="เริ่มจากเล็กแล้วขยายใหญ่ เพิ่มฟีเจอร์ใหม่ๆ ได้ตลอดเวลาที่คุณต้องการ โดยไม่มีข้อจำกัด" 
                        style="color: var(--text-sub); font-size: 0.95rem;">
+                       Start small and scale big. Add new features anytime you need without limits.
                     </p>
                 </div>
 
@@ -275,6 +278,7 @@
                     <p data-en="You own 100% of your data with advanced security systems designed for your organization." 
                        data-th="คุณเป็นเจ้าของข้อมูล 100% พร้อมระบบความปลอดภัยขั้นสูงที่ออกแบบมาเฉพาะองค์กร" 
                        style="color: var(--text-sub); font-size: 0.95rem;">
+                       You own 100% of your data with advanced security systems designed for your organization.
                     </p>
                 </div>
             </div>
