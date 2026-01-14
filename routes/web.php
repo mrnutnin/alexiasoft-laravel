@@ -17,3 +17,18 @@ Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('servic
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.page');
+
+// กลุ่มของเมนู Tools
+Route::prefix('tools')->group(function () {
+    Route::get('/qr-code', function () { 
+        return view('tools.qrcode', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
+    })->name('tools.qrcode');
+
+    Route::get('/base64', function () { 
+        return view('tools.base64', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
+    })->name('tools.base64');
+
+    Route::get('/short-link', function () { 
+        return view('tools.shortlink', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
+    })->name('tools.shortlink');
+});

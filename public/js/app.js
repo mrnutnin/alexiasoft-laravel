@@ -117,21 +117,44 @@ const scrollReveal = () => {
 
 window.addEventListener('scroll', scrollReveal);
 window.addEventListener('load', scrollReveal);
+
 document.addEventListener("DOMContentLoaded", function() {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
-    const projectImages = document.querySelectorAll(".project-visual img");
+    
+    // เลือกรูปภาพทั้งหมดที่เป็นส่วนประกอบของงาน (ทั้งแผ่นหน้าและแผ่นหลัง)
+    const projectImages = document.querySelectorAll(".img-main, .img-sub");
 
-    // เมื่อคลิกที่รูปภาพใดๆ ใน project-visual
     projectImages.forEach(img => {
-        img.addEventListener("click", () => {
+        // เปลี่ยนเมาส์เป็นรูปแว่นขยายเพื่อบอกว่ากดได้
+        img.style.cursor = "zoom-in";
+
+        img.addEventListener("click", function() {
+            // ดึงที่อยู่ไฟล์รูปภาพจากตัวที่ถูกคลิก
+            const imageSrc = this.getAttribute('src');
+            
+            // ใส่รูปเข้าไปใน Lightbox
+            lightboxImg.src = imageSrc;
+            
+            // แสดงผล Lightbox
             lightbox.style.display = "flex";
-            lightboxImg.src = img.src; // เอารูปที่กดไปใส่ใน lightbox
+            
+            // ล็อกการ Scroll หน้าจอหลัก
+            document.body.style.overflow = "hidden";
+            
+            // เพิ่ม Class เพื่อให้เกิด Animation ขยายตัว
+            setTimeout(() => {
+                lightbox.classList.add("active");
+            }, 10);
         });
     });
-});
 
-// ฟังก์ชันปิด Lightbox
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
+    // ฟังก์ชันปิด (เมื่อคลิกพื้นหลัง หรือปุ่ม X)
+    window.closeLightbox = function() {
+        lightbox.classList.remove("active");
+        setTimeout(() => {
+            lightbox.style.display = "none";
+            document.body.style.overflow = "auto";
+        }, 300);
+    };
+});

@@ -26,7 +26,10 @@
                         data-th="ร้านค้าออนไลน์สำหรับวัสดุก่อสร้าง รองรับการสั่งซื้อผ่านมือถือและบริหารสต็อก">
                         Online store for construction materials, supporting mobile orders and stock management.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
                 </div>
                 <div class="project-visual">
                     <div class="image-stack">
@@ -45,8 +48,10 @@
                         Online store for construction materials, supporting mobile orders and stock
                         management.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
                 </div>
                 <div class="project-visual">
                     <div class="image-stack">
@@ -85,8 +90,10 @@
                         data-th="ระบบ ERP อัจฉริยะเพื่อการวางแผนทรัพยากรและการบริหารธุรกิจอย่างมีประสิทธิภาพ">
                         Smart ERP system for efficient resource planning and business management.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
                 </div>
                 <div class="project-visual">
                     <div class="image-stack">
@@ -105,9 +112,10 @@
                         data-th="ระบบบริหารจัดการแลกเปลี่ยนเงินตราต่างประเทศ พร้อมการอัปเดตอัตราแลกเปลี่ยนแบบเรียลไทม์">
                         Currency exchange management system with real-time rate updates.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
-
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
                 </div>
                 <div class="project-visual">
                     <div class="image-stack">
@@ -126,8 +134,10 @@
                         data-th="แพลตฟอร์มอีคอมเมิร์ซศูนย์รวมร้านค้าท้องถิ่นเพื่อการเชื่อมต่อลูกค้าอย่างมีประสิทธิภาพ">
                         Centralized e-Commerce platform connecting local vendors with customers.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
 
                 </div>
                 <div class="project-visual">
@@ -150,8 +160,10 @@
                         by connecting them with a broader customer base through streamlined digital
                         solutions.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
 
                 </div>
                 <div class="project-visual">
@@ -173,8 +185,10 @@
                         accessories,
                         featuring online booking and real-time service tracking for customer convenience.
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
 
                 </div>
                 <div class="project-visual">
@@ -196,8 +210,10 @@
                         invoicing,
                         inventory tracking, and customer relationship management (CRM).
                     </p>
-                    <a href="#" class="btn-consult" data-en="Consult Us" data-th="ปรึกษาเราตอนนี้">Consult
-                        Us</a>
+                    <a href="{{ route('contact.page') }}" class="btn-consult" data-en="Consult Us"
+                        data-th="ปรึกษาเราตอนนี้">
+                        Consult Us
+                    </a>
                 </div>
                 <div class="project-visual">
                     <div class="image-stack">
@@ -205,14 +221,14 @@
                         <img src="images/client-9-sub.png" alt="Sub UI" class="img-sub">
                     </div>
                 </div>
-                <!-- เพิ่มโค้ดการขยายภาพเต็ม -->
-                <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                    <span class="close-lightbox">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
-                </div>
             </div>
         </div>
     </div>
+</div>
+<!-- เพิ่มโค้ดการขยายภาพเต็ม -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="">
 </div>
 <section style="padding: 80px 24px;" class="scroll-reveal">
     <h2 data-en="Trusted By" data-th="ลูกค้าที่ไว้วางใจเรา">Trusted By </h2>

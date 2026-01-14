@@ -1,12 +1,12 @@
 @php
-    // ประกาศตัวแปรเพื่อเช็คสถานะหน้าปัจจุบัน
-    $isHome = request()->is('/');
-    $isPortfolio = request()->is('portfolio*');
-    $isAbout = request()->is('about*');
-    $isContact = request()->is('contact*');
-    
-    // ประกาศตัวแปรเจ้าปัญหา: เช็คว่าอยู่ในหน้า Service หรือไม่
-    $isServicePage = request()->is('services*') || request()->routeIs('services.show');
+// ประกาศตัวแปรเพื่อเช็คสถานะหน้าปัจจุบัน
+$isHome = request()->is('/');
+$isPortfolio = request()->is('portfolio*');
+$isAbout = request()->is('about*');
+$isContact = request()->is('contact*');
+
+// ประกาศตัวแปรเจ้าปัญหา: เช็คว่าอยู่ในหน้า Service หรือไม่
+$isServicePage = request()->is('services*') || request()->routeIs('services.show');
 @endphp
 
 <header id="main-header">
@@ -18,39 +18,65 @@
 
         <nav class="nav-menu">
             @if($isHome)
-                <a href="#home">Home</a>
-                {{-- ใส่ class active ถ้าเป็นหน้า Service --}}
-                <div class="dropdown-wrapper {{ $isServicePage ? 'active' : '' }}">
-                    <a href="#services" class="dropdown-trigger">
-                        Services <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="{{ route('services.show', 'custom-solution') }}">Custom Solution</a>
-                        <a href="{{ route('services.show', 'web-application') }}">Web Application</a>
-                        <a href="{{ route('services.show', 'mobile-application') }}">Mobile Application</a>
-                        <a href="{{ route('services.show', 'system-integration') }}">System Integration</a>
-                    </div>
+            <a href="#home">Home</a>
+
+            {{-- Services Dropdown --}}
+            <div class="dropdown-wrapper {{ $isServicePage ? 'active' : '' }}">
+                <a href="#services" class="dropdown-trigger">
+                    Services <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="{{ route('services.show', 'custom-solution') }}">Custom Solution</a>
+                    <a href="{{ route('services.show', 'web-application') }}">Web Application</a>
+                    <a href="{{ route('services.show', 'mobile-application') }}">Mobile Application</a>
+                    <a href="{{ route('services.show', 'system-integration') }}">System Integration</a>
                 </div>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+            </div>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            {{-- ✅ เพิ่ม Tools Dropdown (ในหน้า Home) --}}
+            <div class="dropdown-wrapper {{ request()->is('tools*') ? 'active' : '' }}">
+                <a href="#" class="dropdown-trigger">
+                    Tools <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="{{ route('tools.qrcode') }}">QR Code</a>
+                    <a href="{{ route('tools.base64') }}">Base64</a>
+                    <a href="{{ route('tools.shortlink') }}">Short link</a>
+                </div>
+            </div>
             @else
-                <a href="{{ url('/') }}">Home</a>
-                {{-- สำหรับหน้าอื่นๆ ก็ต้องใส่ class active เช่นกัน --}}
-                <div class="dropdown-wrapper {{ $isServicePage ? 'active' : '' }}">
-                    <a href="{{ url('/') }}#services" class="dropdown-trigger">
-                        Services <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="{{ route('services.show', 'custom-solution') }}">Custom Solution</a>
-                        <a href="{{ route('services.show', 'web-application') }}">Web Application</a>
-                        <a href="{{ route('services.show', 'mobile-application') }}">Mobile Application</a>
-                        <a href="{{ route('services.show', 'system-integration') }}">System Integration</a>
-                    </div>
+            <a href="{{ url('/') }}">Home</a>
+
+            {{-- Services Dropdown --}}
+            <div class="dropdown-wrapper {{ $isServicePage ? 'active' : '' }}">
+                <a href="{{ url('/') }}#services" class="dropdown-trigger">
+                    Services <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="{{ route('services.show', 'custom-solution') }}">Custom Solution</a>
+                    <a href="{{ route('services.show', 'web-application') }}">Web Application</a>
+                    <a href="{{ route('services.show', 'mobile-application') }}">Mobile Application</a>
+                    <a href="{{ route('services.show', 'system-integration') }}">System Integration</a>
                 </div>
-                <a href="{{ url('/portfolio') }}" class="{{ $isPortfolio ? 'active' : '' }}">Portfolio</a>
-                <a href="{{ url('/about') }}" class="{{ $isAbout ? 'active' : '' }}">About</a>
-                <a href="{{ url('/contact') }}" class="{{ $isContact ? 'active' : '' }}">Contact</a>
+            </div>
+
+            <a href="{{ url('/portfolio') }}" class="{{ $isPortfolio ? 'active' : '' }}">Portfolio</a>
+            <a href="{{ url('/about') }}" class="{{ $isAbout ? 'active' : '' }}">About</a>
+            <a href="{{ url('/contact') }}" class="{{ $isContact ? 'active' : '' }}">Contact</a>
+            {{-- ✅ เพิ่ม Tools Dropdown (ในหน้าอื่นๆ) --}}
+            <div class="dropdown-wrapper {{ request()->is('tools*') ? 'active' : '' }}">
+                <a href="#" class="dropdown-trigger">
+                    Tools <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="{{ route('tools.qrcode') }}">QR Code</a>
+                    <a href="{{ route('tools.base64') }}">Base64</a>
+                    <a href="{{ route('tools.shortlink') }}">Short link</a>
+                </div>
+            </div>
+
             @endif
         </nav>
 

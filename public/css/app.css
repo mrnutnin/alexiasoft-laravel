@@ -1466,7 +1466,7 @@ footer {
     }
 }
 
-/* หน้าproject */
+/* หน้าผลงาน */
 /* จัดการระยะห่างและการสลับฟันปลา */
 .project-item {
     margin-bottom: 120px;
@@ -1511,44 +1511,62 @@ footer {
     position: relative;
 }
 
-/* --- จัดการพื้นที่รูปภาพให้เท่ากันทุก Block --- */
+/* --- จัดพื้นที่รูปภาพใหม่: บังคับความสูงคงที่เพื่อให้ทุกใบเท่ากัน --- */
 .image-stack {
     position: relative;
     width: 100%;
-    height: 400px; /* บังคับความสูงคงที่เพื่อให้รูปภาพเท่ากันทั้งหมด */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 400px; /* บังคับความสูงเท่ากันทุก Project */
+    display: block; /* เปลี่ยนจาก flex เป็น block เพื่อการวางตำแหน่ง absolute ที่แม่นยำ */
+}
+
+/* ปรับแต่งรูปภาพทั้งหลักและรอง: กลับมาใช้ระบบสัดส่วนคงที่ */
+.img-main, .img-sub {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; /* กลับมาใช้ cover เพื่อให้รูปเต็มกรอบการ์ดเสมอ */
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    background: #fff; /* พื้นหลังขาวกันรูปโปร่งใส */
 }
 
 /* รูปหลัก (แผ่นหลัง) */
 .img-main {
-    width: 75% !important; /* กำหนดขนาดแน่นอน */
-    height: auto;
-    aspect-ratio: 4/3; /* บังคับสัดส่วนภาพ */
-    object-fit: cover;
-    position: absolute;
-    top: 20px;
-    right: 0; 
+    width: 80% !important; /* บังคับขนาดการ์ดหลัง */
+    height: 75% !important;
+    top: 0;
+    right: 0;
     z-index: 1;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    background: #fff; /* ป้องกันภาพโปร่งใสแล้วเห็นข้างหลัง */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* รูปย่อย (แผ่นหน้า) */
 .img-sub {
-    width: 55% !important; /* กำหนดขนาดแน่นอน */
-    height: auto;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    position: absolute;
-    bottom: 20px;
+    width: 65% !important; /* บังคับขนาดการ์ดหน้า */
+    height: 75% !important;
+    bottom: 0;
     left: 0;
     z-index: 2;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border: 6px solid #fff; /* ขอบขาวหนาขึ้นเพื่อให้ดูมีมิติเหมือนในรูป */
+    border: 6px solid #fff; /* ขอบขาวตัดขอบให้ชัดเจน */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* --- เอฟเฟกต์ตอน Hover: ขยับแค่เล็กน้อยไม่ให้เสียทรง --- */
+.project-item:hover .img-main {
+    transform: translateY(-5px);
+}
+
+.project-item:hover .img-sub {
+    transform: translate(10px, -10px);
+}
+
+/* --- ปรับปรุงหน้าจอ Mobile --- */
+@media (max-width: 768px) {
+    .image-stack {
+        height: 300px;
+    }
+    .img-main { width: 85% !important; height: 80% !important; }
+    .img-sub { width: 70% !important; height: 80% !important; }
 }
 
 /* --- การสลับตำแหน่งเมื่อเป็นแถวคู่ (Even) --- */
@@ -1597,25 +1615,36 @@ footer {
 }
 /* Lightbox Styles */
 .lightbox {
-    display: none; /* ซ่อนไว้ก่อน */
-    position: fixed;
-    z-index: 9999;
+    display: none; 
+    /* fixed จะทำให้มันลอยค้างอยู่ที่หน้าจอเดิม ไม่ว่าเราจะ Scroll ไปไกลแค่ไหน */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* พื้นหลังดำโปร่งแสง */
+    width: 100vw; /* เต็มความกว้างหน้าจอ */
+    height: 100vh; /* เต็มความสูงหน้าจอ */
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 99999; /* มั่นใจว่าอยู่บนสุดแน่นอน */
+    
+    /* จัดรูปให้อยู่กึ่งกลางหน้าจอที่กำลังดูอยู่ */
     justify-content: center;
     align-items: center;
-    cursor: zoom-out;
+    backdrop-filter: blur(8px);
 }
 
 .lightbox-content {
     max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    animation: zoomIn 0.3s ease; /* เอฟเฟกต์เด้งเข้า */
+    max-height: 85vh; /* บังคับความสูงไม่ให้เกินหน้าจอที่มองเห็น */
+    object-fit: contain; /* โชว์รูปเต็มใบ ไม่โดนตัดแน่นอน */
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    
+    /* Animation ตอนเปิด */
+    transform: scale(0.8);
+    transition: transform 0.3s ease-out;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
 }
 
 @keyframes zoomIn {
