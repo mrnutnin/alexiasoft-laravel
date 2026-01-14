@@ -5,7 +5,7 @@ $isPortfolio = request()->is('portfolio*');
 $isAbout = request()->is('about*');
 $isContact = request()->is('contact*');
 
-// ประกาศตัวแปรเจ้าปัญหา: เช็คว่าอยู่ในหน้า Service หรือไม่
+// เช็คว่าอยู่ในหน้า Service หรือไม่
 $isServicePage = request()->is('services*') || request()->routeIs('services.show');
 @endphp
 
@@ -35,7 +35,8 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
             <a href="#portfolio">Portfolio</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            {{-- ✅ เพิ่ม Tools Dropdown (ในหน้า Home) --}}
+
+            {{-- Tools Dropdown (Home Page) --}}
             <div class="dropdown-wrapper {{ request()->is('tools*') ? 'active' : '' }}">
                 <a href="#" class="dropdown-trigger">
                     Tools <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
@@ -44,8 +45,14 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     <a href="{{ route('tools.qrcode') }}">QR Code</a>
                     <a href="{{ route('tools.base64') }}">Base64</a>
                     <a href="{{ route('tools.shortlink') }}">Short link</a>
+                    {{-- เพิ่มใหม่ 4 รายการ --}}
+                    <a href="{{ route('tools.image-convert') }}">Image Converter </a>
+                    <a href="{{ route('tools.remove-bg') }}">Background Remover</a>
+                    <a href="{{ route('tools.json-tool') }}">JSON Encoder & Decoder</a>
+                    <a href="{{ route('tools.image-resize') }}">Image Resizer </a>
                 </div>
             </div>
+
             @else
             <a href="{{ url('/') }}">Home</a>
 
@@ -65,7 +72,8 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
             <a href="{{ url('/portfolio') }}" class="{{ $isPortfolio ? 'active' : '' }}">Portfolio</a>
             <a href="{{ url('/about') }}" class="{{ $isAbout ? 'active' : '' }}">About</a>
             <a href="{{ url('/contact') }}" class="{{ $isContact ? 'active' : '' }}">Contact</a>
-            {{-- ✅ เพิ่ม Tools Dropdown (ในหน้าอื่นๆ) --}}
+
+            {{-- Tools Dropdown (Other Pages) --}}
             <div class="dropdown-wrapper {{ request()->is('tools*') ? 'active' : '' }}">
                 <a href="#" class="dropdown-trigger">
                     Tools <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
@@ -74,9 +82,13 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     <a href="{{ route('tools.qrcode') }}">QR Code</a>
                     <a href="{{ route('tools.base64') }}">Base64</a>
                     <a href="{{ route('tools.shortlink') }}">Short link</a>
+                    {{-- เพิ่มใหม่ 4 รายการ --}}
+                    <a href="{{ route('tools.image-convert') }}">Image Converter </a>
+                    <a href="{{ route('tools.remove-bg') }}">Background Remover</a>
+                    <a href="{{ route('tools.json-tool') }}">JSON Encoder & Decoder</a>
+                    <a href="{{ route('tools.image-resize') }}">Image Resizer </a>
                 </div>
             </div>
-
             @endif
         </nav>
 
