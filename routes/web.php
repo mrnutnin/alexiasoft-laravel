@@ -44,10 +44,15 @@ Route::prefix('tools')->group(function () {
         return view('tools.remove-bg', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
     })->name('tools.remove-bg');
 
-    // 6. JSON Encoder & Decoder
-    Route::get('/json-tool', function () { 
+    // 6. Beautify JSON (ไฟล์เดิมชื่อ json-tool.blade.php)
+    Route::get('/beautify-json', function () { 
         return view('tools.json-tool', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
     })->name('tools.json-tool');
+
+    // 6.2 JSON Encoder & Decoder (ไฟล์ใหม่ชื่อ json-encode-decode.blade.php)
+    Route::get('/json-encode-decode', function () { 
+        return view('tools.json-encode-decode', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
+    })->name('tools.json-encode-decode');
 
     // 7. รีไซต์ img (Image Resize)
     Route::get('/image-resize', function () { 

@@ -7,8 +7,8 @@
         {{-- Header --}}
         <div style="text-align: center; margin-bottom: 30px;">
             <h1 style="font-size: 2.5rem; font-weight: 700; color: #2d3436; margin-bottom: 10px;" 
-                data-en="JSON Encoder & Decoder" data-th="เครื่องมือจัดการ JSON">
-                JSON Encoder & Decoder
+                data-en="Beautify JSON" data-th="เครื่องมือจัดการรูปแบบ JSON">
+                Beautify JSON
             </h1>
             <p style="color: #636e72; font-size: 1.1rem;" 
                data-en="Beautify, Minify, and Validate your JSON code." 

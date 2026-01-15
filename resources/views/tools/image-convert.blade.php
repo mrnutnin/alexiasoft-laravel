@@ -20,8 +20,8 @@
         {{-- Interface Card --}}
         <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);">
             
-            {{-- Upload Area --}}
-            <div id="drop-zone" style="border: 2px dashed #17eb92; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 25px; cursor: pointer; transition: 0.3s; position: relative;" 
+            {{-- Upload Area (With Image Preview) --}}
+            <div id="drop-zone" style="border: 2px dashed #17eb92; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 25px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;" 
                  onclick="document.getElementById('image-input').click()">
                 
                 <div id="upload-placeholder">
@@ -51,7 +51,7 @@
                     </select>
                 </div>
 
-                <button id="convert-btn" onclick="convertImage()" class="btn-consult" style="width: 100%; cursor: pointer; border: none; padding: 15px; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: 0.3s;"
+                <button onclick="convertImage()" class="btn-consult" style="width: 100%; cursor: pointer; border: none; padding: 15px; border-radius: 50px; font-weight: 600; font-size: 1rem;"
                         data-en="Convert & Download" data-th="แปลงไฟล์และดาวน์โหลด">
                     Convert & Download
                 </button>
@@ -71,10 +71,12 @@
         if (file) {
             selectedImage = file;
             
+            // แสดงชื่อไฟล์
             const fileNameDisplay = document.getElementById('file-name');
             fileNameDisplay.innerText = file.name;
             fileNameDisplay.style.color = "#17eb92";
 
+            // แสดงรูปภาพตัวอย่าง (Preview)
             const reader = new FileReader();
             reader.onload = function(e) {
                 const preview = document.getElementById('image-preview');
@@ -82,7 +84,7 @@
                 
                 preview.src = e.target.result;
                 preview.style.display = 'block';
-                placeholder.style.display = 'none';
+                placeholder.style.display = 'none'; // ซ่อนไอคอนกับข้อความเดิม
             }
             reader.readAsDataURL(file);
 
@@ -93,14 +95,8 @@
     function convertImage() {
         if (!selectedImage) return;
 
-        const btn = document.getElementById('convert-btn');
         const targetFormat = document.getElementById('target-format').value;
         const reader = new FileReader();
-
-        // เปลี่ยนสถานะปุ่มเพื่อแจ้งผู้ใช้
-        btn.innerText = "Processing...";
-        btn.style.opacity = "0.7";
-        btn.disabled = true;
 
         reader.onload = function(event) {
             const img = new Image();
@@ -115,17 +111,10 @@
                 const extension = targetFormat.split('/')[1];
                 const dataUrl = canvas.toDataURL(targetFormat, 0.9);
 
-                // สร้างลิงก์ดาวน์โหลด
                 const link = document.createElement('a');
                 link.download = `alexiasoft-converted.${extension}`;
                 link.href = dataUrl;
                 link.click();
-
-                // ✅ เพิ่มส่วนการรีเฟรชอัตโนมัติ
-                // หน่วงเวลา 1.5 วินาทีเพื่อให้ Browser จัดการเรื่องดาวน์โหลดเสร็จก่อนแล้วค่อย Refresh
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1500);
             };
             img.src = event.target.result;
         };
@@ -141,7 +130,6 @@
     });
     dropZone.addEventListener('dragleave', () => {
         dropZone.style.background = 'transparent';
-        dropZone.style.borderColor = '#17eb92';
     });
     dropZone.addEventListener('drop', (e) => {
         e.preventDefault();
