@@ -48,7 +48,8 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     {{-- เพิ่มใหม่ 4 รายการ --}}
                     <a href="{{ route('tools.image-convert') }}">Image Converter </a>
                     <a href="{{ route('tools.remove-bg') }}">Background Remover</a>
-                    <a href="{{ route('tools.json-tool') }}">JSON Encoder & Decoder</a>
+                    <a href="{{ route('tools.json-tool') }}">Beautify JSON</a>
+                    <a href="{{ route('tools.json-encode-decode') }}">JSON Encoder & Decoder php</a>
                     <a href="{{ route('tools.image-resize') }}">Image Resizer </a>
                 </div>
             </div>
@@ -85,7 +86,8 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     {{-- เพิ่มใหม่ 4 รายการ --}}
                     <a href="{{ route('tools.image-convert') }}">Image Converter </a>
                     <a href="{{ route('tools.remove-bg') }}">Background Remover</a>
-                    <a href="{{ route('tools.json-tool') }}">JSON Encoder & Decoder</a>
+                    <a href="{{ route('tools.json-tool') }}">Beautify JSON </a>
+                    <a href="{{ route('tools.json-encode-decode') }}">JSON Encoder & Decoder php</a>
                     <a href="{{ route('tools.image-resize') }}">Image Resizer </a>
                 </div>
             </div>
