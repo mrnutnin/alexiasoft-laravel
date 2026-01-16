@@ -16,7 +16,13 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
             <img src="{{ asset('images/logo-alexia.png') }}" alt="AlexiaSoft">
         </a>
 
-        <nav class="nav-menu">
+        {{-- [เพิ่มส่วนนี้] ปุ่ม Hamburger สำหรับมือถือ --}}
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        {{-- [แก้ไข] เพิ่ม id="navMenu" เพื่อให้ JS สั่งงานได้ --}}
+        <nav class="nav-menu" id="navMenu">
             @if($isHome)
             <a href="#home">Home</a>
 

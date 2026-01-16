@@ -190,7 +190,7 @@
 
                 <label for="fileUpload" class="upload-label-wrapper">
                     <div class="upload-box">
-                        <div style="font-size: 40px; margin-bottom: 10px;">📤</div>
+                         <i class="fa-regular fa-image" style="font-size: 3rem; color: #17eb92; margin-bottom: 15px;"></i>
                         <h5 class="fw-bold text-dark lang-text" data-en="Click to Upload" data-th="คลิกเพื่อเลือกรูป">Click to Upload</h5>
                         <small class="text-muted">JPG, PNG, GIF</small>
                     </div>
