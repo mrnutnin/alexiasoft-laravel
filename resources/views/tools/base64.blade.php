@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Base64 | AlexiaSoft')
 @section('content')
 <style>
     /* --- CSS หลัก --- */

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Background Remover | AlexiaSoft')
 @section('content')
 <section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; align-items: center; justify-content: center;">
     <div class="container" style="max-width: 800px; width: 100%;">
