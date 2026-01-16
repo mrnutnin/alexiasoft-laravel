@@ -49,7 +49,7 @@ Route::prefix('tools')->group(function () {
         return view('tools.json-tool', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
     })->name('tools.json-tool');
 
-    // 6.2 JSON Encoder & Decoder (ไฟล์ใหม่ชื่อ json-encode-decode.blade.php)
+    // 6.2 JSON Encoder & Decoder 
     Route::get('/json-encode-decode', function () { 
         return view('tools.json-encode-decode', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
     })->name('tools.json-encode-decode');
