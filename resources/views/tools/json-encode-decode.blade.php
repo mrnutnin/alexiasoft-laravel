@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'JSON Encoder & Decoder PHP | AlexiaSoft')
 @section('content')
 <section style="padding:120px 20px; min-height:100vh; display:flex; justify-content:center;">
     <div style="max-width:1100px; width:100%;">
