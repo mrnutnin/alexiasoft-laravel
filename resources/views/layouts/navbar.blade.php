@@ -27,8 +27,9 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
             <a href="#home">Home</a>
 
             {{-- Services Dropdown --}}
-            <div class="dropdown-wrapper {{ $isServicePage ? 'active' : '' }}">
-                <a href="#services" class="dropdown-trigger">
+            <div class="dropdown-wrapper {{ request()->is('services*') ? 'active' : '' }}">
+                {{-- ถ้าอยู่หน้า Home ให้ไปที่ ID #services แต่ถ้าอยู่หน้าอื่นให้ไปที่ URL /#services --}}
+                <a href="{{ $isHome ? '#services' : url('/#services') }}" class="dropdown-trigger">
                     Services <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
                 </a>
                 <div class="dropdown-menu">
@@ -64,8 +65,9 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
             <a href="{{ url('/') }}">Home</a>
 
             {{-- Services Dropdown --}}
-            <div class="dropdown-wrapper {{ $isServicePage ? 'active' : '' }}">
-                <a href="{{ url('/') }}#services" class="dropdown-trigger">
+            <div class="dropdown-wrapper {{ request()->is('services*') ? 'active' : '' }}">
+                {{-- ถ้าอยู่หน้า Home ให้ไปที่ ID #services แต่ถ้าอยู่หน้าอื่นให้ไปที่ URL /#services --}}
+                <a href="{{ $isHome ? '#services' : url('/#services') }}" class="dropdown-trigger">
                     Services <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
                 </a>
                 <div class="dropdown-menu">
