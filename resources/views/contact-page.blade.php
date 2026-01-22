@@ -4,229 +4,196 @@
 
 {{-- Import Font --}}
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 </style>
 
 <style>
-/* --- THEME CONFIG --- */
-:root {
-    --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
-    --text-main: #1e293b;
-    --text-sub: #64748b;
-}
-
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--text-main);
-    overflow-x: hidden;
-}
-
-.container-custom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
-    /* ให้ Content อยู่เหนือ Background */
-}
-
-/* --- 1. HEADER SECTION (จัดระเบียบส่วนหัวใหม่) --- */
-.page-header {
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    /* เว้นระยะห่างด้านล่างไม่ให้ชน Content */
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.header-subtitle {
-    color: #22c55e;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #0f172a;
-    line-height: 1.1;
-}
-
-.text-highlight {
-    background: var(--primary-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-p.page-desc {
-    font-size: 1.1rem;
-    color: var(--text-sub);
-    line-height: 1.6;
-    margin: 0 auto;
-}
-
-/* --- 2. GRID LAYOUT (แก้ปัญหาซ้อนทับ) --- */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    /* ซ้าย 1 ส่วน : ขวา 1.5 ส่วน */
-    gap: 50px;
-    /* ระยะห่างแนวนอนระหว่างซ้ายขวา */
-    align-items: start;
-    /* ให้เริ่มชิดบนทั้งคู่ */
-    padding-bottom: 100px;
-}
-
-/* --- LEFT: INFO CARDS (ปรับให้โปร่งแสง) --- */
-.info-card {
-    /* เปลี่ยนจากสีขาวทึบ เป็นสีขาวโปร่งแสง 40% */
-    background: rgba(255, 255, 255, 0.4);
-
-    /* เอฟเฟกต์เบลอหลังกล่อง */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    /* ขอบจางๆ ให้ดูมีมิติ */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-
-    padding: 25px;
-    /* ปรับลด padding เล็กน้อยให้ดูกระชับ */
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    /* เงาบางๆ */
-
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    /* ลดระยะห่างระหว่างการ์ด */
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.6);
-    /* สว่างขึ้นเล็กน้อยตอน Hover */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-/* --- RIGHT: MAP CONTAINER (ปรับให้เข้าชุดกัน) --- */
-.map-wrapper {
-    /* ปรับให้โปร่งแสงเหมือนการ์ดซ้ายมือ */
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-
-    padding: 12px;
-    /* ขอบขาวรอบแผนที่จางๆ */
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    height: 100%;
-    min-height: 500px;
-}
-
-/* ปรับระยะห่างในส่วน Contact Wrapper ให้กระชับขึ้น */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 30px;
-    /* ลดช่องว่างระหว่างการ์ดข้อมูลกับแผนที่ */
-    align-items: stretch;
-    /* ให้ความสูงการ์ดกับแผนที่ดูสมดุลกัน */
-    padding-bottom: 80px;
-}
-
-.icon-box {
-    width: 60px;
-    height: 60px;
-    background: #f0fdf4;
-    color: #10b981;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    /* ป้องกันไอคอนบีบตัว */
-}
-
-.icon-box.email {
-    background: #fff7ed;
-    color: #f97316;
-}
-
-.icon-box.phone {
-    background: #eff6ff;
-    color: #3b82f6;
-}
-
-.info-content h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0 0 5px 0;
-    color: var(--text-main);
-}
-
-.info-content p {
-    font-size: 1rem;
-    color: var(--text-sub);
-    margin: 0;
-    line-height: 1.5;
-}
-
-/* --- RIGHT: MAP CONTAINER --- */
-/* .map-wrapper {
-            background: white;
-            padding: 10px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
-            height: 100%;
-            min-height: 500px;
-            /* Fix ความสูงขั้นต่ำให้แผนที่ */
-
-.map-frame {
-    width: 100%;
-    height: 100%;
-    min-height: 480px;
-    /* ความสูงของ iframe */
-    border-radius: 15px;
-    border: 0;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 991px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        /* มือถือ: เรียงลงมา */
-        gap: 40px;
+    /* --- THEME CONFIG --- */
+    :root {
+        --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
+        --text-main: #1e293b;
+        --text-sub: #64748b;
     }
 
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text-main);
+        overflow-x: hidden;
+    }
+
+    .container-custom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* --- 1. HEADER SECTION --- */
     .page-header {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 60px;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     h1 {
         font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #0f172a;
+        line-height: 1.1;
+    }
+
+    .text-highlight {
+        background: var(--primary-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p.page-desc {
+        font-size: 1.1rem;
+        color: var(--text-sub);
+        line-height: 1.6;
+        margin: 0 auto;
+    }
+
+    /* --- 2. GRID LAYOUT (Main Layout) --- */
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr; /* ซ้าย 1 : ขวา 1.5 */
+        gap: 30px;
+        align-items: stretch; /* !!! สำคัญ: สั่งให้ซ้ายขวาสูงเท่ากัน !!! */
+        padding-bottom: 100px;
+    }
+
+    /* --- LEFT COLUMN: INFO CARDS --- */
+    .info-column {
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /* เว้นระยะห่างระหว่างการ์ดด้วย gap แทน margin */
+    }
+
+    .info-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 0; /* เอา margin ออก เพื่อให้สูงพอดีกับเนื้อหา */
+        transition: all 0.3s ease;
+        
+        /* ให้การ์ดแต่ละใบยืดเต็มความกว้างของคอลัมน์ */
+        width: 100%; 
+        box-sizing: border-box;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Icon Box Styles */
+    .icon-box {
+        width: 60px;
+        height: 60px;
+        background: #f0fdf4;
+        color: #10b981;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .icon-box.email { background: #fff7ed; color: #f97316; }
+    .icon-box.phone { background: #eff6ff; color: #3b82f6; }
+
+    .info-content h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        color: var(--text-main);
+    }
+
+    .info-content p {
+        font-size: 1rem;
+        color: var(--text-sub);
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+    .contact-link {
+        text-decoration: none;
+        color: var(--text-sub);
+        transition: color 0.2s;
+    }
+    .contact-link:hover {
+        color: #3b82f6;
+    }
+
+    /* --- RIGHT COLUMN: MAP --- */
+    .map-column {
+        height: 100%; /* สูงเต็ม Grid */
+        display: flex;
+        flex-direction: column;
     }
 
     .map-wrapper {
-        min-height: 400px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 10px;
+        border-radius: 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        
+        /* ตั้งค่าให้ยืดเต็มพื้นที่ แต่ไม่เกินเพื่อนข้างๆ */
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden; /* ป้องกัน iframe ล้น */
     }
 
     .map-frame {
-        min-height: 380px;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        border: 0;
+        display: block; /* แก้บั๊กขอบขาวด้านล่าง iframe */
     }
-}
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 991px) {
+        .contact-wrapper {
+            grid-template-columns: 1fr; /* เรียงเป็นแนวตั้ง */
+            gap: 40px;
+        }
+
+        .page-header {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        h1 { font-size: 2.5rem; }
+
+        /* มือถือ: ให้แผนที่มีความสูงขั้นต่ำ เพราะไม่ได้อยู่ข้างๆ ข้อความแล้ว */
+        .map-wrapper {
+            height: 400px; 
+        }
+    }
 </style>
 
+{{-- Background Blobs --}}
 <div class="ambient-blob blob-1"></div>
 <div class="ambient-blob blob-2" style="top: 40%; left: 80%;"></div>
 
@@ -242,6 +209,7 @@ p.page-desc {
     </div>
 
     <div class="contact-wrapper">
+        {{-- ฝั่งซ้าย: ข้อมูลติดต่อ --}}
         <div class="info-column">
             <div class="info-card">
                 <div class="icon-box">
@@ -281,11 +249,12 @@ p.page-desc {
             </div>
         </div>
 
+        {{-- ฝั่งขวา: แผนที่ --}}
         <div class="map-column">
             <div class="map-wrapper">
                 <iframe class="map-frame"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.4888514055556!2d102.86803871086617!3d16.399980630432903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122896b9151f1e9%3A0xca1c4406a9411728!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4hC7guIvguLUu4LmA4Lih4LiX4LiX4Lit4Lil4LiK4Li14LiXIOC4iOC4s-C4geC4seC4lCAo4Lih4Lir4Liy4LiK4LiZKSDguKrguLPguJnguLHguIHguIfguLLguJnguYPguKvguI3guYg!5e0!3m2!1sth!2sth!4v1767923627460!5m2!1sth!2sth"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.876735544296!2d102.83648607593257!3d16.38048698434407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a2b53580517%3A0xe54e588102d1f7c7!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4hC7guIvguLXguIgu4LmA4Lih4LiX4LiX4Lit4Lil4Lia4Li04LiXIOC4iOC4s-C4geC4seC4lCAo4Lih4Lir4Liy4LiK4LiZKQ!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth"
+                    width="600" height="420" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>

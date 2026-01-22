@@ -252,6 +252,7 @@
                     resultBase64.value = evt.target.result;
                 };
                 reader.readAsDataURL(file);
+                // ใช้แปลงรูปมาเป็น Base64 
             });
         }
 

@@ -6,13 +6,17 @@
 @section('content')
 <section id="portfolio" class="portfolio-hero-section">
     <div class="container">
-        <h1 class="portfolio-title" data-en="Our Portfolio" data-th="ผลงานของเรา">Our Portfolio</h1>
+        <h1 class="portfolio-title" 
+            data-en="Our Portfolio" 
+            data-th="ผลงานของเรา" 
+            style="text-align: center;">
+            Our Portfolio
+        </h1>
+
         <p data-en="We are proud to work with leading organizations across various industries."
             data-th="เรามีความภาคภูมิใจที่ได้ทำงานร่วมกับองค์กรชั้นนำในหลากหลายอุตสาหกรรม"
             style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 20px; font-size: 0.95rem;">
-
             We are proud to work with leading organizations across various industries.
-
         </p>
     </div>
 </section>

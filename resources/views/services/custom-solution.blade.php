@@ -3,6 +3,7 @@
 @section('content')
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        /* โหลดฟอนต์มาจากgoogle font */
         
         :root {
             --primary-grad: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
@@ -131,10 +132,10 @@
         .icon-1 { top: -20px; right: 0; color: #61dafb; animation-delay: 0s; }
         .icon-2 { bottom: -20px; left: 0; color: #F05340; animation-delay: 2s; }
 
-        @keyframes float {
+        @keyframes float {    
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
-        }
+        }   /* ทำแอนิเมชั่นให้ไอคอนลอยขึ้นลง (Floating Effect) */
 
         /* --- FEATURES GRID --- */
         .features-grid {
@@ -181,7 +182,7 @@
             .graphic-wrapper { margin-top: 60px; }
             .d-mobile-center { justify-content: center; }
             h1 { font-size: 2.5rem; }
-        }
+        }  /* ปรับแต่งหน้าจอสำหรับมือถือ (Mobile Responsive) */
     </style>
 
     <div class="container-custom">
@@ -213,11 +214,15 @@
             </div>
 
             {{-- Right Content: Code Window --}}
-            <div class="graphic-wrapper">
+            <div class="graphic-wrapper">  
+                <!-- กราฟิกหน้าต่างโค้ดแบบ 3D  -->
                 <div class="float-icon icon-1"><i class="fa-brands fa-react"></i></div>
+                {{-- ไอคอนลอยได้ตัวที่ 1 (React) มี Animation ลอยขึ้นลง --}}
                 <div class="float-icon icon-2"><i class="fa-brands fa-laravel"></i></div>
-
+                {{-- ไอคอนลอยได้ตัวที่ 2 (Laravel) --}}
+                {{-- หน้าต่าง Code Editor จำลอง (ส่วนที่เอียง 3D) --}}
                 <div class="code-window">
+                    {{-- แถบหัวหน้าต่าง (Title Bar) --}}
                     <div class="code-header">
                         <div class="dot" style="background: #ff5f56;"></div>
                         <div class="dot" style="background: #ffbd2e;"></div>

@@ -1365,42 +1365,67 @@ footer {
 .dropdown-menu a::after {
     display: none !important;
 }
+/* #about ไม่จำเป็นต้องแก้แล้ว ใช้ค่า default หรือตามที่ตั้งไว้ */
 #about {
-    padding: 40px 0; /* ลดระยะห่างบนล่างของ Section */
+    padding: 40px 0;
 }
 
-/* HERO SECTION - เปลี่ยนหัวข้อหลักเป็นสีดำ */
+/* ===== ABOUT PAGE (GLASSMORPHISM & CENTERED) ===== */
+
+/* พื้นหลังและ Layout หลัก */
+.about-bg {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+/* --- HERO SECTION (About Us) --- */
+#about-hero {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
 #about-hero h1 {
     font-size: 2.5rem;
-    margin-bottom: 12px;
-    color: #000000; /* เปลี่ยนเป็นสีดำสนิท */
-    font-weight: 800;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000000; /* สีเทาเข้ม */
 }
 
-/* CARD ROW - ปรับให้เป็นกล่องโปร่งแสง */
+#about-hero p {
+    color: #555; /* สีเทานุ่ม */
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- CARD ROW (กล่อง Vision/Mission) --- */
 .about-row {
     max-width: 780px;
     width: 100%;
     display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 20px 28px;
-    margin-bottom: 16px;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 30px;
+    margin-bottom: 20px;
     
-    /* --- ส่วนที่ทำโปร่งแสง (Glassmorphism) --- */
-    background: rgba(255, 255, 255, 0.6); /* สีขาวแบบโปร่งแสง 60% */
-    backdrop-filter: blur(10px);          /* ทำให้พื้นหลังหลังกล่องเบลอ */
-    -webkit-backdrop-filter: blur(10px);   /* รองรับ Safari */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* ขอบกล่องจางๆ ให้ดูมีมิติ */
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* เงาบางๆ */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
-/* ICON - ปรับขนาดให้ใหญ่ขึ้น */
 .about-icon {
-    font-size: 2rem;      /* เพิ่มขนาดไอคอน (ปรับได้ตามชอบ เช่น 2.2rem) */
-    width: 60px;          /* ปรับขนาดกรอบไอคอนให้ใหญ่ขึ้นตาม */
+    font-size: 2rem;
+    width: 60px;
     height: 60px;
     border-radius: 14px;
     background: var(--gradient-main);
@@ -1408,46 +1433,47 @@ footer {
     align-items: center;
     justify-content: center;
     color: white;
-    flex-shrink: 0;       /* ป้องกันไอคอนเบี้ยวหรือโดนบีบ */
+    flex-shrink: 0;
+    margin-top: 5px;
 }
 
-
-/* หัวข้อในการ์ด (Vision, Mission) เปลี่ยนเป็นสีดำ */
+/* หัวข้อในการ์ด (Vision, Mission) - ขนาดเล็กกว่าหัวข้อหลัก */
 .about-row h2 {
-    margin: 0 0 4px 0;
-    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+    font-size: 1.5rem; 
     font-weight: 700;
-    color: #000000; /* เปลี่ยนเป็นสีดำสนิท */
+    color: #333;
 }
 
-/* ปรับสีตัวหนังสือรายละเอียดให้เข้มขึ้นเล็กน้อยเพื่อให้ตัดกับพื้นหลังโปร่งแสง */
 .about-row p, .about-list {
-    color: #333333; 
-    font-size: 0.9rem;
-}
-/* ===== ABOUT PAGE (GLASSMORPHISM & CENTERED) ===== */
-
-/* พื้นหลังและ Layout หลัก - จัดกึ่งกลางเหมือนเดิม */
-.about-bg {
-    padding: 30px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* จัดกึ่งกลางแนวแกน X */
-    justify-content: flex-start;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* HERO SECTION - หัวข้อหลักสีดำ */
-#about-hero {
+/* =========================================
+   ส่วนที่เพิ่มใหม่: จัดการหัวข้อ "Why AlexiaSoft?"
+   ========================================= */
+
+/* เลือก h2 ที่อยู่ติดกับ .about-bg โดยตรง (ไม่ใช่ในกล่อง about-row) */
+.about-bg > h2 {
+    font-size: 2.5rem;    /* ขนาดเท่ากับ About Us ด้านบน */
+    font-weight: 700;
+    margin-top: 60px;     /* เพิ่มระยะห่างจากกล่องด้านบน */
+    margin-bottom: 15px;
+    color: #000000;          /* สีเทาเข้ม */
     text-align: center;
-    padding-top: 60px;
-    padding-bottom: 20px;
 }
 
-#about-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-    color: #000000; /* เปลี่ยนหัวข้อใหญ่เป็นสีดำ */
-    font-weight: 800;
+/* เลือก p ที่อยู่ต่อจาก h2 ทันที (คำบรรยายใต้ Why AlexiaSoft) */
+.about-bg > h2 + p {
+    color: #555;          /* สีเทาอ่อน */
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;  /* จัดกึ่งกลางและเว้นระยะล่าง */
+    text-align: center;
 }
 
 
@@ -1465,7 +1491,13 @@ footer {
     }
 
     .about-icon {
-        margin-bottom: 12px;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+    
+    #about-hero h1,
+    .about-bg > h2 { /* ปรับขนาดทั้งคู่ในมือถือ */
+        font-size: 2rem;
     }
 }
 
@@ -1475,11 +1507,12 @@ footer {
     margin-bottom: 120px;
 }
 
-/* ปรับให้สลับฝั่งที่ลำดับคี่ (1, 3, 5...) --- */
+/* ปรับให้สลับฝั่งที่ลำดับคี่ (1, 3, 5...) */
+/* โดยปกติ Flex จะเรียงซ้ายไปขวา (Text -> Image) */
+/* การใส่ row-reverse จะทำให้ลำดับคี่เป็น (Image -> Text) */
 .project-item:nth-child(odd) .project-content {
     flex-direction: row-reverse;
 }
-
 
 .project-content {
     display: flex;
@@ -1489,53 +1522,56 @@ footer {
     margin: 0 auto;
 }
 
-/* ฝั่งข้อความ: ลดขนาดตัวอักษรลง */
+/* --- ฝั่งข้อความ --- */
 .project-text-box {
     flex: 1;
+    text-align: center; /* !!! จัดข้อความและปุ่มให้อยู่กึ่งกลางทั้งหมด !!! */
+    padding: 0 15px; /* กันข้อความชิดขอบจอเกินไปในมือถือ */
 }
 
 .project-text-box h3 {
-    font-size: 2rem; /* ลดจาก 3rem เหลือ 2rem */
+    font-size: 2.5rem; /* ปรับขนาดตามความเหมาะสม */
     font-weight: 700;
     margin-bottom: 15px;
     color: #333;
+    /* text-align: center; ไม่ต้องใส่ตรงนี้แล้วเพราะใส่ที่ตัวแม่ (box) แล้ว */
 }
 
 .project-text-box p {
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
-    margin-bottom: 25px;
+    margin-bottom: 25px; /* !!! แก้ไข: ลบตัว 'ภ' ออก !!! */
 }
 
-/* ฝั่งรูปภาพ: ปรับให้ขนาดพอดีกับพื้นที่ */
+/* --- ฝั่งรูปภาพ --- */
 .project-visual {
     flex: 1.2;
     position: relative;
 }
 
-/* --- จัดพื้นที่รูปภาพใหม่: บังคับความสูงคงที่เพื่อให้ทุกใบเท่ากัน --- */
+/* จัดพื้นที่รูปภาพใหม่: บังคับความสูงคงที่เพื่อให้ทุกใบเท่ากัน */
 .image-stack {
     position: relative;
     width: 100%;
     height: 400px; /* บังคับความสูงเท่ากันทุก Project */
-    display: block; /* เปลี่ยนจาก flex เป็น block เพื่อการวางตำแหน่ง absolute ที่แม่นยำ */
+    display: block;
 }
 
-/* ปรับแต่งรูปภาพทั้งหลักและรอง: กลับมาใช้ระบบสัดส่วนคงที่ */
+/* ปรับแต่งรูปภาพทั้งหลักและรอง */
 .img-main, .img-sub {
     position: absolute;
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover; /* กลับมาใช้ cover เพื่อให้รูปเต็มกรอบการ์ดเสมอ */
+    object-fit: cover;
     border-radius: 15px;
     transition: all 0.5s ease;
-    background: #fff; /* พื้นหลังขาวกันรูปโปร่งใส */
+    background: #fff;
 }
 
 /* รูปหลัก (แผ่นหลัง) */
 .img-main {
-    width: 80% !important; /* บังคับขนาดการ์ดหลัง */
+    width: 80% !important;
     height: 75% !important;
     top: 0;
     right: 0;
@@ -1545,34 +1581,17 @@ footer {
 
 /* รูปย่อย (แผ่นหน้า) */
 .img-sub {
-    width: 65% !important; /* บังคับขนาดการ์ดหน้า */
+    width: 65% !important;
     height: 75% !important;
     bottom: 0;
     left: 0;
     z-index: 2;
-    border: 6px solid #fff; /* ขอบขาวตัดขอบให้ชัดเจน */
+    border: 6px solid #fff;
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* --- เอฟเฟกต์ตอน Hover: ขยับแค่เล็กน้อยไม่ให้เสียทรง --- */
-.project-item:hover .img-main {
-    transform: translateY(-5px);
-}
-
-.project-item:hover .img-sub {
-    transform: translate(10px, -10px);
-}
-
-/* --- ปรับปรุงหน้าจอ Mobile --- */
-@media (max-width: 768px) {
-    .image-stack {
-        height: 300px;
-    }
-    .img-main { width: 85% !important; height: 80% !important; }
-    .img-sub { width: 70% !important; height: 80% !important; }
-}
-
-/* --- การสลับตำแหน่งเมื่อเป็นแถวคู่ (Even) --- */
+/* --- การสลับตำแหน่งรูปภาพเมื่อเป็นแถวคู่ (Even) --- */
+/* เพื่อให้รูปสลับด้านกันสวยงามตามทิศทางของ Content */
 .project-item:nth-child(even) .img-main {
     right: auto;
     left: 0;
@@ -1583,20 +1602,38 @@ footer {
     right: 0;
 }
 
-.project-text-box h3 {
-    font-size: 1.8rem; /* ขนาดเล็กลงตามภาพตัวอย่าง */
-    margin-bottom: 10px;
+/* --- เอฟเฟกต์ตอน Hover --- */
+.project-item:hover .img-main {
+    transform: translateY(-5px);
 }
 
-.project-text-box p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
+.project-item:hover .img-sub {
+    transform: translate(10px, -10px);
 }
-/* ปรับตำแหน่งรูปย่อยเมื่อโดนสลับฝั่ง */
-.project-item:nth-child(even) .img-sub {
-    left: auto;
-    right: 0;
+
+/* --- Responsive มือถือ --- */
+@media (max-width: 768px) {
+    .project-content {
+        flex-direction: column-reverse !important; /* มือถือให้รูปอยู่บน ข้อความอยู่ล่างเสมอ */
+        gap: 40px;
+    }
+    
+    .project-item {
+        margin-bottom: 80px;
+    }
+
+    .image-stack {
+        height: 300px;
+        max-width: 400px; /* จำกัดความกว้างรูปในมือถือไม่ให้ใหญ่เกิน */
+        margin: 0 auto; /* จัดรูปกลาง */
+    }
+    
+    .img-main { width: 85% !important; height: 80% !important; }
+    .img-sub { width: 70% !important; height: 80% !important; }
+
+    .project-text-box h3 {
+        font-size: 1.8rem;
+    }
 }
 .btn-consult {
     display: inline-block;
