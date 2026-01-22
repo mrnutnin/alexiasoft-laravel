@@ -6,6 +6,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ToolController;
 
 // หน้าเดียว
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -17,45 +18,21 @@ Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.page');
 
-// กลุ่มของเมนู Tools
-Route::prefix('tools')->group(function () {
-    // 1. QR Code
-    Route::get('/qr-code', function () { 
-        return view('tools.qrcode', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.qrcode');
-
-    // 2. Base64
-    Route::get('/base64', function () { 
-        return view('tools.base64', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.base64');
-
-    // 3. Short Link
-    Route::get('/short-link', function () { 
-        return view('tools.shortlink', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.shortlink');
-
-    // 4. แปลงนามสกุลไฟล์รูปภาพ (Image Converter)
-    Route::get('/image-convert', function () { 
-        return view('tools.image-convert', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.image-convert');
-
-    // 5. ลบพื้นหลัง (Remove BG)
-    Route::get('/remove-bg', function () { 
-        return view('tools.remove-bg', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.remove-bg');
-
-    // 6. Beautify JSON (ไฟล์เดิมชื่อ json-tool.blade.php)
-    Route::get('/beautify-json', function () { 
-        return view('tools.json-tool', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.json-tool');
-
-    // 6.2 JSON Encoder & Decoder 
-    Route::get('/json-encode-decode', function () { 
-        return view('tools.json-encode-decode', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.json-encode-decode');
-
-    // 7. รีไซต์ img (Image Resize)
-    Route::get('/image-resize', function () { 
-        return view('tools.image-resize', ['isHome' => false, 'isServicePage' => false, 'isPortfolio' => false, 'isAbout' => false, 'isContact' => false]); 
-    })->name('tools.image-resize');
+// กลุ่มของเมนู Tools (ฉบับ Controller)
+Route::prefix('tools')->name('tools.')->group(function () {
+    Route::get('/qr-code', [ToolController::class, 'qrCode'])->name('qrcode');
+    Route::get('/base64', [ToolController::class, 'base64'])->name('base64');
+    Route::get('/short-link', [ToolController::class, 'shortLink'])->name('shortlink');
+    Route::get('/image-convert', [ToolController::class, 'imageConvert'])->name('image-convert');
+    Route::get('/remove-bg', [ToolController::class, 'removeBg'])->name('remove-bg');
+    Route::get('/beautify-json', [ToolController::class, 'beautifyJson'])->name('json-tool');
+    Route::get('/json-encode-decode', [ToolController::class, 'jsonEncodeDecode'])->name('json-encode-decode');
+    Route::get('/image-resize', [ToolController::class, 'imageResize'])->name('image-resize');
+});
+Route::prefix('services')->name('services.')->group(function () {
+    Route::get('/', [ServiceController::class, 'index'])->name('index');
+    Route::get('/custom-solution', [ServiceController::class, 'customSolution'])->name('show.custom');
+    Route::get('/web-application', [ServiceController::class, 'webApplication'])->name('show.web');
+    Route::get('/mobile-application', [ServiceController::class, 'mobileApplication'])->name('show.mobile');
+    Route::get('/system-integration', [ServiceController::class, 'systemIntegration'])->name('show.system');
 });
