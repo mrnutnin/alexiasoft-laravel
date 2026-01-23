@@ -498,6 +498,12 @@ section {
     margin-top: 15px;
     font-weight: 600;
 }
+.text-gradient {
+    background: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
 
 /* Swiper Custom Styling */
 .portfolioSwiper .swiper-button-next,
@@ -1845,68 +1851,94 @@ footer {
     /* ==== NAVBAR ==== */
     .nav-container {
         padding: 15px 20px;
-        position: relative; /* เพื่อให้เมนูวางเทียบกับกรอบนี้ */
+        position: relative;
         justify-content: space-between;
     }
 
-    .logo img {
-        height: 40px; /* ลดขนาดโลโก้นิดหน่อยในมือถือ */
-    }
-
-    .hamburger {
-        display: block; /* แสดงปุ่ม 3 ขีด */
-    }
-
-    /* เมนูหลักในมือถือ (ซ่อนไว้ก่อน) */
     .nav-menu {
         display: none;
         position: absolute;
-        top: 100%; /* อยู่ใต้ Header พอดี */
+        top: 100%;
         left: 0;
         width: 100%;
         background: #ffffff;
         flex-direction: column;
-        padding: 20px;
+        padding: 10px 0; /* ปรับลด padding เพื่อความสวยงาม */
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        border-top: 1px solid #f1f5f9;
         z-index: 1000;
-        animation: slideDown 0.3s ease-out;
     }
 
-    /* คลาสนี้จะถูกเติมด้วย JS เมื่อกดปุ่ม */
     .nav-menu.active {
         display: flex;
     }
 
-    /* จัดลิงก์ในเมนูให้น่ากด */
+    /* จัดลิงก์เมนูหลักและปุ่ม Dropdown Trigger */
     .nav-menu a, 
-    .nav-menu .dropdown-trigger {
-        width: 100%;
-        padding: 15px 0;
-        border-bottom: 1px solid #f1f5f9;
-        text-align: left;
+    .dropdown-trigger {
+        position: relative; /* สำคัญ: เพื่อให้เส้นใต้เกาะไปกับตัวนี้ */
+        padding: 15px 25px;
         font-size: 1.1rem;
+        display: block;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #f1f5f9; /* เส้นกั้นจางๆ ระหว่างเมนู */
+    }
+
+    /* --- ส่วนที่ทำให้เห็นขีดเส้นใต้สีเขียวเหมือนภาพที่ 2 --- */
+    /* เมื่อเมนูย่อยถูกเปิด (active) ให้เพิ่มขีดเส้นใต้ที่หัวข้อ */
+    .dropdown-wrapper.active > .dropdown-trigger::after,
+    .dropdown-wrapper.active > a::after {
+        content: "";
+        position: absolute;
+        bottom: 0; /* วางไว้ล่างสุดของหัวข้อพอดี */
+        left: 0;
+        width: 100%;
+        height: 3px; /* ความหนาของเส้นใต้ */
+        background-color: #22c55e; /* สีเขียว */
+        z-index: 2; /* ให้อยู่เหนือ border-bottom ปกติ */
+    }
+
+    /* เปลี่ยนสีตัวอักษรหัวข้อเมื่อเปิดเมนู */
+    .dropdown-wrapper.active > .dropdown-trigger,
+    .dropdown-wrapper.active > a {
+        color: #22c55e;
+        font-weight: 600;
+    }
+
+    /* ==== ปรับ Dropdown ย่อย (เหลี่ยมและไม่ทับเส้น) ==== */
+    .dropdown-menu {
+        position: static; /* ดันเนื้อหาลงมาข้างล่างเส้น */
+        display: none;
+        width: 100%;
+        background: #f8fafc; /* พื้นหลังสีเทาอ่อนให้ดูแยกจากเมนูหลัก */
+        
+        /* แก้ไขกรอบตามที่ต้องการ: เป็นเหลี่ยม ไม่มน */
+        border-radius: 0 !important; 
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0; 
+    }
+
+    .dropdown-wrapper.active .dropdown-menu {
         display: block;
     }
 
-    /* ปรับ Dropdown ย่อยในมือถือ */
-    .dropdown-menu {
-        position: static; /* ไม่ลอย ให้ดันเนื้อหาลงมา */
-        box-shadow: none;
-        border: none;
-        background: #f8fafc; /* พื้นหลังสีเทาจางๆ ให้รู้ว่าเป็นเมนูย่อย */
-        padding-left: 20px;
-        display: none; /* ซ่อนก่อน */
-        opacity: 1;
-        transform: none;
-        min-width: 100%;
+    /* ลิงก์ภายในเมนูย่อย */
+    .dropdown-menu a {
+        padding: 12px 45px !important; /* ดันข้อความเข้าไปข้างใน */
+        font-size: 1rem;
+        color: #666;
+        border-bottom: 1px solid #eee !important;
+        background: transparent !important;
     }
-    
-    /* ให้แสดง Dropdown ย่อยเมื่อ Hover หรือ Active (ในมือถืออาจต้องใช้ JS เพิ่มถ้าอยากให้คลิกเปิด) 
-       แต่เบื้องต้นให้แสดงออกมาเลยเพื่อให้กดง่าย */
-    .dropdown-wrapper:hover .dropdown-menu,
-    .dropdown-wrapper.active .dropdown-menu {
-        display: block;
+
+    /* เอาขีดเส้นใต้สีเขียวออกสำหรับลิงก์ย่อย */
+    .dropdown-menu a::after {
+        display: none !important;
+    }
+    .hamburger {
+        display: block; /* แสดงปุ่ม 3 ขีด */
     }
 
     /* ซ่อนปุ่มเปลี่ยนภาษาใน Navbar มือถือ (หรือจะย้ายไปใส่ใน nav-menu ก็ได้) */
@@ -1955,9 +1987,7 @@ footer {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* =========================================
-   MOBILE MENU FIX (แก้เมนูมือถือทับกัน)
-   ========================================= */
+
 
 @media (max-width: 991px) {
     /* 1. จัดโครงสร้างเมนูหลัก */
@@ -2022,7 +2052,7 @@ footer {
     /* ลิงก์ข้างใน Dropdown */
     .dropdown-menu a {
         padding: 12px 25px 12px 40px; /* ย่อหน้าเข้าไป */
-        border-bottom: 1px solid #e2e8f0;
+        border-bottom: 1px solid rgba(55, 55, 80, 0.5); 
         color: #64748b;
         font-size: 0.95rem;
         display: block;
@@ -2033,4 +2063,154 @@ footer {
         transform: rotate(180deg);
         transition: 0.3s;
     }
+}
+/* จัดระเบียบ Grid */
+.footer-container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: left; /* เริ่มต้นจัดซ้ายสำหรับ Desktop */
+}
+
+/* ตั้งค่าลิงก์หลัก - ปรับสีให้สว่างเท่ากันหมด */
+.footer-main-link {
+    color:rgba(55, 55, 80, 0.5) !important; 
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.footer-main-link:hover {
+    color: #22c55e !important; /* สีเขียว Alexia */
+}
+
+.icon-static {
+    font-size: 0.7rem;
+    color: #22c55e;
+}
+
+.icon-arrow {
+    font-size: 0.6rem;
+    margin-left: 8px;
+    opacity: 0.6;
+}
+
+/* เมนูย่อย */
+.footer-sub-list {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 25px; 
+}
+
+.dropdown-group:hover .footer-sub-list {
+    max-height: 300px;
+    opacity: 1;
+    margin: 10px 0;
+}
+
+.footer-sub-list a {
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-sub-list a:hover {
+    color: #22c55e !important;
+    padding-left: 5px;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .footer-container-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        /* ไม่ใช้ text-align: center ที่นี่เพื่อให้ข้อความเรียงแถวตรงกัน */
+        text-align: left; 
+    }
+
+    .footer-section-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* เปลี่ยนจาก center เป็น flex-start เพื่อให้หัวข้อตรงกัน */
+        width: fit-content;      /* ให้กล่องกว้างเท่ากับเนื้อหา */
+        margin: 0 auto;          /* สั่งให้กล่องเนื้อหาทั้งหมดไปอยู่กลางหน้าจอ */
+        min-width: 200px;        /* กำหนดความกว้างขั้นต่ำเพื่อให้แนวดูเท่ากัน */
+    }
+
+    .footer-main-link {
+        justify-content: flex-start; /* ให้ไอคอนกับข้อความชิดซ้ายในแถวของตัวเอง */
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    /* จัดเมนูย่อยให้เยื้องซ้ายตามเมนูหลัก แต่อยู่ในแนวเดียวกัน */
+    .footer-sub-list {
+        padding-left: 20px !important; /* ให้เยื้องขวาหน่อยเพื่อให้รู้ว่าเป็นเมนูย่อย */
+        align-items: flex-start;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .dropdown-group:hover .footer-sub-list {
+        opacity: 1;
+        max-height: 500px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+    }
+
+    .footer-sub-list a {
+        text-align: left;
+        padding: 4px 0;
+        width: 100%;
+    }
+
+    .footer-logo-img {
+        margin: 0 0 10px 0; /* โลโก้ชิดซ้ายตามเนื้อหา */
+    }
+    
+    .footer-link-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* จัด Home, Portfolio, Contact ให้เรียงแถวตรงกัน */
+        width: 100%;
+        gap: 12px;
+    }
+
+    /* โชว์ไอคอนลูกศรเพื่อให้ดูเป็นระเบียบ */
+    .icon-static {
+        display: inline-block;
+        min-width: 15px;
+    }
+    
+    .icon-arrow {
+        margin-left: 15px !important;
+    }
+}
+
+.footer-company-name { 
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 1.1rem; 
+    margin: 5px 0 10px 0; 
+    font-weight: 600;
+}
+
+.footer-description { 
+    color: rgba(255,255,255,0.6); 
+    font-size: 0.85rem; 
+    line-height: 1.5; 
+    max-width: 250px; 
+    text-align: left; /* คำอธิบายก็ชิดซ้ายตามแนว */
 }

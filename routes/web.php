@@ -31,8 +31,8 @@ Route::prefix('tools')->name('tools.')->group(function () {
 });
 Route::prefix('services')->name('services.')->group(function () {
     Route::get('/', [ServiceController::class, 'index'])->name('index');
-    Route::get('/custom-solution', [ServiceController::class, 'customSolution'])->name('show.custom');
-    Route::get('/web-application', [ServiceController::class, 'webApplication'])->name('show.web');
-    Route::get('/mobile-application', [ServiceController::class, 'mobileApplication'])->name('show.mobile');
-    Route::get('/system-integration', [ServiceController::class, 'systemIntegration'])->name('show.system');
+    Route::get('/custom-solution', [ServiceController::class, 'customSolution'])->name('custom');
+    Route::get('/web-application', [ServiceController::class, 'webApplication'])->name('web');
+    Route::get('/mobile-application', [ServiceController::class, 'mobileApplication'])->name('mobile');
+    Route::get('/system-integration', [ServiceController::class, 'systemIntegration'])->name('system');
 });

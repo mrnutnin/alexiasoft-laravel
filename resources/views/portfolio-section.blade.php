@@ -220,10 +220,10 @@
         </div>
     </div>
     <div class="portfolio-cta">
-    <a href="{{ route('portfolio') }}" class="btn btn-primary btn-project" data-en="View All Portfolio"
-        data-th="ผลงานทั้งหมด">
-        View All Portfolio
-    </a>
+        <a href="{{ route('portfolio') }}" class="btn btn-primary btn-project" data-en="View All Portfolio"
+            data-th="ผลงานทั้งหมด">
+            View All Portfolio
+        </a>
     </div>
 
     <section style="padding: 80px 24px;" class="scroll-reveal">
@@ -301,12 +301,7 @@
                 </div>
                 <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
             </div>
-            <div class="glass-card client-logo-card">
-                <div class="client-logo-placeholder">
-                    <img src="images/clients/client-10.png" alt="Client 10">
-                </div>
-                <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
-            </div>
+
         </div>
 
     </section>
