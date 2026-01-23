@@ -20,6 +20,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
             overflow-x: hidden;
+            
         }
 
         .container-custom {
@@ -34,7 +35,7 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 50px;
-            padding: 140px 0 80px;
+            padding: 110px 0 80px;
         }
 
         .hero-tag {
@@ -48,7 +49,7 @@
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 25px;

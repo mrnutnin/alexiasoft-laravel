@@ -2064,6 +2064,8 @@ footer {
         transition: 0.3s;
     }
 }
+
+
 /* จัดระเบียบ Grid */
 .footer-container-grid {
     display: grid;
@@ -2119,7 +2121,7 @@ footer {
 }
 
 .footer-sub-list a {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(72, 71, 71, 0.5) !important;
     text-decoration: none;
     font-size: 0.85rem;
     transition: 0.3s;
