@@ -224,3 +224,4 @@ function toggleMobileMenu() {
         document.querySelectorAll('.dropdown-wrapper').forEach(w => w.classList.remove('active'));
     }
 }
+

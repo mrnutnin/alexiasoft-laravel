@@ -49,9 +49,9 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     Tools <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="{{ route('tools.qrcode') }}">QR Code</a>
-                    <a href="{{ route('tools.base64') }}">Base64</a>
-                    <a href="{{ route('tools.shortlink') }}">Short link</a>
+                    <a href="{{ route('tools.qrcode') }}">QR Code Generator</a>
+                    <a href="{{ route('tools.base64') }}">Base64 Converter</a>
+                    <a href="{{ route('tools.shortlink') }}">URL Shortener</a>
                     {{-- เพิ่มใหม่ 4 รายการ --}}
                     <a href="{{ route('tools.image-convert') }}">Image Converter </a>
                     <a href="{{ route('tools.remove-bg') }}">Background Remover</a>
@@ -88,9 +88,9 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     Tools <i class="fa-solid fa-chevron-down" style="font-size:12px;margin-left:4px;"></i>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="{{ route('tools.qrcode') }}">QR Code</a>
-                    <a href="{{ route('tools.base64') }}">Base64</a>
-                    <a href="{{ route('tools.shortlink') }}">Short link</a>
+                    <a href="{{ route('tools.qrcode') }}">QR Code Generator</a>
+                    <a href="{{ route('tools.base64') }}">Base64 Converter</a>
+                    <a href="{{ route('tools.shortlink') }}">URL Shortener</a>
                     {{-- เพิ่มใหม่ 4 รายการ --}}
                     <a href="{{ route('tools.image-convert') }}">Image Converter </a>
                     <a href="{{ route('tools.remove-bg') }}">Background Remover</a>
