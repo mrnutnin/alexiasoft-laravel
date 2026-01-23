@@ -33,7 +33,7 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 50px;
-            padding: 120px 0 80px;
+            padding: 110px 0 80px;
         }
 
         .hero-tag {
@@ -47,7 +47,7 @@
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 25px;
@@ -95,7 +95,7 @@
 
         .phone-frame {
             width: 280px;
-            height: 530px;
+            height: 500px;
             background: #0f172a;
             border-radius: 40px;
             border: 6px solid #334155;
@@ -122,7 +122,7 @@
         .phone-screen {
             width: 100%; height: 100%;
             background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-            padding: 40px 20px;
+            padding: 60px 20px;
             display: flex; flex-direction: column; gap: 15px;
         }
 
