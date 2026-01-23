@@ -263,3 +263,4 @@ function toggleMobileMenu() {
         icon.classList.add('fa-bars');
     }
 }
+

@@ -1,16 +1,21 @@
 @extends('layouts.app')
-@section('title', 'Short Linlk | AlexiaSoft')
+@section('title', 'Short Link | AlexiaSoft')
 @section('content')
-<section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; align-items: center; justify-content: center;">
+
+{{-- 1. ปรับ Layout: ใช้ flex-direction: column และเอา justify-content: center ออก --}}
+{{-- เพื่อให้เริ่มนับจากข้างบน 80px เท่ากับหน้าอื่น --}}
+<section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; flex-direction: column; align-items: center;">
     <div class="container" style="max-width: 600px; width: 100%;">
 
         {{-- Header ส่วนหัว --}}
-        <div style="text-align: center; margin-bottom: 30px;">
+        {{-- 2. ปรับ margin-bottom เป็น 40px --}}
+        <div style="text-align: center; margin-bottom: 40px;">
             <h1 style="font-size: 2.5rem; font-weight: 700; color: #2d3436; margin-bottom: 10px;" 
                 data-en="URL Shortener" data-th="เครื่องมือย่อลิงก์">
                 URL Shortener
             </h1>
-            <p style="color: #636e72; font-size: 1.1rem;" 
+            {{-- 3. ปรับ font-size เป็น 1rem ให้เท่าหน้าอื่น --}}
+            <p style="color: #636e72; font-size: 1rem;" 
                data-en="Make your long links short and easy to share." 
                data-th="เปลี่ยนลิงก์ที่ยาวของคุณให้สั้นลงและแชร์ได้ง่ายขึ้น">
                 Make your long links short and easy to share.
@@ -40,7 +45,7 @@
             <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
                 {{-- ปุ่มกด --}}
                 <button onclick="shortenLink()" class="btn-consult" id="btn-text"
-                        style="cursor: pointer; border: none; padding: 12px 40px; border-radius: 50px; font-weight: 600; font-size: 1rem;"
+                        style="cursor: pointer; border: none; padding: 12px 40px; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: transform 0.2s;"
                         data-en="Shorten URL" data-th="ย่อลิงก์">
                     Shorten URL
                 </button>
@@ -51,9 +56,9 @@
                            data-en="Your Short Link:" data-th="ลิงก์ที่ย่อแล้วของคุณ:">Your Short Link:</label>
                     <div style="display: flex; gap: 10px;">
                         <input type="text" id="short-url" readonly 
-                               style="flex: 1; padding: 10px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; color: #333;">
+                               style="flex: 1; padding: 10px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; color: #333; outline: none;">
                         <button onclick="copyLink()" 
-                                style="padding: 10px 15px; background: #2d3436; color: white; border: none; border-radius: 8px; cursor: pointer;"
+                                style="padding: 10px 15px; background: #2d3436; color: white; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s;"
                                 data-en="Copy" data-th="คัดลอก">
                             Copy
                         </button>
@@ -83,7 +88,7 @@
         btnText.disabled = true;
 
         try {
-            // เรียกใช้ TinyURL API (แบบง่ายผ่าน proxy หรือ direct fetch)
+            // เรียกใช้ TinyURL API
             const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`);
             
             if (response.ok) {
@@ -97,10 +102,13 @@
             console.error(error);
             alert("Something went wrong.");
         } finally {
-            // คืนค่าปุ่มเดิม (ตรวจสอบภาษาปัจจุบันจาก attribute ของปุ่ม)
+            // คืนค่าปุ่มเดิม
             btnText.disabled = false;
-            // หมายเหตุ: ตรงนี้ถ้าคุณมีฟังก์ชันเปลี่ยนภาษาในเว็บ มันจะกลับมาเป็นภาษาตามที่ตั้งไว้เอง
-            btnText.innerText = document.documentElement.lang === 'th' ? originalTextTh : originalTextEn;
+            // เช็คว่าปัจจุบันเป็นภาษาไทยหรืออังกฤษ
+            const isThai = document.documentElement.lang === 'th' || document.body.classList.contains('lang-th'); 
+            // *หมายเหตุ: ถ้าคุณมีการเก็บ state ภาษาที่อื่น ให้ปรับเงื่อนไขตรงนี้นะครับ
+            // เบื้องต้นให้คืนค่าตาม Attribute เดิมไปก่อน
+            btnText.innerText = btnText.getAttribute('data-en'); 
         }
     }
 

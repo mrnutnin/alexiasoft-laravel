@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('title', 'QR Code | AlexiaSoft')
 @section('content')
-<section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; align-items: center; justify-content: center;">
+
+{{-- แก้ไข: เอา justify-content: center ออก และใส่ flex-direction: column แทน --}}
+{{-- เพื่อให้เนื้อหาเริ่มจากด้านบน (80px) ไม่ใช่ลอยอยู่กลางจอ --}}
+<section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; flex-direction: column; align-items: center;">
+    
     <div class="container" style="max-width: 600px; width: 100%;">
 
         {{-- Header ส่วนหัว --}}
-        <div style="text-align: center; margin-bottom: 30px;">
+        <div style="text-align: center; margin-bottom: 40px;">
             <h1 style="font-size: 2.5rem; font-weight: 700; color: #2d3436; margin-bottom: 10px;"
                 data-en="QR Code Generator" data-th="เครื่องมือสร้าง QR Code">
                 QR Code Generator
@@ -16,7 +20,7 @@
             </p>
         </div>
 
-        {{-- การ์ดแบบโปร่งใส (Glassmorphism) --}}
+        {{-- การ์ดแบบโปร่งใส --}}
         <div style="
             background: rgba(255, 255, 255, 0.7); 
             backdrop-filter: blur(10px); 
@@ -36,7 +40,7 @@
             </div>
 
             <div style="display: flex; flex-direction: column; align-items: center; gap: 25px;">
-                {{-- พื้นที่แสดง QR Code และปุ่มดาวน์โหลด --}}
+                {{-- พื้นที่แสดง QR Code --}}
                 <div id="qrcode-container"
                     style="padding: 20px; background: #fff; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: none; text-align: center;">
                     <div id="qrcode" style="margin-bottom: 15px;"></div>
@@ -87,7 +91,6 @@ function generateQR() {
     });
 }
 
-// ฟังก์ชันสำหรับดาวน์โหลดรูปภาพ
 function downloadQR() {
     const qrImage = document.querySelector('#qrcode img');
     if (qrImage) {
@@ -98,7 +101,6 @@ function downloadQR() {
         link.click();
         document.body.removeChild(link);
     } else {
-        // กรณีเบราว์เซอร์ใช้ Canvas แทน Img (เช่นในบางเวอร์ชั่น)
         const canvas = document.querySelector('#qrcode canvas');
         if (canvas) {
             const link = document.createElement('a');

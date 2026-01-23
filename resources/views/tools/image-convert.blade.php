@@ -1,27 +1,41 @@
 @extends('layouts.app')
 @section('title', 'Image Converter | AlexiaSoft')
 @section('content')
-<section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; align-items: center; justify-content: center;">
-    <div class="container" style="max-width: 700px; width: 100%;">
 
-        {{-- Header --}}
-        <div style="text-align: center; margin-bottom: 30px;">
+{{-- 1. ปรับ Layout: ใช้ flex-direction: column, เอา justify-content: center ออก --}}
+<section style="padding: 80px 20px; min-height: 90vh; background: none; display: flex; flex-direction: column; align-items: center;">
+    
+    {{-- 2. ปรับ max-width เป็น 600px ให้เท่ากับหน้าอื่น --}}
+    <div class="container" style="max-width: 600px; width: 100%;">
+
+        {{-- Header ส่วนหัว --}}
+        {{-- 3. ปรับ margin-bottom เป็น 40px --}}
+        <div style="text-align: center; margin-bottom: 40px;">
             <h1 style="font-size: 2.5rem; font-weight: 700; color: #2d3436; margin-bottom: 10px;" 
                 data-en="Image Converter" data-th="แปลงนามสกุลรูปภาพ">
                 Image Converter
             </h1>
-            <p style="color: #636e72; font-size: 1.1rem;" 
+            {{-- 4. ปรับ font-size เป็น 1rem --}}
+            <p style="color: #636e72; font-size: 1rem;" 
                data-en="Convert your images to various formats easily." 
                data-th="แปลงไฟล์รูปภาพเป็นนามสกุลต่างๆ ได้ง่ายๆ">
                 Convert your images to various formats easily.
             </p>
         </div>
 
-        {{-- Interface Card --}}
-        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);">
+        {{-- Interface Card (Glassmorphism) --}}
+        <div style="
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        ">
             
             {{-- Upload Area (With Image Preview) --}}
-            <div id="drop-zone" style="border: 2px dashed #17eb92; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 25px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;" 
+            <div id="drop-zone" style="border: 2px dashed #17eb92; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 25px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden; background: rgba(255,255,255,0.5);" 
                  onclick="document.getElementById('image-input').click()">
                 
                 <div id="upload-placeholder">
@@ -51,7 +65,7 @@
                     </select>
                 </div>
 
-                <button onclick="convertImage()" class="btn-consult" style="width: 100%; cursor: pointer; border: none; padding: 15px; border-radius: 50px; font-weight: 600; font-size: 1rem;"
+                <button onclick="convertImage()" class="btn-consult" style="width: 100%; cursor: pointer; border: none; padding: 15px; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: transform 0.2s;"
                         data-en="Convert & Download" data-th="แปลงไฟล์และดาวน์โหลด">
                     Convert & Download
                 </button>
@@ -129,11 +143,14 @@
         dropZone.style.borderColor = '#17eb92';
     });
     dropZone.addEventListener('dragleave', () => {
-        dropZone.style.background = 'transparent';
+        e.preventDefault();
+        dropZone.style.background = 'rgba(255,255,255,0.5)';
+        dropZone.style.borderColor = '#17eb92'; // หรือสีเดิมถ้าต้องการ
+        // หมายเหตุ: ปกติ dashed border จะมีสีเดิมอยู่แล้ว
     });
     dropZone.addEventListener('drop', (e) => {
         e.preventDefault();
-        dropZone.style.background = 'transparent';
+        dropZone.style.background = 'rgba(255,255,255,0.5)';
         const files = e.dataTransfer.files;
         if (files.length > 0) {
             const input = document.getElementById('image-input');
