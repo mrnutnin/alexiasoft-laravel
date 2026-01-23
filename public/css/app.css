@@ -2001,7 +2001,7 @@ footer {
         flex-direction: column;
         padding: 0; /* ลบ Padding เพื่อความเนียน */
         box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        border-top: 1px solid #f1f5f9;
+        border-top: 1px solid #343536;
         z-index: 9999;
         max-height: 80vh; /* กันเมนูยาวเกินจอ */
         overflow-y: auto; /* ให้เลื่อนดูได้ถ้าเมนูยาว */

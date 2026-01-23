@@ -209,13 +209,58 @@
             color: #475569;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
+        
 
-        @media (max-width: 900px) {
-            .hero-section { grid-template-columns: 1fr; text-align: center; }
-            .hub-wrapper { margin-top: 50px; height: 350px; }
-            .tech-strip { justify-content: center; }
-            h1 { font-size: 2.5rem; }
-        }
+    @media (max-width: 900px) {
+    /* ปรับระยะห่างด้านบนให้พอดีกับ Navbar ในมือถือ */
+    .hero-section { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        padding: 120px 0 40px; /* เพิ่ม padding-top เล็กน้อยกัน Navbar ทับตัวหนังสือ */
+    }
+
+    .hero-tag { font-size: 1.5rem; }
+    h1 { font-size: 2.2rem; }
+
+    /* ย่อขนาดกราฟิก Hub ให้เล็กลงในแท็บเล็ต */
+    .hub-wrapper { 
+        margin-top: 20px;
+        height: 320px;
+        transform: scale(0.8);
+        overflow: hidden; /* ป้องกันวงจรล้นออกนอกจอ */
+    }
+}
+
+/* --- สำหรับมือถือจอเล็กพิเศษ (Small Mobile - iPhone SE, 12 mini, Galaxy S20) --- */
+@media (max-width: 400px) {
+    .hero-section {
+        padding: 100px 10px 30px; /* ลด Padding ให้กระชับ */
+    }
+
+    h1 { 
+        font-size: 2.5rem; /* ลดขนาดหัวข้อใหญ่ลงไม่ให้ล้นบรรทัด */
+        line-height: 1.3;
+    }
+
+    .hero-tag { font-size: 2.0rem; }
+
+    /* ปรับกราฟิก Hub ให้เล็กลงอีก เพื่อไม่ให้ไปเบียด Navbar หรือเนื้อหาอื่น */
+    .hub-wrapper { 
+        height: 250px; 
+        transform: scale(0.70); /* ย่อลงเหลือ 65% */
+        margin-top: -20px; /* ดึงขึ้นไปใกล้เนื้อหาด้านบนมากขึ้น */
+    }
+
+    .tech-strip {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .tech-badge {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
     </style>
 
     <div class="container-custom">
