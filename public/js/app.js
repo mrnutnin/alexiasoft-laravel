@@ -159,63 +159,25 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 });
 /* =========================================
-   MOBILE MENU LOGIC (เพิ่มส่วนนี้ต่อท้ายสุด)
-   ========================================= */
-
-// ฟังก์ชันหลักที่ปุ่ม Hamburger เรียกใช้
-function toggleMobileMenu() {
-    const menu = document.getElementById('navMenu');
-    const icon = document.querySelector('.hamburger i');
-    
-    // 1. สลับ class 'active' เพื่อแสดง/ซ่อน เมนู
-    menu.classList.toggle('active');
-    
-    // 2. เปลี่ยนไอคอน: ถ้าเปิดอยู่ให้เป็นกากบาท (X) ถ้าปิดให้เป็นขีด (Bars)
-    if (icon) {
-        if (menu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-xmark'); // ต้องมั่นใจว่าใช้ FontAwesome 6
-        } else {
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
-        }
-    }
-}
-
-// เสริม: คลิกที่ Link ในเมนูแล้วให้ปิดเมนูอัตโนมัติ (UX ที่ดีบนมือถือ)
-document.addEventListener("DOMContentLoaded", function() {
-    const mobileLinks = document.querySelectorAll('.nav-menu a');
-    
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const menu = document.getElementById('navMenu');
-            // เช็คว่าถ้าเป็นมือถือ (จอเล็ก) และเมนูเปิดอยู่ -> ให้สั่งปิด
-            if (window.innerWidth < 991 && menu.classList.contains('active')) {
-                 toggleMobileMenu();
-            }
-        });
-    });
-});
-/* =========================================
-   MOBILE MENU & DROPDOWN LOGIC (FINAL FIX)
+   MOBILE MENU & DROPDOWN LOGIC (CLEAN VERSION)
    ========================================= */
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    // 1. จัดการปุ่ม Dropdown (Services, Tools)
+    const navMenu = document.getElementById('navMenu');
+    const hamburgerIcon = document.querySelector('.hamburger i');
+
+    // 1. จัดการ Dropdown (Services, Tools)
     const dropdownTriggers = document.querySelectorAll('.nav-menu .dropdown-trigger');
 
     dropdownTriggers.forEach(trigger => {
-        // ต้องใช้ click event
         trigger.addEventListener('click', function(e) {
-            // เช็คว่าเป็นมือถือหรือไม่
             if (window.innerWidth < 991) {
-                e.preventDefault();    // 1. ห้ามลิงก์ทำงาน (ไม่กระโดดไป #services)
-                e.stopPropagation();   // 2. ห้าม Event ทะลุไปปิดเมนูหลัก
+                e.preventDefault(); 
+                e.stopPropagation(); // หยุดไม่ให้ Event ไหลไปโดนคำสั่งปิดเมนูข้างล่าง
                 
                 const wrapper = this.closest('.dropdown-wrapper');
                 
-                // ปิดอันอื่นก่อน (ถ้าอยากให้เปิดได้ทีละอัน)
+                // ปิด Dropdown อันอื่นก่อน
                 document.querySelectorAll('.dropdown-wrapper.active').forEach(w => {
                     if (w !== wrapper) w.classList.remove('active');
                 });
@@ -226,40 +188,39 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // 2. จัดการลิงก์ธรรมดา (Home, Portfolio, About, Contact)
-    // เมนูพวกนี้พอกดแล้ว ต้องปิด Navbar ทิ้ง
-    const normalLinks = document.querySelectorAll('.nav-menu a:not(.dropdown-trigger)');
+    // 2. จัดการลิงก์ธรรมดา (กดแล้วให้ปิดเมนูทันที)
+    // ใช้ Selector ที่เจาะจงเฉพาะลิงก์ที่ "ไม่ใช่" ตัวเปิดเมนูย่อย และ "ไม่ใช่" ลิงก์ที่อยู่ในเมนูย่อย
+    const normalLinks = document.querySelectorAll('.nav-menu > a, .footer-sub-list a, .dropdown-menu a');
     
     normalLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth < 991) {
-                // ปิดเมนู
-                document.getElementById('navMenu').classList.remove('active');
-                
+                // ปิด Navbar
+                navMenu.classList.remove('active');
                 // เปลี่ยนไอคอนกลับเป็น 3 ขีด
-                const icon = document.querySelector('.hamburger i');
-                if(icon) {
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
+                if (hamburgerIcon) {
+                    hamburgerIcon.classList.remove('fa-xmark');
+                    hamburgerIcon.classList.add('fa-bars');
                 }
             }
         });
     });
 });
 
-// 3. ฟังก์ชันปุ่ม Hamburger (เรียกผ่าน onclick ใน HTML)
+// 3. ฟังก์ชันปุ่ม Hamburger (ใช้ onclick="toggleMobileMenu()" ใน HTML)
 function toggleMobileMenu() {
     const menu = document.getElementById('navMenu');
     const icon = document.querySelector('.hamburger i');
     
+    if (!menu || !icon) return;
+
     menu.classList.toggle('active');
     
-    // เปลี่ยนไอคอน
     if (menu.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
+        icon.className = 'fa-solid fa-xmark';
     } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+        icon.className = 'fa-solid fa-bars';
+        // เมื่อปิดเมนูหลัก ให้สั่งปิด dropdown ที่ค้างอยู่ทั้งหมดด้วย
+        document.querySelectorAll('.dropdown-wrapper').forEach(w => w.classList.remove('active'));
     }
 }
