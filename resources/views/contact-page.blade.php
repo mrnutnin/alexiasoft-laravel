@@ -180,7 +180,7 @@
         }
 
         .page-header {
-            padding-top: 40px;
+            padding-top: 80px;
             padding-bottom: 40px;
         }
 
@@ -253,7 +253,7 @@
         <div class="map-column">
             <div class="map-wrapper">
                 <iframe class="map-frame"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.876735544296!2d102.83648607593257!3d16.38048698434407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a2b53580517%3A0xe54e588102d1f7c7!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4hC7guIvguLXguIgu4LmA4Lih4LiX4LiX4Lit4Lil4Lia4Li04LiXIOC4iOC4s-C4geC4seC4lCAo4Lih4Lir4Liy4LiK4LiZKQ!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.4888514055556!2d102.86803871086617!3d16.399980630432903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122896b9151f1e9%3A0xca1c4406a9411728!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4hC7guIvguLUu4LmA4Lih4LiX4LiX4Lit4Lil4LiK4Li14LiXIOC4iOC4s-C4geC4seC4lCAo4Lih4Lir4Liy4LiK4LiZKSDguKrguLPguJnguLHguIHguIfguLLguJnguYPguKvguI3guYg!5e0!3m2!1sth!2sth!4v1769142995075!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     width="600" height="420" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
