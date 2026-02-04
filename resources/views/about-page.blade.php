@@ -36,7 +36,7 @@
     </p>
 
     {{-- Stat Grid --}}
-    <div class="glass-card" style="padding: 40px 30px; max-width: 900px; width: 100%; margin: 0 auto;">
+    <div class="glass-card" style="padding: 40px 30px; max-width: 900px; width: 90%; margin: 0 auto;">
         <div class="stat-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
             <div style="text-align: center;">
                 <h3 style="margin: 0 0 8px 0; font-size: 1.8rem; color: #333;">100%</h3>
