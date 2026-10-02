@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ filemtime(public_path('css/app.css')) }}">
 
     @stack('styles') {{-- สำหรับใส่ CSS เฉพาะหน้าเพิ่มเติม --}}
 </head>
@@ -50,7 +50,7 @@
     @include('layouts.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 
     @stack('scripts') {{-- สำหรับใส่ JS เฉพาะหน้าเพิ่มเติม --}}
 </body>
