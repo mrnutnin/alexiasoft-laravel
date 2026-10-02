@@ -36,3 +36,13 @@ Route::prefix('services')->name('services.')->group(function () {
     Route::get('/mobile-application', [ServiceController::class, 'mobileApplication'])->name('mobile');
     Route::get('/system-integration', [ServiceController::class, 'systemIntegration'])->name('system');
 });
+
+
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+
+    return "Cleared!";
+});
