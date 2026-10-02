@@ -39,6 +39,7 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                     <a href="{{ route('services.show', 'system-integration') }}">System Integration</a>
                 </div>
             </div>
+            <a href="#products">Products</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
@@ -78,6 +79,7 @@ $isServicePage = request()->is('services*') || request()->routeIs('services.show
                 </div>
             </div>
 
+            <a href="{{ url('/#products') }}">Products</a>
             <a href="{{ url('/portfolio') }}" class="{{ $isPortfolio ? 'active' : '' }}">Portfolio</a>
             <a href="{{ url('/about') }}" class="{{ $isAbout ? 'active' : '' }}">About</a>
             <a href="{{ url('/contact') }}" class="{{ $isContact ? 'active' : '' }}">Contact</a>

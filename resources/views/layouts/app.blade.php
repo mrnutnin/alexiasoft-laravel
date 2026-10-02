@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title', 'AlexiaSoft – Crafted Software Solutions | Custom Development')</title>
-    <meta name="title" content="AlexiaSoft – Crafted Software Solutions | Custom Development" />
-    <meta name="description" content="Crafted software solutions for modern businesses. We build ERP, POS, e-Commerce, and custom applications with cutting-edge technologies." />
-    <meta name="keywords" content="software development, custom software, ERP system, POS system, e-commerce, Laravel, React, Vue.js, AlexiaSoft" />
+    <meta name="title" content="@yield('meta_title', 'AlexiaSoft – Crafted Software Solutions | Custom Development')" />
+    <meta name="description" content="@yield('meta_description', 'Crafted software solutions for modern businesses. We build ERP, POS, e-Commerce, and custom applications with cutting-edge technologies.')" />
+    <meta name="keywords" content="@yield('meta_keywords', 'software development, custom software, ERP system, POS system, e-commerce, Laravel, React, Vue.js, AlexiaSoft')" />
     <meta name="author" content="AlexiaSoft Co., Ltd." />
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:title" content="AlexiaSoft – Crafted Software Solutions" />
-    <meta property="og:description" content="Crafted software solutions for modern businesses. We build technology that drives success." />
-    <meta property="og:image" content="{{ asset('images/og-image.jpg') }}" />
+    <meta property="og:title" content="@yield('meta_title', 'AlexiaSoft – Crafted Software Solutions')" />
+    <meta property="og:description" content="@yield('meta_description', 'Crafted software solutions for modern businesses. We build technology that drives success.')" />
+    <meta property="og:image" content="@yield('og_image', asset('images/og-image.png'))" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16x16.png') }}" />
