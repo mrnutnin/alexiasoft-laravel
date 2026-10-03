@@ -2371,3 +2371,83 @@ footer {
     max-width: 250px; 
     text-align: left; /* คำอธิบายก็ชิดซ้ายตามแนว */
 }
+
+/* Landing page: product-led first impression */
+#home.home-hero {
+    max-width: 1320px;
+    min-height: min(820px, 95svh);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(32px, 5vw, 90px);
+    padding: 135px 32px 70px;
+}
+#home .home-eyebrow {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #166534;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .17em;
+}
+#home .hero-text h1 {
+    max-width: 620px;
+    margin: 0 0 24px;
+    font-size: clamp(3rem, 5.3vw, 5.4rem);
+    line-height: 1.12;
+    letter-spacing: -.05em;
+}
+#home .hero-text > p {
+    max-width: 520px;
+    margin: 0;
+    color: #475569;
+    font-size: clamp(1rem, 1.45vw, 1.2rem);
+    line-height: 1.85;
+}
+#home .home-actions {display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px}
+#home .home-actions .btn {border-radius: 12px; padding: 15px 22px}
+#home .home-secondary {background: #fff; color: #0f172a; border: 1px solid #cbd5e1}
+#home .home-secondary:hover {border-color: #16a34a; transform: translateY(-3px)}
+#home .home-highlights {display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 38px; color: #475569; font-size: .86rem}
+#home .home-highlights i {color: #15803d; margin-right: 5px}
+#home .home-showcase {display: grid; grid-template-columns: 1fr 1fr; gap: 14px; perspective: none}
+#home .home-product {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 370px;
+    padding: 22px 22px 0;
+    text-decoration: none;
+    color: #0f172a;
+    border: 1px solid #bbdccb;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #e7f8ee, #fff 75%);
+    box-shadow: 0 22px 55px rgba(15, 23, 42, .1);
+    transition: transform .25s, box-shadow .25s;
+}
+#home .home-product:hover, #home .home-product:focus-visible {transform: translateY(-8px); box-shadow: 0 28px 65px rgba(15, 23, 42, .16)}
+#home .home-pos {margin-top: 52px; border-color: #c7d9f8; background: linear-gradient(145deg, #e8f1ff, #fff 75%)}
+#home .home-product-label {display: flex; justify-content: space-between; gap: 8px; color: #166534; font-size: .67rem; font-weight: 800; letter-spacing: .08em}
+#home .home-pos .home-product-label {color: #1d4ed8}
+#home .home-product strong {margin-top: 24px; font: 700 clamp(1.5rem, 2.4vw, 2.25rem) 'Outfit', sans-serif}
+#home .home-product-description {min-height: 3em; margin: 7px 0 20px; color: #475569; font-size: .83rem; line-height: 1.5}
+#home .home-product img {width: calc(100% + 44px); height: 200px; margin: auto -22px 0; object-fit: cover; object-position: top left; border-top: 1px solid #e2e8f0}
+.home-tech {max-width: 1200px; margin: 0 auto; padding: 16px 24px 44px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px 28px; color: #475569; font-size: .88rem; font-weight: 700}
+.home-tech span:first-child {width: 100%; text-align: center; font-size: .7rem; letter-spacing: .14em; color: #166534}
+#products .product-card:first-child {border-color: #a7d7bb; box-shadow: 0 22px 55px rgba(22, 101, 52, .12)}
+#products .product-card:nth-child(2) {border-color: #c2d7f5}
+@media (max-width: 950px) {
+    #home.home-hero {grid-template-columns: 1fr; text-align: left; padding: 130px 24px 50px; min-height: 0}
+    #home .home-showcase {display: grid; max-width: 700px; width: 100%; margin: 0 auto}
+}
+@media (max-width: 600px) {
+    #home.home-hero {padding-top: 120px; gap: 30px}
+    #home .hero-text h1 {font-size: clamp(2.55rem, 10vw, 3.5rem)}
+    #home .home-showcase {gap: 10px}
+    #home .home-product {min-height: 270px; padding: 15px 15px 0; border-radius: 16px}
+    #home .home-pos {margin-top: 24px}
+    #home .home-product strong {font-size: 1.35rem; margin-top: 16px}
+    #home .home-product-description {font-size: .73rem}
+    #home .home-product img {height: 120px; width: calc(100% + 30px); margin-left: -15px; margin-right: -15px}
+    #home .home-highlights {justify-content: flex-start; margin-top: 24px}
+}
+@media (prefers-reduced-motion: reduce) {#home .home-product {transition: none}}

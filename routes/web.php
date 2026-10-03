@@ -7,9 +7,11 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ToolController;
+use App\Http\Controllers\PitchController;
 
 // หน้าเดียว
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/pitch', [PitchController::class, 'index'])->name('pitch');
 
 // route แยก controller ไว้ แต่ redirect กลับหน้าเดียว
 Route::get('/services', [ServiceController::class, 'index']);
